@@ -1,0 +1,7 @@
+_target_: dccm_quasistatic.sample_generator.SampleGenerator
+
+params:
+  _target_: dccm_quasistatic.sample_generator.SampleGeneratorParams
+  actuated_collision_geomtery_names: ["hand::collision"]
+  n_samples: 10
+  workspace_radius: 5

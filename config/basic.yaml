@@ -1,0 +1,3 @@
+defaults:
+  - sample_generator: sample_generator_defaults
+  - sample_generator_params: params
