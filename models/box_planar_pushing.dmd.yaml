@@ -1,0 +1,21 @@
+directives:
+- add_model:
+    name: object
+    file: package://dccm_quasistatic/models/box.urdf
+- add_model:
+    name: robot
+    file: package://dccm_quasistatic/models/actuated_sphere.urdf
+- add_model:
+    name: floor
+    file: package://dccm_quasistatic/models/floor.urdf
+- add_weld:
+    parent: world
+    child: floor::floor
+    X_PC:
+        translation: [0.0, 0.0, 0]
+- add_weld:
+    parent: world
+    child: floor::box_target
+    X_PC:
+        translation: [0.0, 0.0, 0]
+

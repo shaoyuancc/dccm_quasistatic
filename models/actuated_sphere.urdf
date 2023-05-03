@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+
+<robot xmlns="http://drake.mit.edu"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ name="actuated_sphere">
+
+  <link name="robot_x_link">
+    <inertial>
+      <origin xyz="0 0 0.2" rpy="0 0 0" />
+      <mass value="0" />
+      <inertia ixx="0.00" ixy="0" ixz="0" iyy="0.00" iyz="0" izz="0.00" />
+    </inertial>
+  </link>
+
+  <link name="robot">
+    <inertial>
+      <origin xyz="0 0 0.2" rpy="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="0.004" ixy="0" ixz="0" iyy="0.004" iyz="0" izz="0.004" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0.5" rpy="0 0 0" />
+      <geometry>
+        <sphere radius=".3" />
+      </geometry>
+      <material>
+        <color rgba="0 0 0 1" />
+      </material>
+    </visual>
+    <collision name="collision">
+        <origin xyz="0 0 0.5" rpy="0 0 0" />
+        <geometry>
+          <sphere radius=".3" />
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>.2</mu>
+              <mu2>.2</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+  </link>
+  
+  <joint name="x_slider" type="prismatic">
+    <parent link="world" />
+    <child link="robot_x_link" />
+    <origin xyz="0 0 0" />
+    <axis xyz="1 0 0" />
+  </joint>
+
+  <joint name="y_slider" type="prismatic">
+    <parent link="robot_x_link" />
+    <child link="robot" />
+    <origin xyz="0 0 0" />
+    <axis xyz="0 1 0" />
+  </joint>
+
+  <transmission type="SimpleTransmission" name="x_force">
+    <actuator name="x_force_actuator" />
+    <joint name="x_slider" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+
+  <transmission type="SimpleTransmission" name="y_force">
+    <actuator name="y_force_actuator" />
+    <joint name="y_slider" />
+    <mechanicalReduction>1</mechanicalReduction>
+  </transmission>
+
+</robot>

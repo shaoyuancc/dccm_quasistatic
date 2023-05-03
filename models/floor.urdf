@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+
+<robot xmlns="http://drake.mit.edu"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ name="floor">
+
+  <link name="floor">
+    <visual>
+      <origin xyz="0 0 -0.2" rpy="0 0 0" />
+      <geometry>
+        <box size="15 15 0.2" />
+      </geometry>
+      <material>
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision name="collision">
+        <origin xyz="0 0 -0.2" rpy="0 0 0" />
+        <geometry>
+          <box size="50 50 0.2" />
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+  </link>
+
+  <link name="box_target">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="1 1 0.1" />
+      </geometry>
+      <material>
+        <color rgba="0 1 0 1" />
+      </material>
+    </visual>
+  </link>
+</robot>

@@ -3,6 +3,7 @@ from typing import Tuple
 import matplotlib.pyplot as plt
 from IPython.display import Markdown, display
 from dataclasses import dataclass
+from dccm_quasistatic.controller.controller_base import ControllerBase
 
 from pydrake.all import (MathematicalProgram, Solve, MonomialBasis,
                          DiagramBuilder, Evaluate, LogVectorOutput, Simulator,
@@ -27,7 +28,7 @@ class DCCMParams:
     # Geodesic calculation parameters
     n_geodesic_segments: int = 5 # Number of segments to discretize the geodesic into
 
-class DCCMOnlineController(LeafSystem):
+class DCCMSystem(LeafSystem):
     def __init__(self, params: DCCMParams):
         LeafSystem.__init__(self)
         self.params = params
@@ -278,3 +279,6 @@ class DCCMOnlineController(LeafSystem):
         l1c_ans = result.GetSolution(l1c)
         l2c_ans = result.GetSolution(l2c)
          
+class DCCMController(ControllerBase):
+    def __init__(self, params: DCCMParams) -> None:
+        self._params = params

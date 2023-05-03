@@ -9,6 +9,8 @@ from tqdm import tqdm
 import os
 import numpy as np
 from datetime import datetime
+from dccm_quasistatic.controller.controller_base import ControllerBase
+from dccm_quasistatic.environment.planar_pushing_environment import PlanarPushingEnvironment
 
 from pydrake.all import Box, Sphere
 
@@ -37,9 +39,14 @@ def main(cfg: OmegaConf) -> None:
     q_parser = QuasistaticParser(q_model_path)
     q_sim = q_parser.make_simulator_cpp()
     q_sim_py = q_parser.make_simulator_py(InternalVisualizationType.Cpp)
-    test = instantiate(cfg.sample_generator_params)
-    # sample_generator = instantiate(cfg.sample_generator, q_sim=q_sim, q_sim_py=q_sim_py, parser=q_parser)
-    print(test.params.n_samples)
+    sample_generator = instantiate(cfg.sample_generator, q_sim=q_sim, q_sim_py=q_sim_py, parser=q_parser)
+    res = sample_generator.generate_samples()
+    
+    controller: ControllerBase = instantiate(cfg.controller)
+    environment: PlanarPushingEnvironment = instantiate(cfg.environment, controller=controller)
+    environment.setup()
+    environment.simulate()
+    
     print("Done!")
 
 if __name__ == "__main__":

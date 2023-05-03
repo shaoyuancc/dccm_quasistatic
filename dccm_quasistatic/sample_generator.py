@@ -1,4 +1,5 @@
 import os, copy
+from dataclasses import dataclass
 
 import numpy as np
 from tqdm import tqdm
@@ -15,6 +16,7 @@ from qsim.parser import (
 
 @dataclass
 class SampleGeneratorParams:
+    log_barrier_weight: float = 100
     n_samples: int = 100 # Number of samples to use for creating the DCCM
     workspace_radius: float = 5
     actuated_collision_geomtery_names: List = None
@@ -48,8 +50,8 @@ class SampleGenerator():
         self.sim_p.h = 0.1
         self.sim_p.unactuated_mass_scale = 10
         self.q_sim_batch = parser.make_batch_simulator()
-
-        self.enable_analytical_smoothing(True)
+        
+        self.enable_analytical_smoothing(True, self.params.log_barrier_weight)
 
     def enable_analytical_smoothing(
         self, enable: bool, log_barrier_weight: float = None
