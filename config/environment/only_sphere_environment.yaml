@@ -2,8 +2,8 @@ _target_: dccm_quasistatic.environment.planar_pushing_environment.PlanarPushingE
 
 params:
   _target_: dccm_quasistatic.environment.planar_pushing_environment.EnvParams
-  time_step: 1e-2
+  time_step: 1e-3
   planar_joint_damping: 50
-  scene_directive_path: models/box_planar_pushing.dmd.yaml
+  scene_directive_path: models/only_sphere.dmd.yaml
   initial_robot_position: [-1.5, 0.0]
   initial_object_position: [-0.5, 0, 0] # [0.0, 1.0, 0.3]

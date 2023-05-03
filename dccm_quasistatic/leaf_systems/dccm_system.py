@@ -17,6 +17,8 @@ from pydrake.all import (MathematicalProgram, Solve, MonomialBasis,
                          LeafSystem, AbstractValue,
                          )
 
+scaling_factor = 1e15
+
 class DCCMSystem(LeafSystem):
     def __init__(self, params: DCCMParams):
         LeafSystem.__init__(self)
@@ -102,6 +104,7 @@ class DCCMSystem(LeafSystem):
             x1: (dim_x,): final state, will correspond to x*_k
         """
         print("calculate_geodesic initialize")
+        start_time = time.time()
         prog = MathematicalProgram()
         
         # Numerical state evaluation along the geodesic
@@ -122,7 +125,6 @@ class DCCMSystem(LeafSystem):
         # Add constraints
         # Constraint 1
         si_sum_to_one = prog.AddLinearConstraint(sum(delta_s) == 1)
-        print("calculate_geodesic B")
         discrete_distances_sum = x0
         # Constraint: Initial state matches x0
         prog.AddConstraint(eq(x[0], x0))
@@ -133,42 +135,39 @@ class DCCMSystem(LeafSystem):
             prog.AddConstraint(eq(x[i+1], discrete_distances_sum))
         # Constraint 3
         total_distances_match = prog.AddConstraint(eq(discrete_distances_sum, x1))
-        print("calculate_geodesic C")
         # Sum cost over all segments
         prog.AddCost(np.sum(y))
         # Constraints for the values of y
+        
         for i in range(self._params.n_geodesic_segments):
-            print("calculate_geodesic D")
             v = [monomial.ToExpression() for monomial in MonomialBasis(x[i], self._params.deg)]
-            print(f"v len: {len(v)}")
             # Construct W(x_i)
             Wk_lower_tri = self._wijc.dot(v)
             Wi = create_square_symmetric_matrix_from_lower_tri_array(Wk_lower_tri)
-            print(f"Wi.shape: {Wi.shape}")
 
-            # Get M(x_i) by inverting W(x_i)
             Mi = matrix_inverse(Wi) # <= because of the division, this is not a polynomial anymore.
-            print(f"Mi.shape: {Mi.shape}")
+            # print(f"Mi.shape: {Mi.shape}")
             # Rational Polynomial Expression
             metric_dist = delta_s[i] * delta_xs[i].T @ Mi @ delta_xs[i]
             # print(f"metric_dist: {metric_dist}")
             # print(f"metric_dist.is_polynomial(): {metric_dist.is_polynomial()}")
             # print(f"metric_dist type: {type(metric_dist)}")
-            prog.AddConstraint(metric_dist <= y[i])
+            y_constraint = prog.AddConstraint(metric_dist <= y[i])
+            y_constraint.evaluator().set_description(f"y_constraint_{i}")
         
         # Try to keep delta_s small
         prog.AddCost(np.sum(delta_s**2))
 
         # Seed initial guess as all 1's so that determinant will not be 0 and cause a failure
         prog.SetInitialGuessForAllVariables(np.ones(prog.num_vars()))
-        print("Start solving geodesic")
+        print("Start solving geodesic, time taken to setup: ", time.time() - start_time, " seconds")
         start_time = time.time()
         result = Solve(prog)
         print("Solver succeeded: ", result.is_success(), " in ", time.time() - start_time, " seconds")
 
-        infeasible_constraints = result.GetInfeasibleConstraints(prog)
-        for c in infeasible_constraints:
-            print(f"infeasible constraint: {c}")
+        # infeasible_constraints = result.GetInfeasibleConstraints(prog)
+        # for c in infeasible_constraints:
+        #     print(f"infeasible constraint: {c}")
 
         geodesic_length = np.sum(result.GetSolution(y))
         return result.is_success(), result.GetSolution(x), result.GetSolution(delta_xs), result.GetSolution(delta_s), geodesic_length
@@ -257,8 +256,9 @@ class DCCMSystem(LeafSystem):
             print(f"infeasible constraint: {c}")
 
         # Extract the solution
-        print("wijc:\n", result.GetSolution(wijc))
-        print("\nlijc:\n", result.GetSolution(lijc))
+        
 
-        self._wijc = result.GetSolution(wijc)
-        self._lijc = result.GetSolution(lijc)
+        self._wijc = result.GetSolution(wijc) * scaling_factor
+        self._lijc = result.GetSolution(lijc) * scaling_factor
+        print("wijc:\n", self._wijc)
+        print("\nlijc:\n", self._lijc)
