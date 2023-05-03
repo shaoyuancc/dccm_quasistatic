@@ -10,6 +10,7 @@ import os
 import numpy as np
 from datetime import datetime
 from dccm_quasistatic.controller.controller_base import ControllerBase
+from dccm_quasistatic.controller.dccm_controller import DCCMController
 from dccm_quasistatic.environment.planar_pushing_environment import PlanarPushingEnvironment
 
 from pydrake.all import Box, Sphere
@@ -40,12 +41,18 @@ def main(cfg: OmegaConf) -> None:
     q_sim = q_parser.make_simulator_cpp()
     q_sim_py = q_parser.make_simulator_py(InternalVisualizationType.Cpp)
     sample_generator = instantiate(cfg.sample_generator, q_sim=q_sim, q_sim_py=q_sim_py, parser=q_parser)
-    res = sample_generator.generate_samples()
+    samples = sample_generator.generate_samples()
     
     controller: ControllerBase = instantiate(cfg.controller)
+    
     environment: PlanarPushingEnvironment = instantiate(cfg.environment, controller=controller)
     environment.setup()
-    environment.simulate()
+
+    if isinstance(controller, DCCMController):
+        controller.calc_dccm(*samples)
+        print(f"calc DCCM completed!")
+    
+    environment.simulate(duration=10)
     
     print("Done!")
 

@@ -32,7 +32,7 @@ class TeleopController(ControllerBase):
         self._meshcat = meshcat
         self.dim_robot_positions = 2
 
-    def _setup_robot_controller(
+    def _setup_robot_position_controller(
         self, builder: DiagramBuilder, plant: MultibodyPlant
     ) -> System:
         robot_model_instance = plant.GetModelInstanceByName("robot")
@@ -44,7 +44,7 @@ class TeleopController(ControllerBase):
         robot_controller_plant.set_name("robot_controller_plant")
         robot_controller_plant.Finalize()
 
-        robot_controller = builder.AddSystem(
+        robot_position_controller = builder.AddSystem(
             InverseDynamicsController(
                 robot_controller_plant,
                 kp=[self._params.pid_gains.kp] * self.dim_robot_positions,
@@ -53,18 +53,33 @@ class TeleopController(ControllerBase):
                 has_reference_acceleration=False,
             )
         )
-        robot_controller.set_name("robot_controller")
+        robot_position_controller.set_name("robot_position_controller")
         builder.Connect(
             plant.get_state_output_port(robot_model_instance),
-            robot_controller.get_input_port_estimated_state(),
+            robot_position_controller.get_input_port_estimated_state(),
         )
         builder.Connect(
-            robot_controller.get_output_port_control(),
+            robot_position_controller.get_output_port_control(),
             plant.get_actuation_input_port(robot_model_instance),
         )
-        return robot_controller
 
-    def _setup_sphere_teleop(self, builder: DiagramBuilder) -> System:
+        # Add discrete derivative to command velocities.
+        desired_state_source = builder.AddSystem(
+            StateInterpolatorWithDiscreteDerivative(
+                self.dim_robot_positions,
+                self._params.time_step,
+                suppress_initial_transient=True,
+            )
+        )
+        desired_state_source.set_name("desired_state_source")
+        builder.Connect(
+            desired_state_source.get_output_port(),
+            robot_position_controller.get_input_port_desired_state(),
+        )
+        
+        return desired_state_source
+
+    def _setup_teleop(self, builder: DiagramBuilder) -> System:
         self._sim_duration = 5.0
 
         input_limit = self._params.teleop.input_limit
@@ -89,20 +104,7 @@ class TeleopController(ControllerBase):
         builder.Connect(force_system.get_output_port(0), mux.get_input_port(0))
         builder.Connect(force_system.get_output_port(1), mux.get_input_port(1))
 
-        # Add discrete derivative to command velocities.
-        desired_state_source = builder.AddSystem(
-            StateInterpolatorWithDiscreteDerivative(
-                self.dim_robot_positions,
-                self._params.time_step,
-                suppress_initial_transient=True,
-            )
-        )
-        desired_state_source.set_name("teleop_desired_state_source")
-        builder.Connect(mux.get_output_port(), desired_state_source.get_input_port())
-
-        self.desired_pos_source = mux
-
-        return desired_state_source
+        return mux
 
     def setup(self, builder: DiagramBuilder, plant: MultibodyPlant, **kwargs) -> None:
         self._meshcat = kwargs.get("meshcat", None)
@@ -111,9 +113,9 @@ class TeleopController(ControllerBase):
                 "Need to pass meshcat to teleop controller."
             )
 
-        robot_controller = self._setup_robot_controller(builder, plant)
-        teleop_state_source = self._setup_sphere_teleop(builder)
+        robot_position_controller = self._setup_robot_position_controller(builder, plant)
+        desired_position_source = self._setup_teleop(builder)
         builder.Connect(
-            teleop_state_source.get_output_port(),
-            robot_controller.get_input_port_desired_state(),
+            desired_position_source.get_output_port(),
+            robot_position_controller.get_input_port(),
         )

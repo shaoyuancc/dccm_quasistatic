@@ -1,4 +1,4 @@
 defaults:
-  - controller: teleop_controller
+  - controller: dccm_controller
   - environment: planar_pushing_environment
   - sample_generator: sample_generator_defaults

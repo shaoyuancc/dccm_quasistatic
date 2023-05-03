@@ -1,0 +1,18 @@
+_target_: dccm_quasistatic.controller.dccm_controller.DCCMController
+
+params:
+  _target_: dccm_quasistatic.controller.dccm_params.DCCMParams
+  robot_urdf_path: package://dccm_quasistatic/models/actuated_sphere.urdf
+  time_step: 1e-3
+  pid_gains:
+    kp: 100
+    kd: 20
+    ki: 1
+  
+  dim_x: 5
+  dim_u: 2
+  
+  deg: 2
+  beta: 0.1
+
+  n_geodesic_segments: 1

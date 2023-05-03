@@ -11,3 +11,4 @@ class ControllerBase(ABC):
     def setup(self, builder: DiagramBuilder, plant: MultibodyPlant, **kwargs) -> None:
         """Setup the controller."""
         raise NotImplementedError
+    

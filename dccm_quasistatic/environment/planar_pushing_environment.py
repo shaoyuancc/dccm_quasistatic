@@ -19,9 +19,9 @@ from pydrake.all import (
     Box,
     Parser,
 )
-from manipulation.utils import AddPackagePaths
 
 from dccm_quasistatic.controller.controller_base import ControllerBase
+from dccm_quasistatic.utils.sim_utils import get_parser
 
 @dataclass
 class EnvParams:
@@ -116,10 +116,3 @@ class PlanarPushingEnvironment():
             self._visualizer.StopRecording()
             self._visualizer.PublishRecording()
     
-
-def get_parser(plant: MultibodyPlant) -> Parser:
-    """Creates a parser for a plant and adds package paths to it."""
-    parser = Parser(plant)
-    AddPackagePaths(parser)
-    parser.package_map().AddPackageXml(os.path.abspath("package.xml"))
-    return parser
