@@ -131,60 +131,6 @@ class SampleGenerator():
             A_samples,
             B_samples,
         )
-
-    def generate_samples(self):
-        # Hardcoded robot and object dimensions:
-        x_bounds = [
-            [-self.params.workspace_radius, self.params.workspace_radius],  #  object pos_x bounds
-            [-self.params.workspace_radius, self.params.workspace_radius],  #  object pos_y bounds
-            [-np.pi, np.pi], # object orientation bounds
-            [-self.params.workspace_radius, self.params.workspace_radius],  #  robot pos_x bounds
-            [-self.params.workspace_radius, self.params.workspace_radius],  #  robot pos_y bounds
-        ]
-
-        u_bounds = [
-            [-self.params.workspace_radius, self.params.workspace_radius],  #  robot pos_x bounds
-            [-self.params.workspace_radius, self.params.workspace_radius],  #  robot pos_y bounds
-        ]
-
-        x_samples = np.zeros((self.params.n_samples, self.dim_x))
-        u_samples = np.zeros((self.params.n_samples, self.dim_u))
-
-        count = 0
-        while count != self.params.n_samples:
-            for i in range(self.dim_x):
-                x_samples[count, i] = np.random.uniform(
-                    x_bounds[i][0], x_bounds[i][1]
-                )
-            for i in range(self.dim_u):
-                u_samples[count, i] = np.random.uniform(
-                    u_bounds[i][0], u_bounds[i][1]
-                )
-
-            if self.is_x_admissible(x_samples[count]):
-                count += 1
-            else:
-                print(
-                    f"Rejected sample {count}, x_sample: {x_samples[count]}"
-                )
-        
-        (
-            x_next_samples,
-            A_samples,
-            B_samples,
-            is_valid_batch,
-        ) = self.q_sim_batch.calc_dynamics_parallel(
-            x_samples, u_samples, self.sim_p
-        )
-        assert np.all(is_valid_batch), "Dynamics batch had invalid results"
-
-        return(
-            x_samples,
-            u_samples,
-            x_next_samples,
-            A_samples,
-            B_samples,
-        )
     
     def generate_samples_submanifold(self, visualize=False):
         robot_radius = 0.1
@@ -261,6 +207,84 @@ class SampleGenerator():
             np.array(x_next_samples),
             np.array(A_samples),
             np.array(B_samples),
+        )
+    def generate_two_spheres_samples(self, visualize=False):
+        robot_radius = 0.1
+        object_radius = 0.1
+        u_rel_lim = 0.3
+
+        x_samples = []
+        u_samples = []
+        x_next_samples = []
+        A_samples = []
+        B_samples = []
+
+        # workspace_bounds = [-self.params.workspace_radius,0]
+        workspace_bounds = [-self.params.workspace_radius,self.params.workspace_radius]
+
+        count = 0
+        while count != self.params.n_samples:
+            # Randomly pick object_x
+            x = np.random.uniform(workspace_bounds[0], workspace_bounds[1], size=(2,))
+            
+            # Randomly pick valid u_x
+            u_x = np.random.uniform(workspace_bounds[0], workspace_bounds[1])
+
+            q = x
+            u = [u_x]
+            if visualize:
+                sleep(1.0)
+                print(f"q: {q}, u: {u}")
+                self.q_sim_py.update_mbp_positions_from_vector(q)
+                self.q_sim_py.draw_current_configuration()
+
+            q_next = self.q_sim.calc_dynamics(q, u, self.sim_p)
+            A = self.q_sim.get_Dq_nextDq()
+            B = self.q_sim.get_Dq_nextDqa_cmd()
+
+            if visualize:
+                sleep(0.5)
+                self.q_sim_py.update_mbp_positions_from_vector(q_next)
+                self.q_sim_py.draw_current_configuration()
+
+            # # Randomly pick object_x
+            # object_x = np.random.uniform(workspace_bounds[0]+ robot_radius*2 + object_radius, workspace_bounds[1] - object_radius)
+            # # Randomly pick robot_x +  < object_x - object_rradius
+            # robot_x = np.random.uniform(workspace_bounds[0]+ robot_radius, object_x - object_radius - robot_radius)
+            # # Randomly pick valid u_x
+            # u_x = np.random.uniform(robot_x - u_rel_lim, robot_x + u_rel_lim)
+
+            # q = [object_x, robot_x]
+            # u = [u_x]
+            # if visualize:
+            #     sleep(1.0)
+            #     print(f"q: {q}, u: {u}")
+            #     self.q_sim_py.update_mbp_positions_from_vector(q)
+            #     self.q_sim_py.draw_current_configuration()
+
+            # q_next = self.q_sim.calc_dynamics(q, u, self.sim_p)
+            # A = self.q_sim.get_Dq_nextDq()
+            # B = self.q_sim.get_Dq_nextDqa_cmd()
+
+            # if visualize:
+            #     sleep(0.5)
+            #     self.q_sim_py.update_mbp_positions_from_vector(q_next)
+            #     self.q_sim_py.draw_current_configuration()
+            
+            x_samples.append(q)
+            u_samples.append(u)
+            x_next_samples.append(q_next)
+            A_samples.append(A)
+            B_samples.append(B)
+
+            count += 1
+        
+        return(
+            x_samples,
+            u_samples,
+            x_next_samples,
+            A_samples,
+            B_samples,
         )
     
     def generate_robot_only_samples(self, visualize=False):
