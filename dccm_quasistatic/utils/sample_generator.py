@@ -209,6 +209,67 @@ class SampleGenerator():
             np.array(B_samples),
         )
     
+    def generate_circular_traj_samples(self, visualize=False):
+        u_rel_lim = 0.3
+
+        x_samples = []
+        u_samples = []
+        x_next_samples = []
+        A_samples = []
+        B_samples = []
+
+        b_r = 1.5
+        s_r = b_r + 1.1
+        theta_buff = 0.9
+
+        b_theta_eps = 0.4
+        b_r_eps = 0.4
+
+        count = 0
+        while count != self.params.n_samples:
+            b_theta = np.random.uniform(0 - b_theta_eps, np.pi * 2 + b_theta_eps)
+            b_rk = np.random.uniform(b_r - b_r_eps, b_r + b_r_eps)
+            b_thetak = np.random.uniform(b_theta - b_theta_eps, b_theta + b_theta_eps)
+            b_x = b_rk * np.sin(b_thetak)
+            b_y = b_rk * np.cos(b_thetak)
+            s_thetak = np.random.uniform(b_theta - 3 * theta_buff, b_theta)
+            s_rk = np.random.uniform(s_r - b_r_eps, s_r + b_r_eps)
+            s_x = s_rk * np.sin(s_thetak)
+            s_y = s_rk * np.cos(s_thetak)
+            q = np.array([b_x, b_y, -b_theta, s_x, s_y])
+            if not self.is_x_admissible(q):
+                continue
+            else:
+                count += 1
+            robot = np.array([s_x, s_y])
+            u = np.random.uniform(robot - u_rel_lim, robot + u_rel_lim)
+
+            q_next = self.q_sim.calc_dynamics(q, u, self.sim_p)
+            A = self.q_sim.get_Dq_nextDq()
+            B = self.q_sim.get_Dq_nextDqa_cmd()
+            x_samples.append(q)
+            u_samples.append(u)
+            x_next_samples.append(q_next)
+            A_samples.append(A)
+            B_samples.append(B)
+
+            if visualize:
+                sleep(1.0)
+                print(f"q: {q}, u: {u}")
+                self.q_sim_py.update_mbp_positions_from_vector(q)
+                self.q_sim_py.draw_current_configuration()
+                sleep(0.5)
+                self.q_sim_py.update_mbp_positions_from_vector(q_next)
+                self.q_sim_py.draw_current_configuration()
+        
+        return(
+            np.array(x_samples),
+            np.array(u_samples),
+            np.array(x_next_samples),
+            np.array(A_samples),
+            np.array(B_samples),
+        )
+    
     def generate_three_spheres_samples(self, visualize=False):
         robot_radius = 0.1
         object_radius = 0.1
