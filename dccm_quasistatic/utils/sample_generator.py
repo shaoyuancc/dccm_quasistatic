@@ -222,8 +222,8 @@ class SampleGenerator():
         s_r = b_r + 1.1
         theta_buff = 0.9
 
-        b_theta_eps = 0.4
-        b_r_eps = 0.4
+        b_theta_eps = 0.2
+        b_r_eps = 0.3
 
         count = 0
         while count != self.params.n_samples:
