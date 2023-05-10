@@ -2,8 +2,8 @@ import numpy as np
 from typing import Tuple
 import matplotlib.pyplot as plt
 from IPython.display import Markdown, display
-from dccm_quasistatic.controller.controller_base import ControllerBase
-from dccm_quasistatic.controller.dccm_params import DCCMParams
+from dccm_quasistatic.online_controller.controller_base import ControllerBase
+from dccm_quasistatic.online_controller.dccm_params import DCCMParams
 from dccm_quasistatic.leaf_systems.dccm_system import DCCMSystem
 from dccm_quasistatic.leaf_systems.desired_trajectory_source_system import DesiredTrajectorySourceSystem
 from dccm_quasistatic.utils.sim_utils import get_parser
