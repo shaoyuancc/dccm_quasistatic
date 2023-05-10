@@ -1,0 +1,270 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{pangGlobalPlanningContactRich2023}{online}{}
+      \name{author}{4}{}{%
+        {{hash=15bfbfe1db67917fc953926d49afd752}{%
+           family={Pang},
+           familyi={P\bibinitperiod},
+           given={Tao},
+           giveni={T\bibinitperiod}}}%
+        {{hash=c0f4057d2985bb65db720a9bfffcf847}{%
+           family={Suh},
+           familyi={S\bibinitperiod},
+           given={H.\bibnamedelimi J.\bibnamedelimi Terry},
+           giveni={H\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+        {{hash=29701bbe434c8649e2bc3bb7fc65006e}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Lujie},
+           giveni={L\bibinitperiod}}}%
+        {{hash=480d067fbc7c00be4a01a0e4902c984e}{%
+           family={Tedrake},
+           familyi={T\bibinitperiod},
+           given={Russ},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{b187a94242925e9eb9c88ced00895d74}
+      \strng{fullhash}{7cc4cef530c30e06c10714dd8ed3b726}
+      \strng{bibnamehash}{7cc4cef530c30e06c10714dd8ed3b726}
+      \strng{authorbibnamehash}{7cc4cef530c30e06c10714dd8ed3b726}
+      \strng{authornamehash}{b187a94242925e9eb9c88ced00895d74}
+      \strng{authorfullhash}{7cc4cef530c30e06c10714dd8ed3b726}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The empirical success of Reinforcement Learning (RL) in the setting of contact-rich manipulation leaves much to be understood from a model-based perspective, where the key difficulties are often attributed to (i) the explosion of contact modes, (ii) stiff, non-smooth contact dynamics and the resulting exploding / discontinuous gradients, and (iii) the non-convexity of the planning problem. The stochastic nature of RL addresses (i) and (ii) by effectively sampling and averaging the contact modes. On the other hand, model-based methods have tackled the same challenges by smoothing contact dynamics analytically. Our first contribution is to establish the theoretical equivalence of the two methods for simple systems, and provide qualitative and empirical equivalence on a number of complex examples. In order to further alleviate (ii), our second contribution is a convex, differentiable and quasi-dynamic formulation of contact dynamics, which is amenable to both smoothing schemes, and has proven through experiments to be highly effective for contact-rich planning. Our final contribution resolves (iii), where we show that classical sampling-based motion planning algorithms can be effective in global planning when contact modes are abstracted via smoothing. Applying our method on a collection of challenging contact-rich manipulation tasks, we demonstrate that efficient model-based motion planning can achieve results comparable to RL with dramatically less computation. Video: https://youtu.be/12Ew4xC-VwA}
+      \field{day}{27}
+      \field{eprintclass}{cs}
+      \field{eprinttype}{arxiv}
+      \field{month}{2}
+      \field{note}{Comment: The first two authors contributed equally to this work}
+      \field{pubstate}{preprint}
+      \field{title}{Global {{Planning}} for {{Contact-Rich Manipulation}} via {{Local Smoothing}} of {{Quasi-dynamic Contact Models}}}
+      \field{urlday}{15}
+      \field{urlmonth}{3}
+      \field{urlyear}{2023}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.2206.10787
+      \endverb
+      \verb{eprint}
+      \verb 2206.10787
+      \endverb
+      \verb{file}
+      \verb /home/shaoyuan/snap/zotero-snap/common/Zotero/storage/HQSPJVA4/Pang et al. - 2023 - Global Planning for Contact-Rich Manipulation via .pdf;/home/shaoyuan/snap/zotero-snap/common/Zotero/storage/CH85QNA6/2206.html
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/2206.10787
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/2206.10787
+      \endverb
+      \keyw{Computer Science - Robotics}
+    \endentry
+    \entry{manchesterUnifyingRobotTrajectory2018}{incollection}{}
+      \name{author}{3}{}{%
+        {{hash=05a95f205346bf516eafa0bbf32ae394}{%
+           family={Manchester},
+           familyi={M\bibinitperiod},
+           given={Ian\bibnamedelima R.},
+           giveni={I\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=b701e4e799e9f0ab7a258afffed4b29c}{%
+           family={Tang},
+           familyi={T\bibinitperiod},
+           given={Justin\bibnamedelima Z.},
+           giveni={J\bibinitperiod\bibinitdelim Z\bibinitperiod}}}%
+        {{hash=1dc6c2ca8255505108e7ed377ab4c534}{%
+           family={Slotine},
+           familyi={S\bibinitperiod},
+           given={Jean-Jacques\bibnamedelima E.},
+           giveni={J\bibinithyphendelim J\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=cc43c52cecb0f037579498ca80c711a1}{%
+           family={Bicchi},
+           familyi={B\bibinitperiod},
+           given={Antonio},
+           giveni={A\bibinitperiod}}}%
+        {{hash=98f4ab1bc2ac191d8f8a0651315ce9c0}{%
+           family={Burgard},
+           familyi={B\bibinitperiod},
+           given={Wolfram},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cham}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{7cb913a072dcf5b5122d9c22dea5c86c}
+      \strng{fullhash}{7cb913a072dcf5b5122d9c22dea5c86c}
+      \strng{bibnamehash}{7cb913a072dcf5b5122d9c22dea5c86c}
+      \strng{authorbibnamehash}{7cb913a072dcf5b5122d9c22dea5c86c}
+      \strng{authornamehash}{7cb913a072dcf5b5122d9c22dea5c86c}
+      \strng{authorfullhash}{7cb913a072dcf5b5122d9c22dea5c86c}
+      \strng{editorbibnamehash}{22eb1ac8f5b01532f7d30926a2361efa}
+      \strng{editornamehash}{22eb1ac8f5b01532f7d30926a2361efa}
+      \strng{editorfullhash}{22eb1ac8f5b01532f7d30926a2361efa}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this paper we present new results for nonlinear tracking control design based on the search for a “control contraction metric” (CCM). We show that for fully-actuated robots, CCMs can be found analytically that correspond to classical methods of robot control including sliding and energy-based designs. We also show that, for underactuated robots, the CCM approach extends more recent optimization-based methods such as LQR-Trees to tracking of arbitrary feasible trajectories. Therefore the CCM methodology represents a bridge between these methods. We illustrate our results with calculations and simulations on the single and double inverted pendulums and the underactuated cart-pole system.}
+      \field{booktitle}{Robotics {{Research}}: {{Volume}} 2}
+      \field{isbn}{978-3-319-60916-4}
+      \field{langid}{english}
+      \field{series}{Springer {{Proceedings}} in {{Advanced Robotics}}}
+      \field{title}{Unifying {{Robot Trajectory Tracking}} with {{Control Contraction Metrics}}}
+      \field{urlday}{5}
+      \field{urlmonth}{5}
+      \field{urlyear}{2023}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{403\bibrangedash 418}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.1007/978-3-319-60916-4_23
+      \endverb
+      \verb{file}
+      \verb /home/shaoyuan/snap/zotero-snap/common/Zotero/storage/PSK9EWJ3/Manchester et al. - 2018 - Unifying Robot Trajectory Tracking with Control Co.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/978-3-319-60916-4_23
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/978-3-319-60916-4_23
+      \endverb
+    \endentry
+    \entry{weiControlContractionMetric2021}{article}{}
+      \name{author}{3}{}{%
+        {{hash=86bddf7e41ad7b14e94a19d0e9149843}{%
+           family={Wei},
+           familyi={W\bibinitperiod},
+           given={Lai},
+           giveni={L\bibinitperiod}}}%
+        {{hash=99fcdbd720b185cca99155ae060efc83}{%
+           family={Mccloy},
+           familyi={M\bibinitperiod},
+           given={Ryan},
+           giveni={R\bibinitperiod}}}%
+        {{hash=383cc8c5920b0d3a042c117dce411b0c}{%
+           family={Bao},
+           familyi={B\bibinitperiod},
+           given={Jie},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{bb1917638836d5d2d89954a0fc86afd5}
+      \strng{fullhash}{bb1917638836d5d2d89954a0fc86afd5}
+      \strng{bibnamehash}{bb1917638836d5d2d89954a0fc86afd5}
+      \strng{authorbibnamehash}{bb1917638836d5d2d89954a0fc86afd5}
+      \strng{authornamehash}{bb1917638836d5d2d89954a0fc86afd5}
+      \strng{authorfullhash}{bb1917638836d5d2d89954a0fc86afd5}
+      \field{sortinit}{3}
+      \field{sortinithash}{a37a8ef248a93c322189792c34fc68c9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Flexible manufacturing has been the trend in the area of the modern chemical process nowadays. One of the essential characteristics of flexible manufacturing is to track time-varying target trajectories (e.g. diversity and quantity of products). A possible tool to achieve time-varying targets is contraction theory. However, the contraction theory was developed for continuous time systems and there lacks analysis and synthesis tools for discrete-time systems. This article develops a systematic approach to discrete-time contraction analysis and control synthesis using Discrete-time Control Contraction Metrics (DCCM) which can be implemented using Sum of Square (SOS) programming. The proposed approach is demonstrated by illustrative example.}
+      \field{day}{1}
+      \field{issn}{2405-8963}
+      \field{journaltitle}{IFAC-PapersOnLine}
+      \field{langid}{english}
+      \field{month}{1}
+      \field{number}{3}
+      \field{series}{16th {{IFAC Symposium}} on {{Advanced Control}} of {{Chemical Processes ADCHEM}} 2021}
+      \field{shortjournal}{IFAC-PapersOnLine}
+      \field{title}{Control {{Contraction Metric Synthesis}} for {{Discrete-time Nonlinear Systems}}}
+      \field{urlday}{16}
+      \field{urlmonth}{4}
+      \field{urlyear}{2023}
+      \field{volume}{54}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{661\bibrangedash 666}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1016/j.ifacol.2021.08.317
+      \endverb
+      \verb{file}
+      \verb /home/shaoyuan/snap/zotero-snap/common/Zotero/storage/DB3YNPET/Wei et al. - 2021 - Control Contraction Metric Synthesis for Discrete-.pdf;/home/shaoyuan/snap/zotero-snap/common/Zotero/storage/DZZWLMYP/S2405896321010910.html
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S2405896321010910
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S2405896321010910
+      \endverb
+      \keyw{contraction theory,discrete-time control contraction metric (DCCM),discrete-time nonlinear systems,nonlinear control,sum of squares (SOS) programming}
+    \endentry
+    \entry{manchesterControlContractionMetrics2017}{article}{}
+      \name{author}{2}{}{%
+        {{hash=05a95f205346bf516eafa0bbf32ae394}{%
+           family={Manchester},
+           familyi={M\bibinitperiod},
+           given={Ian\bibnamedelima R.},
+           giveni={I\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=1dc6c2ca8255505108e7ed377ab4c534}{%
+           family={Slotine},
+           familyi={S\bibinitperiod},
+           given={Jean-Jacques\bibnamedelima E.},
+           giveni={J\bibinithyphendelim J\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{47bf9fc4b95b81dd567fe1f464892fca}
+      \strng{fullhash}{47bf9fc4b95b81dd567fe1f464892fca}
+      \strng{bibnamehash}{47bf9fc4b95b81dd567fe1f464892fca}
+      \strng{authorbibnamehash}{47bf9fc4b95b81dd567fe1f464892fca}
+      \strng{authornamehash}{47bf9fc4b95b81dd567fe1f464892fca}
+      \strng{authorfullhash}{47bf9fc4b95b81dd567fe1f464892fca}
+      \field{sortinit}{4}
+      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{We introduce the concept of a control contraction metric, extending contraction analysis to constructive nonlinear control design. We derive sufficient conditions for exponential stabilizability of all trajectories of a nonlinear control system. The conditions have a simple geometrical interpretation, can be written as a convex feasibility problem, and are invariant under coordinate changes. We show that these conditions are necessary and sufficient for feedback linearizable systems and also derive novel convex criteria for exponential stabilization of a nonlinear submanifold of state space. We illustrate the benefits of convexity by constructing a controller for an unstable polynomial system that combines local optimality and global stability, using a metric found via sum-of-squares programming.}
+      \field{eventtitle}{{{IEEE Transactions}} on {{Automatic Control}}}
+      \field{issn}{1558-2523}
+      \field{journaltitle}{IEEE Transactions on Automatic Control}
+      \field{month}{6}
+      \field{number}{6}
+      \field{shorttitle}{Control {{Contraction Metrics}}}
+      \field{title}{Control {{Contraction Metrics}}: {{Convex}} and {{Intrinsic Criteria}} for {{Nonlinear Feedback Design}}}
+      \field{volume}{62}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{pages}{3046\bibrangedash 3053}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1109/TAC.2017.2668380
+      \endverb
+      \verb{file}
+      \verb /home/shaoyuan/snap/zotero-snap/common/Zotero/storage/6K8337UG/Manchester and Slotine - 2017 - Control Contraction Metrics Convex and Intrinsic .pdf;/home/shaoyuan/snap/zotero-snap/common/Zotero/storage/YBISNIMZ/stamp.html
+      \endverb
+      \keyw{Adaptive control,Contraction,Control design,control system synthesis,linear matrix inequalities,lyapunov methods,Lyapunov methods,Measurement,nonlinear control systems,Nonlinear systems,Power system stability,Trajectory}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
