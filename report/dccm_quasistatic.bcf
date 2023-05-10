@@ -2189,6 +2189,10 @@
     <bcf:citekey order="4">manchesterControlContractionMetrics2017</bcf:citekey>
     <bcf:citekey order="5">pangGlobalPlanningContactRich2023</bcf:citekey>
     <bcf:citekey order="6">weiControlContractionMetric2021</bcf:citekey>
+    <bcf:citekey order="7">weiControlContractionMetric2021</bcf:citekey>
+    <bcf:citekey order="8">weiControlContractionMetric2021</bcf:citekey>
+    <bcf:citekey order="9">weiControlContractionMetric2021</bcf:citekey>
+    <bcf:citekey order="10">DrakeModelBasedDesign</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

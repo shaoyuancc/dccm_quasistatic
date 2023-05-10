@@ -264,6 +264,43 @@
       \endverb
       \keyw{Adaptive control,Contraction,Control design,control system synthesis,linear matrix inequalities,lyapunov methods,Lyapunov methods,Measurement,nonlinear control systems,Nonlinear systems,Power system stability,Trajectory}
     \endentry
+    \entry{DrakeModelBasedDesign}{online}{}
+      \name{author}{1}{}{%
+        {{hash=2fea63cf1e4140f74fb7fa5f676776b7}{%
+           family={Drake\bibnamedelimb Development\bibnamedelima Team},
+           familyi={D\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim T\bibinitperiod},
+           given={Russ\bibnamedelimb Tedrake\bibnamedelima {and}},
+           giveni={R\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim a\bibinitperiod},
+           prefix={the},
+           prefixi={t\bibinitperiod}}}%
+      }
+      \strng{namehash}{2fea63cf1e4140f74fb7fa5f676776b7}
+      \strng{fullhash}{2fea63cf1e4140f74fb7fa5f676776b7}
+      \strng{bibnamehash}{2fea63cf1e4140f74fb7fa5f676776b7}
+      \strng{authorbibnamehash}{2fea63cf1e4140f74fb7fa5f676776b7}
+      \strng{authornamehash}{2fea63cf1e4140f74fb7fa5f676776b7}
+      \strng{authorfullhash}{2fea63cf1e4140f74fb7fa5f676776b7}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Drake: {{Model-Based Design}} and {{Verification}} for {{Robotics}}}
+      \field{urlday}{10}
+      \field{urlmonth}{5}
+      \field{urlyear}{2023}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/shaoyuan/snap/zotero-snap/common/Zotero/storage/YI3JRVDF/drake.mit.edu.html
+      \endverb
+      \verb{urlraw}
+      \verb https://drake.mit.edu/
+      \endverb
+      \verb{url}
+      \verb https://drake.mit.edu/
+      \endverb
+    \endentry
   \enddatalist
 \endrefsection
 \endinput
