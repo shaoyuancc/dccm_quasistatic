@@ -209,7 +209,7 @@ class SampleGenerator():
             np.array(B_samples),
         )
     
-    def generate_circular_traj_samples(self, visualize=False):
+    def generate_circular_traj_samples(self, b_r, s_r_buff, visualize=False):
         u_rel_lim = 0.3
 
         x_samples = []

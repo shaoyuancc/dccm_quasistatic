@@ -6,11 +6,6 @@ class DCCMParams:
     """
     Parameters for the DCCM controller.
     """
-    # Sim  and base position controller parameters
-    time_step: float
-    pid_gains: Dict[str, float]
-    robot_urdf_path: str
-
     # System parameters
     dim_x: int # Dimension of the state
     dim_u: int # Dimension of the input
