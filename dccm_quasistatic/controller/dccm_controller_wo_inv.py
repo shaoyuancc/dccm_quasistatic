@@ -28,7 +28,7 @@ from dccm_quasistatic.utils.sample_generator import (SampleGenerator, SampleGene
 from dccm_quasistatic.controller.dccm_params import DCCMParams
 
 
-class DCCMController(ControllerBase):
+class DCCMControllerWoInv(ControllerBase):
     def __init__(self, params: DCCMParams, wijc, lijc) -> None:
         self._params = params
         self._wijc = wijc
@@ -165,6 +165,7 @@ class DCCMController(ControllerBase):
         # infeasible_constraints = result.GetInfeasibleConstraints(prog)
         # for c in infeasible_constraints:
         #     print(f"infeasible constraint: {c}")
+        print(f"solver id: {result.get_solver_id().name()}")
 
         geodesic_length = np.sum(result.GetSolution(y))
         return result.is_success(), result.GetSolution(x), result.GetSolution(delta_xs), result.GetSolution(delta_s), geodesic_length
