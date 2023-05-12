@@ -1105,6 +1105,22 @@
   file = {/home/shaoyuan/snap/zotero-snap/common/Zotero/storage/YPYLK3CA/Ho et al. - 2020 - Denoising Diffusion Probabilistic Models.pdf;/home/shaoyuan/snap/zotero-snap/common/Zotero/storage/9IQ3T476/2006.html}
 }
 
+@online{hoganFeedbackControlPusherSlider2016,
+  title = {Feedback {{Control}} of the {{Pusher-Slider System}}: {{A Story}} of {{Hybrid}} and {{Underactuated Contact Dynamics}}},
+  shorttitle = {Feedback {{Control}} of the {{Pusher-Slider System}}},
+  author = {Hogan, Francois Robert and Rodriguez, Alberto},
+  date = {2016-11-24},
+  eprint = {1611.08268},
+  eprinttype = {arxiv},
+  eprintclass = {cs},
+  url = {http://arxiv.org/abs/1611.08268},
+  urldate = {2023-05-12},
+  abstract = {This paper investigates real-time control strategies for dynamical systems that involve frictional contact interactions. Hybridness and underactuation are key characteristics of these systems that complicate the design of feedback controllers. In this research, we examine and test a novel feedback controller design on a planar pushing system, where the purpose is to control the motion of a sliding object on a flat surface using a point robotic pusher. The pusher-slider is a simple dynamical system that retains many of the challenges that are typical of robotic manipulation tasks. Our results show that a model predictive control approach used in tandem with integer programming offers a powerful solution to capture the dynamic constraints associated with the friction cone as well as the hybrid nature of the contact. In order to achieve real-time control, simplifications are proposed to speed up the integer program. The concept of Family of Modes (FOM) is introduced to solve an online convex optimization problem by selecting a set of contact mode schedules that spans a large set of dynamic behaviors that can occur during the prediction horizon. The controller design is applied to stabilize the motion of a sliding object about a nominal trajectory, and to re-plan its trajectory in real-time to follow a moving target. We validate the controller design through numerical simulations and experimental results on an industrial ABB IRB 120 robotic arm.},
+  pubstate = {preprint},
+  keywords = {Computer Science - Robotics},
+  file = {/home/shaoyuan/snap/zotero-snap/common/Zotero/storage/E9GXGHET/Hogan and Rodriguez - 2016 - Feedback Control of the Pusher-Slider System A St.pdf;/home/shaoyuan/snap/zotero-snap/common/Zotero/storage/CUU6SW3R/1611.html}
+}
+
 @article{hollanderDoesSelfDefenseTraining2014,
   title = {Does {{Self-Defense Training Prevent Sexual Violence Against Women}}?},
   author = {Hollander, Jocelyn A},
@@ -2238,6 +2254,21 @@
   file = {/home/shaoyuan/snap/zotero-snap/common/Zotero/storage/RJ9P4TZ8/Ondras et al. - 2022 - Robotic Dough Shaping.pdf;/home/shaoyuan/snap/zotero-snap/common/Zotero/storage/USNSM8E9/10003767.html}
 }
 
+@thesis{onolPlanningContactInteractionTrajectories,
+  type = {phdthesis},
+  title = {Planning of {{Contact-Interaction Trajectories Using Numerical Optimization}}},
+  author = {Önol, Aykut Ögun},
+  institution = {{Northeastern University}},
+  location = {{United States -- Massachusetts}},
+  url = {https://www.proquest.com/docview/2476856278/abstract/E4E35F7364F4546PQ/1},
+  urldate = {2023-05-12},
+  abstract = {Dynamic multi-contact behaviors, such as locomotion and item manipulation, remain a challenge for today's robotic systems. This is primarily due to the discontinuous and non-smooth dynamics introduced by contacts. For mobile manipulators (e.g., humanoids) to become useful for dull, dirty, and dangerous tasks, such as those in disaster response, they need to be capable of interacting with their cluttered, constrained, and changing environments. It is therefore essential to develop methods that would enable robots to plan and execute contact-rich motions in dynamic surroundings. In this dissertation research, we investigate the planning of contact-interaction trajectories and utilize numerical optimal control techniques to solve this problem in a generalizable and computationally-tractable way. We develop a contact-implicit trajectory optimization framework for the automatic discovery of dynamic contact-rich behaviors given only a high-level goal, i.e., the desired configuration of the environment. A variable smooth contact model is introduced to improve the convergence of gradient-based optimization without compromising the physical fidelity of the resulting motions. This is achieved by employing smooth virtual forces that act as a decoupled relaxation of rigid-body contact dynamics. Second, we develop a sequential convex optimization procedure that provides reliable convergence characteristics while solving this non-convex problem. Third, a penalty loop approach is proposed to generalize this method to a wide range of robots and tasks. The proposed methodology provides an out-of-the-box planning framework for a broad spectrum of contact-interaction trajectories. Moreover, the planned motions are physically realistic enough that they can be immediately executed on hardware by using only a standard position-tracking controller. Last, we propose the use of state-triggered constraints (STCs) in the planning and control of contact-interaction trajectories. STCs are a more modular alternative to complementarity constraints which are widely used in this domain to incorporate discrete elements into continuous optimization. As example use cases, we develop a novel reformulation of the Coulomb friction model and an automatic contact constraint activation method based on STCs. Our extensive simulation experiments demonstrate that the proposed STC-based approaches provide a significant improvement with respect to the prior art in terms of both computational efficiency and robustness, indicating the immense promise of STCs to efficiently model rich discrete aspects of contact-related problems. Thus, this dissertation presents methods that enable the generalized and computationally-efficient planning of dynamic contact-rich behaviors for a broad range of robotic applications without requiring any heuristics or tuning.},
+  isbn = {9798557033046},
+  langid = {english},
+  pagetotal = {135},
+  keywords = {Contact-implicit trajectory optimization,Manipulation planning,Motion planning,Trajectory optimization}
+}
+
 @online{orlandWhatDepressionQuest2014,
   title = {What {{Depression Quest}} Taught Me about Dealing with Mental Illness},
   author = {Orland, Kyle},
@@ -2611,6 +2642,20 @@
   keywords = {0BANK,1USA,AIDS (Disease)--Care and treatment,Services,United States,World Bank}
 }
 
+@inproceedings{ruscelliMultiContactMotionPlanning2020,
+  title = {A {{Multi-Contact Motion Planning}} and {{Control Strategy}} for {{Physical Interaction Tasks Using}} a {{Humanoid Robot}}},
+  booktitle = {2020 {{IEEE}}/{{RSJ International Conference}} on {{Intelligent Robots}} and {{Systems}} ({{IROS}})},
+  author = {Ruscelli, Francesco and Polverini, Matteo Parigi and Laurenzi, Arturo and Hoffman, Enrico Mingo and Tsagarakis, Nikos G.},
+  date = {2020-10},
+  pages = {3869--3876},
+  issn = {2153-0866},
+  doi = {10.1109/IROS45743.2020.9340745},
+  abstract = {This paper presents a framework providing a full pipeline to execute a complex physical interaction behaviour of a humanoid bipedal robot, both from a theoretical and a practical standpoint. Building from a multi-contact control architecture that combines contact planning and reactive force distribution capabilities, the main contribution of this work consists in the integration of a sample-based motion planning layer conceived for transitioning movements where obstacle and self-collisions avoidance is involved. To plan these motions we use Rapidly Exploring Random Tree (RRT) projected on the contacts manifold and validated through the Centroidal Statics (CS) model, to ensure static balance on non-coplanar surfaces. Finally, we successfully validate the presented planning and control architecture on the humanoid robot COMAN+ performing a wall-plank task.},
+  eventtitle = {2020 {{IEEE}}/{{RSJ International Conference}} on {{Intelligent Robots}} and {{Systems}} ({{IROS}})},
+  keywords = {Force,Humanoid robots,Intelligent robots,Manifolds,Pipelines,Planning,Task analysis},
+  file = {/home/shaoyuan/snap/zotero-snap/common/Zotero/storage/MR4QZABT/Ruscelli et al. - 2020 - A Multi-Contact Motion Planning and Control Strate.pdf;/home/shaoyuan/snap/zotero-snap/common/Zotero/storage/EW57M7DQ/9340745.html}
+}
+
 @article{searlesFEMINISTSELFDEFENSEMOVEMENT1987,
   title = {{{THE FEMINIST SELF-DEFENSE MOVEMENT}}: {{A Case Study}}},
   author = {Searles, Patricia and Berger, Ronald J},
@@ -2920,6 +2965,25 @@
   file = {/home/shaoyuan/snap/zotero-snap/common/Zotero/storage/R8CNDA24/Stevens et al. - 2018 - Developmental effects of childhood household adver.pdf;/home/shaoyuan/snap/zotero-snap/common/Zotero/storage/BP5FIQ73/S0145213418300577.html}
 }
 
+@article{stewartOptimalControlSystems2010,
+  title = {Optimal Control of Systems with Discontinuous Differential Equations},
+  author = {Stewart, David E. and Anitescu, Mihai},
+  date = {2010-02-01},
+  journaltitle = {Numerische Mathematik},
+  shortjournal = {Numer. Math.},
+  volume = {114},
+  number = {4},
+  pages = {653--695},
+  issn = {0945-3245},
+  doi = {10.1007/s00211-009-0262-2},
+  url = {https://doi.org/10.1007/s00211-009-0262-2},
+  urldate = {2023-05-12},
+  abstract = {In this paper we discuss the problem of verifying and computing optimal controls of systems whose dynamics is governed by differential systems with a discontinuous right-hand side. In our work, we are motivated by optimal control of mechanical systems with Coulomb friction, which exhibit such a right-hand side. Notwithstanding the impressive development of nonsmooth and set-valued analysis, these systems have not been closely studied either computationally or analytically. We show that even when the solution crosses and does not stay on the discontinuity, differentiating the results of a simulation gives gradients that have errors of a size independent of the stepsize. This means that the strategy of “optimize the discretization” will usually fail for problems of this kind. We approximate the discontinuous right-hand side for the differential equations or inclusions by a smooth right-hand side. For these smoothed approximations, we show that the resulting gradients approach the true gradients provided that the start and end points of the trajectory do not lie on the discontinuity and that Euler’s method is used where the step size is “sufficiently small” in comparison with the smoothing parameter. Numerical results are presented for a crude model of car racing that involves Coulomb friction and slip showing that this approach is practical and can handle problems of moderate complexity.},
+  langid = {english},
+  keywords = {49J24,Primary: 49Q12,Secondary: 34A36},
+  file = {/home/shaoyuan/snap/zotero-snap/common/Zotero/storage/EPA5NXNT/Stewart and Anitescu - 2010 - Optimal control of systems with discontinuous diff.pdf}
+}
+
 @article{storerSearchConnectionFoster2014,
   title = {In Search of Connection: {{The}} Foster Youth and Caregiver Relationship},
   author = {Storer, Heather L and Barkan, Susan E and Stenhouse, Linnea L and Eichenlaub, Caroline and Mallillin, Anastasia and Haggerty, Kevin P},
@@ -2930,6 +2994,20 @@
   abstract = {Placement instability is an ongoing challenge for the 125,000 foster youth aged 14 - 18 that are living in foster care, with youth living in approximately 3 placements before aging out of the system. Despite the importance caring adult relationships can play in promoting positive youth development and resiliency, there has been limited inquiry into the characteristics of the foster youth and caregiver relationship. The goal of this paper is to provide a descriptive account of the foster youth and caregiver relationship, and explore what qualities and experiences foster youth desire from their caregivers. Qualitative data were gathered from 9 focus groups. Data were analyzed using thematic content analysis approaches. Foster youth, caregivers, and child welfare staff described relationships lacking in formative bonds and connection, where youth didn't "fit in", and chaotic homes marked by reactivity and judgment. Characteristics of supportive foster homes include a sense of belonging, structure, guidance, and consistency. This research underscores the important role positive relationships can play in foster youth's feelings of well-being and points to the need for foster parent training to include tangible strategies to develop stronger bonds.},
   langid = {english},
   keywords = {Bonding,Connection,Foster Caregiving Support,Foster Youth}
+}
+
+@article{stuberLetPushThings2020,
+  title = {Let's {{Push Things Forward}}: {{A Survey}} on {{Robot Pushing}}},
+  shorttitle = {Let's {{Push Things Forward}}},
+  author = {Stüber, Jochen and Zito, Claudio and Stolkin, Rustam},
+  date = {2020},
+  journaltitle = {Frontiers in Robotics and AI},
+  volume = {7},
+  issn = {2296-9144},
+  url = {https://www.frontiersin.org/articles/10.3389/frobt.2020.00008},
+  urldate = {2023-05-12},
+  abstract = {As robots make their way out of factories into human environments, outer space, and beyond, they require the skill to manipulate their environment in multifarious, unforeseeable circumstances. With this regard, pushing is an essential motion primitive that dramatically extends a robot's manipulation repertoire. In this work, we review the robotic pushing literature. While focusing on work concerned with predicting the motion of pushed objects, we also cover relevant applications of pushing for planning and control. Beginning with analytical approaches, under which we also subsume physics engines, we then proceed to discuss work on learning models from data. In doing so, we dedicate a separate section to deep learning approaches which have seen a recent upsurge in the literature. Concluding remarks and further research perspectives are given at the end of the paper.},
+  file = {/home/shaoyuan/snap/zotero-snap/common/Zotero/storage/E5452TTE/Stüber et al. - 2020 - Let's Push Things Forward A Survey on Robot Pushi.pdf}
 }
 
 @online{suhDifferentiableSimulatorsGive2022,

@@ -2183,19 +2183,22 @@
     <bcf:datasource type="file" datatype="bibtex">ZoteroLibrary.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
+    <bcf:citekey order="1">stewartOptimalControlSystems2010</bcf:citekey>
     <bcf:citekey order="1">pangGlobalPlanningContactRich2023</bcf:citekey>
-    <bcf:citekey order="2">manchesterUnifyingRobotTrajectory2018</bcf:citekey>
-    <bcf:citekey order="3">weiControlContractionMetric2021</bcf:citekey>
-    <bcf:citekey order="4">manchesterControlContractionMetrics2017</bcf:citekey>
-    <bcf:citekey order="5">pangGlobalPlanningContactRich2023</bcf:citekey>
-    <bcf:citekey order="6">weiControlContractionMetric2021</bcf:citekey>
-    <bcf:citekey order="7">weiControlContractionMetric2021</bcf:citekey>
+    <bcf:citekey order="2">hoganFeedbackControlPusherSlider2016</bcf:citekey>
+    <bcf:citekey order="3">pangGlobalPlanningContactRich2023</bcf:citekey>
+    <bcf:citekey order="4">manchesterUnifyingRobotTrajectory2018</bcf:citekey>
+    <bcf:citekey order="5">weiControlContractionMetric2021</bcf:citekey>
+    <bcf:citekey order="6">manchesterControlContractionMetrics2017</bcf:citekey>
+    <bcf:citekey order="7">pangGlobalPlanningContactRich2023</bcf:citekey>
     <bcf:citekey order="8">weiControlContractionMetric2021</bcf:citekey>
     <bcf:citekey order="9">weiControlContractionMetric2021</bcf:citekey>
-    <bcf:citekey order="10">DrakeModelBasedDesign</bcf:citekey>
-    <bcf:citekey order="11">manchesterControlContractionMetrics2017</bcf:citekey>
-    <bcf:citekey order="12">manchesterControlContractionMetrics2017</bcf:citekey>
-    <bcf:citekey order="13">DrakeModelBasedDesign</bcf:citekey>
+    <bcf:citekey order="10">weiControlContractionMetric2021</bcf:citekey>
+    <bcf:citekey order="11">weiControlContractionMetric2021</bcf:citekey>
+    <bcf:citekey order="12">DrakeModelBasedDesign</bcf:citekey>
+    <bcf:citekey order="13">manchesterControlContractionMetrics2017</bcf:citekey>
+    <bcf:citekey order="14">manchesterControlContractionMetrics2017</bcf:citekey>
+    <bcf:citekey order="15">DrakeModelBasedDesign</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

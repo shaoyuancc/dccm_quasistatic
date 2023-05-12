@@ -2,13 +2,22 @@
 % \IEEEoverridecommandlockouts
 % The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
 \usepackage{amsmath,amssymb,amsfonts}
+\usepackage{pifont}% http://ctan.org/pkg/pifont
 \usepackage{algorithmic}
 \usepackage{graphicx}
 \usepackage{textcomp}
 \usepackage{xcolor}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage[font=small, labelfont=bf]{subfig}
 \usepackage[style=ieee, autocite=inline]{biblatex}
 \addbibresource{ZoteroLibrary.bib}
+
 \DeclareMathOperator*{\argmin}{\arg\!\min}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}} % define new column type
+
 
 \begin{document}
 
@@ -31,14 +40,22 @@ shaoyuan\_chewchia@college.harvard.edu
 
 \section{Introduction}
 % Why control through contact is difficult - non smooth dynamics
-Planning and control through contact is an important task in Robotics. Robots interacting with the environment need to make and break contact in order to complete tasks but this has proved challenging due to the non-smooth nature of contact dynamics. This has traditionally been done using hybrid planners and controllers with guards and resets where different dynamics are considered based on enumerated contact modes. An alternative approach has been proposed in \autocite{pangGlobalPlanningContactRich2023} where contact dynamics are smoothed to create more informative gradients in global planning of contact-rich manipulation tasks. In this paper we apply these same smoothing techniques to explore the controllers that this enables.
+Planning and control through contact is an important task in Robotics. Robots interacting with the environment need to make and break contact in order to complete tasks but this has proved challenging due to the non-smooth nature of contact dynamics.
 
 % Why control through contact is difficult - underactuated
 Another way in which control through contact is difficult is that these systems are highly underactuated. The state of the unactuated objects cannot be controlled directly.
 
 % Current methods for control through contact
+Two main approaches, smoothing \autocite{stewartOptimalControlSystems2010,pangGlobalPlanningContactRich2023}, and hybrid systems \autocite{hoganFeedbackControlPusherSlider2016} have been proposed to deal with the non-smoothness of contact dynamics. Smoothing methods approximate the non-smooth contact dynamics with a smooth function. Hybrid systems explicitly enumeate the contact modes.
+
+Current methods for control through contact include hybrid planners and controllers with guards and resets where different dynamics are considered based on enumerated contact modes. An alternative approach has been proposed in \autocite{pangGlobalPlanningContactRich2023} where contact dynamics are smoothed to create more informative gradients in global planning of contact-rich manipulation tasks. In this paper we apply these same smoothing techniques to explore the controllers that this enables.
 
 % Why we would want to use Control Contraction Metrics
+convex synthesis of contraction metric and controller, which we have powerful tools for like SOS programming.
+
+The same controller exponentially stabilizes to arbitrary, time-varying feasible trajectories, while Lyapnov-based approaches typically need to be designed for a specific equilibrium.
+
+provide guarantees on stability and convergence rates
 
 % CCMs for underactuated systems
 This work builds on \autocite{manchesterUnifyingRobotTrajectory2018} which demonstrates the effectiveness of CCMs on cannonical underactuated systems such as Cart-Pole.
@@ -244,6 +261,69 @@ An important point to note is that the integration is done from $x^*_k$ to $x_k$
 
 
 \section{Results and Discussion}
+
+\subsection{Pinacle of success}
+
+\subsection{Effect of different parameters}
+
+% \begin{table}[thpb] \label{tab:trajoptresults}
+% 	\centering
+% 	\begin{tabular}{|| c | r | r | r | r || r | r | r | r ||}
+% 	 \hline
+% 	 Log barrier weight & \multicolumn{4}{||c||}{PlanarPushing} & \multicolumn{4}{||c||}{PlanarHand} \\\hline
+% 	# Samples & Synthesizes & Stabilzes & Synthesizes & Stabilzes & Synthesizes & Stabilzes & Synthesizes & Stabilzes & \\ \hline\hline
+	
+% 	% 	A.        & 11.74 & 2.17  & 26.55 &  5.20  & \bf{5.78} & 19.59  \\
+% 	% 	RF.       & \bf{11.73} & 4.64 & \bf{17.8}7 & 23.09 & 8.42 & 40.07 \\
+% 	% 	RZ.      & 12.86 & 4.61 & 18.29 & 11.93 & 28.21 & 34.05 \\
+% 	% 	Exact            & 31.64 & 1.88 & 18.49 & 5.91 & 44.68 & 12.92 \\\hline
+% 	\end{tabular}
+% 	\caption{Average of minimum cost and running time achieved by different methods. All methods are ran for $20$ iterations across 5 trials. Method abbreviations: A(Analytic), RF(Randomized First), RZ(Randomized Zero).}
+% 	\label{table:trajoptresults}
+% 	\vspace{-0.3cm}
+% \end{table}
+
+% \begin{table}[thpb]
+% 	\centering
+% 	\begin{tabular}{|| c | r | r | r | r || r | r | r | r ||} 
+% 	 \hline
+% 	 Log barrier weight & \multicolumn{4}{||c||}{PlanarPushing} & \multicolumn{4}{||c||}{PlanarHand} \\\hline
+% 	Num Samples & Synthesizes & Stabilzes & Synthesizes & Stabilzes & Synthesizes & Stabilzes & Synthesizes & Stabilzes \\ \hline\hline
+% 	\end{tabular}
+% 	\caption{Average of minimum cost and running time achieved by different methods. All methods are ran for $20$ iterations across 5 trials. Method abbreviations: A(Analytic), RF(Randomized First), RZ(Randomized Zero).}
+% 	\label{table:trajoptresults}
+% \end{table}
+
+\begin{table}[thpb]
+	\centering
+	\begin{tabular}{|| C{0.8cm} | c | c || c | c | c | c | c |} 
+		\hline
+		Log Barrier Weight  & Deg. & \# Samples 
+		& 100 &500 & 1000 & 2000 & 3000\\ \hline\hline
+		\multirow{4}{*}{10} & \multirow{2}{*}{4} 
+		& Synthesizes 
+		& \cmark & \cmark & \cmark & \cmark & ! \\ \cline{3-8}
+		& & Stabilzes 
+		& \xmark & \cmark & \cmark & \cmark & - \\ \cline{2-8}
+		& \multirow{2}{*}{6}
+		& Synthesizes 
+		\\ \cline{3-8}
+		& &  Stabilizes \\ \hline
+		\multirow{4}{*}{100} & \multirow{2}{*}{4} 
+		& Synthesizes
+		& \cmark & \cmark & \xmark & - & - \\ \cline{3-8}
+		& & Stabilzes
+		& \xmark & \xmark & - & - & -\\ \cline{2-8}
+		& \multirow{2}{*}{6} 
+		& Synthesizes
+		& \cmark & \cmark & ! & - & -\\ \cline{3-8}
+		& &  Stabilizes
+		& \xmark & \xmark & - & - & -\\ \hline
+	\end{tabular}
+	\caption{Feasibility (whether a DCCM can be synthesized) and performance (whether the found DCCM stabilizes to the desired trajectory) across different log barrier weights (10 is high smoothing, 100 is low smoothing), degree of monomial basis used, and number of sampled points at which the contraction condition is enforced.  Symbols: \cmark (succeeds), \xmark (fails), ! (program crashes), - (did not/could not run test).}
+	\label{table:trajoptresults}
+\end{table}
+
 
 \subsection{Degree of metric on}
 Higher degree means its more able to find a contraction metric for a system with more "warped" dynamics, i.e. if there is less smoothing. 
