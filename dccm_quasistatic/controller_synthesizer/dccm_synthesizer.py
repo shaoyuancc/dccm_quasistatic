@@ -2,7 +2,7 @@ from pydrake.all import (MathematicalProgram, Solve, MonomialBasis,
                          DiagramBuilder, Evaluate, LogVectorOutput, Simulator,
                          SymbolicVectorSystem, Variable, ToLatex, Polynomial,
                          VectorSystem, eq, ge, le, Formula, Expression, Evaluate,
-                         LeafSystem, AbstractValue,
+                         LeafSystem, AbstractValue, SolverOptions, CommonSolverOption,
                          )
 
 from pydrake.all import (PiecewisePolynomial, ModelInstanceIndex,
@@ -120,14 +120,22 @@ class DCCMSynthesizer():
             prog.SetInitialGuess(lijc, lijc_initial_guess)
 
         print("Start solving DCCM")
-        result = Solve(prog)
+        solver_options = SolverOptions()
+        solver_options.SetOption(CommonSolverOption.kPrintToConsole, 1)
+        result = Solve(prog, solver_options=solver_options)
         print("Solver succeeded: ", result.is_success(), " in ", time.time() - start_time, " seconds")
 
         infeasible_constraints = result.GetInfeasibleConstraints(prog)
-        for c in infeasible_constraints:
-            print(f"infeasible constraint: {c}")
+        print(f"num_infeasible_constraints: {len(infeasible_constraints)}")
+        # for c in infeasible_constraints:
+        #     print(f"infeasible constraint: {c}")
 
-        # print('solver is: ', result.get_solver_id().name())
+        print('solver is: ', result.get_solver_id().name())
+        solver_details = result.get_solver_details()
+        print(f"solution status {solver_details.solution_status}")
+        print(f"rescode {solver_details.rescode}")
+        
+        self.solution_status = solver_details.solution_status
 
         # Extract the solution
         self._wijc = result.GetSolution(wijc)
@@ -135,4 +143,5 @@ class DCCMSynthesizer():
         print("wijc:\n", self._wijc)
         print("\nlijc:\n", self._lijc)
         print("r:\n", result.GetSolution(r))
+        print(f"beta: {self._params.beta}")
         return result.is_success(), result.GetSolution(wijc), result.GetSolution(lijc)

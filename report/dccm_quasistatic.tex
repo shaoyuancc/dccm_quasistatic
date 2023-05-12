@@ -8,6 +8,8 @@
 \usepackage{xcolor}
 \usepackage[style=ieee, autocite=inline]{biblatex}
 \addbibresource{ZoteroLibrary.bib}
+\DeclareMathOperator*{\argmin}{\arg\!\min}
+
 \begin{document}
 
 \title{Discrete-time Control Contraction Metrics (DCCM) for Quasistatic Planar Pushing using Smoothed Dynamics\\
@@ -89,6 +91,7 @@ where $A(x_k) = \frac{\partial (f(x_k) + g(x_k)u_k)}{\partial x_k} \in \mathbb{R
 
 We can define the state feedback control law
 \begin{equation}
+	\label{eq:delta_control_law}
     \delta_{u_k} = K(x_k)\delta_{x_k}
 \end{equation}
 where $K$ is the state dependent feedback gain matrix.
@@ -186,6 +189,59 @@ We solve this SOS program using Drake's Mathematical Program \autocite{DrakeMode
 To get a contraction metric valid over the entire state space we would have to densely sample the entire state space. However, the available RAM on the machine sets an upper bound of the size of the optmization program, which for a monomial basis of degree $4$, was around $2000$ samples. Thus, to get a contraction metric and controller that had good performance at least in the vicinity of the desired trajectory, we only sampled states and control actions from a small region around the desired trajectory. This is a clear limitation of the current approach and future work would involve finding a way to enforce the contraction condition over a larger portion of state space.
 
 \subsection{Online Geodesic and Controller Computation}
+With the contraction metric synthesized, we now need to compute the control action that enforces the contraction condition.
+
+For a smooth curve $c(s), s\in [0, 1]$ that connects two points in state space $x_0$ and $x_1$, \autocite{manchesterControlContractionMetrics2017} defines the Riemannian length and energy of the curve as
+
+\begin{equation}
+	\begin{aligned}
+		L(c) &= \int_0^1 \sqrt{\frac{\partial{c(s)}}{\partial{s}} ^\top M(c(s)) \frac{\partial{c(s)}}{\partial{s}}} ds \\
+		E(c) &= \int_0^1 L(c)^2 ds
+	\end{aligned}
+\end{equation}
+
+The geodesic $\gamma(x_0, x_1)$ is the curve that minimizes the Riemanian length and energy between $x_0$ and $x_1$
+
+\begin{equation}
+	\label{eq:geodesic}
+	\begin{aligned}
+		\gamma(x_0, x_1) &= \argmin_{c} L(c) \\
+		&= \arg \min_{c} E(c)
+	\end{aligned}
+\end{equation}
+
+By the contraction condition we enforced, we see that the Riemanian energy of geodesic decreases exponentially as the system evolves and thus can be thought of as an incremental Lyapunov function \autocite{manchesterControlContractionMetrics2017}. In order to numerically approximate the geodesic $\gamma(x^*_k, x_k)$, we discretize the curve into $N$ segments and solve the following optimization program
+
+\begin{equation}
+	\label{eq:geodesic_opt}
+	\begin{aligned}
+		\bar{\gamma}(x^*_k, x_k) = \argmin_{ \substack{ x[\cdot], \Delta x_{s}[\cdot],\\ \Delta s[\cdot], m[\cdot], y[\cdot]}}
+		& \sum_{i=0}^{N-1} y[i] + \Delta s[i]^2 \\
+		s.t. & \forall i, y \geq \Delta s[i] \Delta x_s[i]^\top M(m[i]) \Delta x_s[i]\\
+		& x[0] = x^*_k, \quad x[N] = x_k \\
+		& \forall i, x[i+1] = x[i] + \Delta x_{s}[i]\Delta s[i] \\
+		& \forall i, s[i] > 0, \quad \sum_{i=0}^{N-1} s[i]	= 1\\
+		& \forall i, M(m[i]) W(x[i]) = I  \\
+	\end{aligned}
+\end{equation}
+where $x[i]$ is the state at the start of the $i$th segment of the geodesic, $\Delta s[i]$ is a small positive scalar, $\Delta x_s[i]$ is the discretized displacement vector, $y[i]$ is a slack variable that represents the Riemanian energy and $N$ is the number of segments the $\gamma$ is discretized into. $m[i]$ is a slack variable introduced such that the $5\times5$ symbolic matrix $W(x[i])$ does not need to be explicitly inverted which was found to be a severe computational bottleneck. The constraint $M(m[i]) W(x[i]) = \mathbf{I}$ enforces $M(m[i])=W(x[i])^{-1}$. Adding $\Delta s[i]^2$ to the objective serves to spread out the discretized points evenly along the geodesic.
+
+As this is a non-convex program, we use Drake, this time using SNOPT under the hood \autocite{DrakeModelBasedDesign}.
+
+With the geodesic $\bar{\gamma}(x^*_k, x_k)$ computed, we can compute the control action $u_k$ that enforces the contraction condition
+
+\begin{equation}
+	\label{eq:control_law}
+	\begin{aligned}
+		u_k &= u^*_k + \sum_{i=0}^{N-1} \Delta s[i] K(x[i]) \Delta x_s[i]  \\
+		&= u^*_k + \sum_{i=0}^{N-1} \Delta s[i] L(x[i]) W(x[i])^{-1} \Delta x_s[i]
+	\end{aligned}
+\end{equation}
+
+An important point to note is that the integration is done from $x^*_k$ to $x_k$ and not the other way around. While it might seem intuitive that we want to calculate the $\delta_u$ that brings the system from $x_k$ to $x^*_k$, this is actually not the right way to think about it. First, the $\delta_u$ in equation \ref{eq:delta_control_law} does not lead to a change in state $\delta_x$ on the right side of the same equation. Instead, \ref{eq:delta_control_law} tells us for a change in state $\delta_x$ from a nominal trajectory, what is the corresponding $\delta_u$ that enforces the contraction condition. In this case, the nominal trajectory is $x^*$ and $u^*$, thus to calculate the $\delta_u$ that enforces the contraction condition, we need to integrate from $x^*_k$ to $x_k$.
+
+
+
 
 \section{Results and Discussion}
 

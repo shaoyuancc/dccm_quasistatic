@@ -132,82 +132,6 @@ class SampleGenerator():
             B_samples,
         )
     
-    def generate_samples_submanifold(self, visualize=False):
-        robot_radius = 0.1
-        object_radius = 0.5
-        u_rel_lim = 0.5
-
-        object_buffer = robot_radius*2 + object_radius
-        
-        x_bounds = [
-            [-self.params.workspace_radius + object_buffer, self.params.workspace_radius - object_buffer],  #  object pos_x bounds
-            [-self.params.workspace_radius + object_buffer, self.params.workspace_radius - object_buffer],  #  object pos_y bounds
-            [-np.pi, np.pi], # object orientation bounds
-            [-self.params.workspace_radius + robot_radius, self.params.workspace_radius - robot_radius],  #  robot pos_x bounds
-            [-self.params.workspace_radius + robot_radius, self.params.workspace_radius - robot_radius],  #  robot pos_y bounds
-        ]
-
-        x_samples = []
-        u_samples = []
-        x_next_samples = []
-        A_samples = []
-        B_samples = []
-
-        workspace_bounds = [-self.params.workspace_radius*2,0]
-        robot_radius = 0.1
-        object_radius = 0.5
-        u_rel_lim = 0.3
-
-        count = 0
-        idx_qu = self.q_sim.get_q_u_indices_into_q()
-        while count != self.params.n_samples:
-            q = [0, 0, 0, 0, 0]
-            u = [0, 0]
-            # Randomly pick object_x
-            for i in range(self.dim_x):
-                q[i] = np.random.uniform(
-                    x_bounds[i][0], x_bounds[i][1]
-                )
-            if self.is_x_admissible(q):
-                count += 1
-            else:
-                continue
-
-            for i in range(self.dim_u):
-                u[i] = np.random.uniform(
-                    q[i + 3] - u_rel_lim, q[i + 3] + u_rel_lim # HARDCODED relative indexes between x and u
-                )            
-            
-            
-            if visualize:
-                sleep(1.0)
-                print(f"q: {q}, u: {u}")
-                self.q_sim_py.update_mbp_positions_from_vector(q)
-                self.q_sim_py.draw_current_configuration()
-            q_next = self.q_sim.calc_dynamics(q, u, self.sim_p)
-            A = self.q_sim.get_Dq_nextDq()
-            B = self.q_sim.get_Dq_nextDqa_cmd()
-
-            if visualize:
-                sleep(0.5)
-                self.q_sim_py.update_mbp_positions_from_vector(q_next)
-                self.q_sim_py.draw_current_configuration()
-            
-            x_samples.append(q[idx_qu])
-            u_samples.append(u)
-            x_next_samples.append(q_next[idx_qu])
-            A_samples.append(A)
-            B_samples.append(B)
-
-            
-        
-        return(
-            np.array(x_samples),
-            np.array(u_samples),
-            np.array(x_next_samples),
-            np.array(A_samples),
-            np.array(B_samples),
-        )
     
     def generate_circular_traj_samples(self, b_r, s_r_buff, visualize=False):
         u_rel_lim = 0.3
@@ -219,7 +143,7 @@ class SampleGenerator():
         B_samples = []
 
         b_r = 1.5
-        s_r = b_r + 1.1
+        s_r = b_r + s_r_buff
         theta_buff = 0.9
 
         b_theta_eps = 0.2
