@@ -376,6 +376,117 @@
       \endverb
       \keyw{locomotion planning,optimal control,planning with contacts,planning with impacts and friction,Trajectory optimization}
     \endentry
+    \entry{tedrakeLQRtreesFeedbackMotion2010}{article}{}
+      \name{author}{4}{}{%
+        {{hash=480d067fbc7c00be4a01a0e4902c984e}{%
+           family={Tedrake},
+           familyi={T\bibinitperiod},
+           given={Russ},
+           giveni={R\bibinitperiod}}}%
+        {{hash=05a95f205346bf516eafa0bbf32ae394}{%
+           family={Manchester},
+           familyi={M\bibinitperiod},
+           given={Ian\bibnamedelima R.},
+           giveni={I\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=2205e0f1c1932eb98d32cb8c43bd493f}{%
+           family={Tobenkin},
+           familyi={T\bibinitperiod},
+           given={Mark},
+           giveni={M\bibinitperiod}}}%
+        {{hash=37ad3bb026475aab12003baced6ead48}{%
+           family={Roberts},
+           familyi={R\bibinitperiod},
+           given={John\bibnamedelima W.},
+           giveni={J\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {SAGE Publications Ltd STM}%
+      }
+      \strng{namehash}{577871f2dafaedc6c6b0530fe8e7460b}
+      \strng{fullhash}{4cee38d2ce6b8643d3541acc4aa75932}
+      \strng{bibnamehash}{4cee38d2ce6b8643d3541acc4aa75932}
+      \strng{authorbibnamehash}{4cee38d2ce6b8643d3541acc4aa75932}
+      \strng{authornamehash}{577871f2dafaedc6c6b0530fe8e7460b}
+      \strng{authorfullhash}{4cee38d2ce6b8643d3541acc4aa75932}
+      \field{sortinit}{5}
+      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Advances in the direct computation of Lyapunov functions using convex optimization make it possible to efficiently evaluate regions of attraction for smooth non-linear systems. Here we present a feedback motion-planning algorithm which uses rigorously computed stability regions to build a sparse tree of LQR-stabilized trajectories. The region of attraction of this non-linear feedback policy “probabilistically covers” the entire controllable subset of state space, verifying that all initial conditions that are capable of reaching the goal will reach the goal. We numerically investigate the properties of this systematic non-linear feedback design algorithm on simple non-linear systems, prove the property of probabilistic coverage, and discuss extensions and implementation details of the basic algorithm.}
+      \field{day}{1}
+      \field{issn}{0278-3649}
+      \field{journaltitle}{The International Journal of Robotics Research}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{number}{8}
+      \field{shorttitle}{{{LQR-trees}}}
+      \field{title}{{{LQR-trees}}: {{Feedback Motion Planning}} via {{Sums-of-Squares Verification}}}
+      \field{urlday}{13}
+      \field{urlmonth}{5}
+      \field{urlyear}{2023}
+      \field{volume}{29}
+      \field{year}{2010}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{1038\bibrangedash 1052}
+      \range{pages}{15}
+      \verb{doi}
+      \verb 10.1177/0278364910369189
+      \endverb
+      \verb{file}
+      \verb /home/shaoyuan/snap/zotero-snap/common/Zotero/storage/RXEUJ7ME/Tedrake et al. - 2010 - LQR-trees Feedback Motion Planning via Sums-of-Sq.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1177/0278364910369189
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1177/0278364910369189
+      \endverb
+    \endentry
+    \entry{manchesterControlContractionMetrics2017}{article}{}
+      \name{author}{2}{}{%
+        {{hash=05a95f205346bf516eafa0bbf32ae394}{%
+           family={Manchester},
+           familyi={M\bibinitperiod},
+           given={Ian\bibnamedelima R.},
+           giveni={I\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+        {{hash=1dc6c2ca8255505108e7ed377ab4c534}{%
+           family={Slotine},
+           familyi={S\bibinitperiod},
+           given={Jean-Jacques\bibnamedelima E.},
+           giveni={J\bibinithyphendelim J\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \strng{namehash}{47bf9fc4b95b81dd567fe1f464892fca}
+      \strng{fullhash}{47bf9fc4b95b81dd567fe1f464892fca}
+      \strng{bibnamehash}{47bf9fc4b95b81dd567fe1f464892fca}
+      \strng{authorbibnamehash}{47bf9fc4b95b81dd567fe1f464892fca}
+      \strng{authornamehash}{47bf9fc4b95b81dd567fe1f464892fca}
+      \strng{authorfullhash}{47bf9fc4b95b81dd567fe1f464892fca}
+      \field{sortinit}{6}
+      \field{sortinithash}{7851c86048328b027313775d8fbd2131}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{We introduce the concept of a control contraction metric, extending contraction analysis to constructive nonlinear control design. We derive sufficient conditions for exponential stabilizability of all trajectories of a nonlinear control system. The conditions have a simple geometrical interpretation, can be written as a convex feasibility problem, and are invariant under coordinate changes. We show that these conditions are necessary and sufficient for feedback linearizable systems and also derive novel convex criteria for exponential stabilization of a nonlinear submanifold of state space. We illustrate the benefits of convexity by constructing a controller for an unstable polynomial system that combines local optimality and global stability, using a metric found via sum-of-squares programming.}
+      \field{eventtitle}{{{IEEE Transactions}} on {{Automatic Control}}}
+      \field{issn}{1558-2523}
+      \field{journaltitle}{IEEE Transactions on Automatic Control}
+      \field{month}{6}
+      \field{number}{6}
+      \field{shorttitle}{Control {{Contraction Metrics}}}
+      \field{title}{Control {{Contraction Metrics}}: {{Convex}} and {{Intrinsic Criteria}} for {{Nonlinear Feedback Design}}}
+      \field{volume}{62}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{pages}{3046\bibrangedash 3053}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1109/TAC.2017.2668380
+      \endverb
+      \verb{file}
+      \verb /home/shaoyuan/snap/zotero-snap/common/Zotero/storage/6K8337UG/Manchester and Slotine - 2017 - Control Contraction Metrics Convex and Intrinsic .pdf;/home/shaoyuan/snap/zotero-snap/common/Zotero/storage/YBISNIMZ/stamp.html
+      \endverb
+      \keyw{Adaptive control,Contraction,Control design,control system synthesis,linear matrix inequalities,lyapunov methods,Lyapunov methods,Measurement,nonlinear control systems,Nonlinear systems,Power system stability,Trajectory}
+    \endentry
     \entry{manchesterUnifyingRobotTrajectory2018}{incollection}{}
       \name{author}{3}{}{%
         {{hash=05a95f205346bf516eafa0bbf32ae394}{%
@@ -421,8 +532,8 @@
       \strng{editorbibnamehash}{22eb1ac8f5b01532f7d30926a2361efa}
       \strng{editornamehash}{22eb1ac8f5b01532f7d30926a2361efa}
       \strng{editorfullhash}{22eb1ac8f5b01532f7d30926a2361efa}
-      \field{sortinit}{5}
-      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
+      \field{sortinit}{7}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{In this paper we present new results for nonlinear tracking control design based on the search for a “control contraction metric” (CCM). We show that for fully-actuated robots, CCMs can be found analytically that correspond to classical methods of robot control including sliding and energy-based designs. We also show that, for underactuated robots, the CCM approach extends more recent optimization-based methods such as LQR-Trees to tracking of arbitrary feasible trajectories. Therefore the CCM methodology represents a bridge between these methods. We illustrate our results with calculations and simulations on the single and double inverted pendulums and the underactuated cart-pole system.}
@@ -452,6 +563,52 @@
       \verb https://doi.org/10.1007/978-3-319-60916-4_23
       \endverb
     \endentry
+    \entry{singhRobustOnlineMotion2017}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=1681c066cc14ab973df975fa46b1d3b2}{%
+           family={Singh},
+           familyi={S\bibinitperiod},
+           given={Sumeet},
+           giveni={S\bibinitperiod}}}%
+        {{hash=b4c715aefa330ae48f5662580997bafd}{%
+           family={Majumdar},
+           familyi={M\bibinitperiod},
+           given={Anirudha},
+           giveni={A\bibinitperiod}}}%
+        {{hash=54b9721d8a3f8acbe240876d7920cee2}{%
+           family={Slotine},
+           familyi={S\bibinitperiod},
+           given={Jean-Jacques},
+           giveni={J\bibinithyphendelim J\bibinitperiod}}}%
+        {{hash=35318fcd7c56edabda1a4c70f2174048}{%
+           family={Pavone},
+           familyi={P\bibinitperiod},
+           given={Marco},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{a067f60cc6d2bcafae1e806892746f1b}
+      \strng{fullhash}{641a0c7526229a59bfec9595fef6d6df}
+      \strng{bibnamehash}{641a0c7526229a59bfec9595fef6d6df}
+      \strng{authorbibnamehash}{641a0c7526229a59bfec9595fef6d6df}
+      \strng{authornamehash}{a067f60cc6d2bcafae1e806892746f1b}
+      \strng{authorfullhash}{641a0c7526229a59bfec9595fef6d6df}
+      \field{sortinit}{8}
+      \field{sortinithash}{1b24cab5087933ef0826a7cd3b99e994}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We present a framework for online generation of robust motion plans for robotic systems with nonlinear dynamics subject to bounded disturbances, control constraints, and online state constraints such as obstacles. In an offline phase, one computes the structure of a feedback controller that can be efficiently implemented online to track any feasible nominal trajectory. The offline phase leverages contraction theory and convex optimization to characterize a fixed-size " tube " that the state is guaranteed to remain within while tracking a nominal trajectory (representing the center of the tube). In the online phase, when the robot is faced with obstacles, a motion planner uses such a tube as a robustness margin for collision checking, yielding nominal trajectories that can be safely executed (i.e., tracked without collisions under disturbances). In contrast to recent work on robust online planning using funnel libraries, our approach is not restricted to a fixed library of maneuvers computed offline and is thus particularly well-suited to applications such as UAV flight in densely cluttered environments where complex maneuvers may be required to reach a goal. We demonstrate our approach through simulations of a 6-state planar quadrotor navigating cluttered environments in the presence of a crosswind. We also discuss applications of our approach to Tube Model Predictive Control (TMPC) and compare the merits of our method with state-of-the-art nonlinear TMPC techniques.}
+      \field{day}{29}
+      \field{month}{5}
+      \field{title}{Robust {{Online Motion Planning}} via {{Contraction Theory}} and {{Convex Optimization}}}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \verb{doi}
+      \verb 10.1109/ICRA.2017.7989693
+      \endverb
+      \verb{file}
+      \verb /home/shaoyuan/snap/zotero-snap/common/Zotero/storage/WQEXSRDE/Singh et al. - 2017 - Robust Online Motion Planning via Contraction Theo.pdf
+      \endverb
+    \endentry
     \entry{weiControlContractionMetric2021}{article}{}
       \name{author}{3}{}{%
         {{hash=86bddf7e41ad7b14e94a19d0e9149843}{%
@@ -476,8 +633,8 @@
       \strng{authorbibnamehash}{bb1917638836d5d2d89954a0fc86afd5}
       \strng{authornamehash}{bb1917638836d5d2d89954a0fc86afd5}
       \strng{authorfullhash}{bb1917638836d5d2d89954a0fc86afd5}
-      \field{sortinit}{6}
-      \field{sortinithash}{7851c86048328b027313775d8fbd2131}
+      \field{sortinit}{8}
+      \field{sortinithash}{1b24cab5087933ef0826a7cd3b99e994}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Flexible manufacturing has been the trend in the area of the modern chemical process nowadays. One of the essential characteristics of flexible manufacturing is to track time-varying target trajectories (e.g. diversity and quantity of products). A possible tool to achieve time-varying targets is contraction theory. However, the contraction theory was developed for continuous time systems and there lacks analysis and synthesis tools for discrete-time systems. This article develops a systematic approach to discrete-time contraction analysis and control synthesis using Discrete-time Control Contraction Metrics (DCCM) which can be implemented using Sum of Square (SOS) programming. The proposed approach is demonstrated by illustrative example.}
@@ -512,50 +669,6 @@
       \verb https://www.sciencedirect.com/science/article/pii/S2405896321010910
       \endverb
       \keyw{contraction theory,discrete-time control contraction metric (DCCM),discrete-time nonlinear systems,nonlinear control,sum of squares (SOS) programming}
-    \endentry
-    \entry{manchesterControlContractionMetrics2017}{article}{}
-      \name{author}{2}{}{%
-        {{hash=05a95f205346bf516eafa0bbf32ae394}{%
-           family={Manchester},
-           familyi={M\bibinitperiod},
-           given={Ian\bibnamedelima R.},
-           giveni={I\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
-        {{hash=1dc6c2ca8255505108e7ed377ab4c534}{%
-           family={Slotine},
-           familyi={S\bibinitperiod},
-           given={Jean-Jacques\bibnamedelima E.},
-           giveni={J\bibinithyphendelim J\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
-      }
-      \strng{namehash}{47bf9fc4b95b81dd567fe1f464892fca}
-      \strng{fullhash}{47bf9fc4b95b81dd567fe1f464892fca}
-      \strng{bibnamehash}{47bf9fc4b95b81dd567fe1f464892fca}
-      \strng{authorbibnamehash}{47bf9fc4b95b81dd567fe1f464892fca}
-      \strng{authornamehash}{47bf9fc4b95b81dd567fe1f464892fca}
-      \strng{authorfullhash}{47bf9fc4b95b81dd567fe1f464892fca}
-      \field{sortinit}{7}
-      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{shorttitle}
-      \field{abstract}{We introduce the concept of a control contraction metric, extending contraction analysis to constructive nonlinear control design. We derive sufficient conditions for exponential stabilizability of all trajectories of a nonlinear control system. The conditions have a simple geometrical interpretation, can be written as a convex feasibility problem, and are invariant under coordinate changes. We show that these conditions are necessary and sufficient for feedback linearizable systems and also derive novel convex criteria for exponential stabilization of a nonlinear submanifold of state space. We illustrate the benefits of convexity by constructing a controller for an unstable polynomial system that combines local optimality and global stability, using a metric found via sum-of-squares programming.}
-      \field{eventtitle}{{{IEEE Transactions}} on {{Automatic Control}}}
-      \field{issn}{1558-2523}
-      \field{journaltitle}{IEEE Transactions on Automatic Control}
-      \field{month}{6}
-      \field{number}{6}
-      \field{shorttitle}{Control {{Contraction Metrics}}}
-      \field{title}{Control {{Contraction Metrics}}: {{Convex}} and {{Intrinsic Criteria}} for {{Nonlinear Feedback Design}}}
-      \field{volume}{62}
-      \field{year}{2017}
-      \field{dateera}{ce}
-      \field{pages}{3046\bibrangedash 3053}
-      \range{pages}{8}
-      \verb{doi}
-      \verb 10.1109/TAC.2017.2668380
-      \endverb
-      \verb{file}
-      \verb /home/shaoyuan/snap/zotero-snap/common/Zotero/storage/6K8337UG/Manchester and Slotine - 2017 - Control Contraction Metrics Convex and Intrinsic .pdf;/home/shaoyuan/snap/zotero-snap/common/Zotero/storage/YBISNIMZ/stamp.html
-      \endverb
-      \keyw{Adaptive control,Contraction,Control design,control system synthesis,linear matrix inequalities,lyapunov methods,Lyapunov methods,Measurement,nonlinear control systems,Nonlinear systems,Power system stability,Trajectory}
     \endentry
     \entry{DrakeModelBasedDesign}{online}{}
       \name{author}{1}{}{%

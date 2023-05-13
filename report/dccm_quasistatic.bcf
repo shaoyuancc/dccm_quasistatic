@@ -2190,19 +2190,25 @@
     <bcf:citekey order="4">sleimanContactImplicitTrajectoryOptimization2019</bcf:citekey>
     <bcf:citekey order="4">nakatsuruImplicitContactRichManipulation2023</bcf:citekey>
     <bcf:citekey order="4">posaDirectMethodTrajectory2014</bcf:citekey>
-    <bcf:citekey order="5">manchesterUnifyingRobotTrajectory2018</bcf:citekey>
-    <bcf:citekey order="6">weiControlContractionMetric2021</bcf:citekey>
-    <bcf:citekey order="7">manchesterControlContractionMetrics2017</bcf:citekey>
-    <bcf:citekey order="8">pangGlobalPlanningContactRich2023</bcf:citekey>
-    <bcf:citekey order="9">weiControlContractionMetric2021</bcf:citekey>
+    <bcf:citekey order="5">tedrakeLQRtreesFeedbackMotion2010</bcf:citekey>
+    <bcf:citekey order="6">manchesterControlContractionMetrics2017</bcf:citekey>
+    <bcf:citekey order="7">manchesterUnifyingRobotTrajectory2018</bcf:citekey>
+    <bcf:citekey order="8">manchesterControlContractionMetrics2017</bcf:citekey>
+    <bcf:citekey order="8">manchesterUnifyingRobotTrajectory2018</bcf:citekey>
+    <bcf:citekey order="8">singhRobustOnlineMotion2017</bcf:citekey>
+    <bcf:citekey order="8">weiControlContractionMetric2021</bcf:citekey>
+    <bcf:citekey order="9">pangGlobalPlanningContactRich2023</bcf:citekey>
     <bcf:citekey order="10">weiControlContractionMetric2021</bcf:citekey>
-    <bcf:citekey order="11">weiControlContractionMetric2021</bcf:citekey>
+    <bcf:citekey order="11">pangGlobalPlanningContactRich2023</bcf:citekey>
     <bcf:citekey order="12">weiControlContractionMetric2021</bcf:citekey>
-    <bcf:citekey order="13">pangGlobalPlanningContactRich2023</bcf:citekey>
-    <bcf:citekey order="14">DrakeModelBasedDesign</bcf:citekey>
-    <bcf:citekey order="15">manchesterControlContractionMetrics2017</bcf:citekey>
-    <bcf:citekey order="16">manchesterControlContractionMetrics2017</bcf:citekey>
+    <bcf:citekey order="13">weiControlContractionMetric2021</bcf:citekey>
+    <bcf:citekey order="14">weiControlContractionMetric2021</bcf:citekey>
+    <bcf:citekey order="15">weiControlContractionMetric2021</bcf:citekey>
+    <bcf:citekey order="16">pangGlobalPlanningContactRich2023</bcf:citekey>
     <bcf:citekey order="17">DrakeModelBasedDesign</bcf:citekey>
+    <bcf:citekey order="18">manchesterControlContractionMetrics2017</bcf:citekey>
+    <bcf:citekey order="19">manchesterControlContractionMetrics2017</bcf:citekey>
+    <bcf:citekey order="20">DrakeModelBasedDesign</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

@@ -41,28 +41,27 @@ shaoyuan\_chewchia@college.harvard.edu
 
 \section{Introduction}
 % Control through contact is important
-Planning and control through contact is an important capability in robotics. In order for robots to manipulate objects in their environment, they need to be able to reason about how to make and break contact. However, this has proved challenging for model-based methods due to two factors, namely, the non-smooth or hybrid nature of contact dynamics, as well as the underactuatedness of the system.
-
-% Why control through contact is difficult - non smooth dynamics
-Contact dynamics involve different modes of contact (e.g. sticking, sliding, no-contact), each with smooth but different dynamics and constraints. When switching between modes, the dynamics are discontinuous and change abruptly. This poses problems for gradient-based methods such as optimal control, as their locally linear models constructed using gradients quickly become inaccurate \autocite{pangGlobalPlanningContactRich2023}.
-% Why control through contact is difficult - underactuated
-Systems that involve contact are underactuated as the state of the unactuated objects cannot be controlled directly. Instead, control inputs to the robot are mediated through friction cones at contact points between the robot and the object, thus severely limiting the control authority of the inputs.
+Planning and control through contact is an important capability in robotics. In order for robots to manipulate objects in their environment, they need to be able to reason about how to make and break contact. However, this has proved challenging for model-based methods due to two factors:
+\begin{enumerate}
+	\item{\bf Non-smooth or hybrid nature of contact dynamics}. Contact dynamics involve different modes of contact (e.g. sticking, sliding, no-contact), each with smooth but different dynamics and constraints. When switching between modes, the dynamics are discontinuous and change abruptly. This poses problems for gradient-based methods such as optimal control, as their locally linear models constructed using gradients quickly become inaccurate \autocite{pangGlobalPlanningContactRich2023}.
+	\item{\bf Underactuatedness of the system}. Systems that involve contact are underactuated as the state of the unactuated objects cannot be controlled directly. Instead, control inputs to the robot are mediated through friction cones at contact points between the robot and the object, thus severely limiting the control authority of the inputs.
+\end{enumerate}
 
 % Current methods for control through contact
-Current methods for model based planning and control through contact typically fall into one of three categories: methods that apply smoothing to the dynamics \autocite{stewartOptimalControlSystems2010,pangGlobalPlanningContactRich2023}, methods that explicitly enumerate the contact modes \autocite{hoganFeedbackControlPusherSlider2016}, and methods that implicitly reason about the contact modes \autocite{sleimanContactImplicitTrajectoryOptimization2019,nakatsuruImplicitContactRichManipulation2023,posaDirectMethodTrajectory2014}. In this paper we apply these same smoothing techniques to explore the controllers that this enables.
+Current methods for model based planning and control through contact typically fall into one of three categories: methods that apply smoothing to the dynamics \autocite{stewartOptimalControlSystems2010,pangGlobalPlanningContactRich2023}, methods that explicitly enumerate the contact modes \autocite{hoganFeedbackControlPusherSlider2016}, and methods that implicitly reason about the contact modes \autocite{sleimanContactImplicitTrajectoryOptimization2019,nakatsuruImplicitContactRichManipulation2023,posaDirectMethodTrajectory2014}. Two methods that have been applied to the control of nonlinear underactuated systems are Linear Quadratic Regulator (LQR)-Trees and Control Contraction Metrics (CCMs). LQR-Trees use locally optimal linear control policies to stabilize planned trajectories. Each trajectory has a basin of attraction and these regions are pieced together to cover a larger region of state space.
+LQR Trees \autocite{tedrakeLQRtreesFeedbackMotion2010}. Control Contraction Metrics, first established in \autocite{manchesterControlContractionMetrics2017}, were shown to be effective at controling underactuated systems in \autocite{manchesterUnifyingRobotTrajectory2018}.
 
 % Why we would want to use Control Contraction Metrics
-convex synthesis of contraction metric and controller, which we have powerful tools for like SOS programming.
+Control Contraction Metrics (CCM)s theoretically provide 4 key advantages over other control methods as described in \autocite{manchesterControlContractionMetrics2017,manchesterUnifyingRobotTrajectory2018,singhRobustOnlineMotion2017,weiControlContractionMetric2021}:
+\begin{enumerate}
+	\item {\bf Certificates of stability and convergence rates}. In general, nonlinear MPC does not provide guarantees on stability or performance. While Control Lyapunov Functions (CLFs) and LQR based methods can produce certificates, the guarantees provided by CCMs are not tied to specific equilbria or trajectories.
+	\item {\bf Trajectory independent controllers}. CCMs generate controllers that stabilize every feasible trajectory in a region, while CLFs and LQR based methods require designing controllers for each trajectory and stitching them together to cover larger regions.
+	\item {\bf Convex synthesis of the controller}. The control synthesis problem can be formulated as a convex optimization problem, which is easier to solve numerically and can leverage powerful tools like SOS programming.
+	\item {\bf Faster online computation of the control law}. The online computation of the geodesic in CCMs is typically simpler than the nonlinear MPC optimal control problem.
+\end{enumerate}
 
-The same controller exponentially stabilizes to arbitrary, time-varying feasible trajectories, while Lyapnov-based approaches typically need to be designed for a specific equilibrium.
-
-provide guarantees on stability and convergence rates
-
-% CCMs for underactuated systems
-This work builds on \autocite{manchesterUnifyingRobotTrajectory2018} which demonstrates the effectiveness of CCMs on cannonical underactuated systems such as Cart-Pole.
-
-% CCMs for discrete time
-as well as \autocite{weiControlContractionMetric2021} that extends work in \autocite{manchesterControlContractionMetrics2017} to discrete time.
+% What are we doing in this paper
+In this paper we use the analytic smoothing of contact dynamics described in \autocite{pangGlobalPlanningContactRich2023} to address the challenge of non-smoothness, and explore the effectiveness of building a Discrete-time Control Contraction Metric (DCCM) as demonstrated by \autocite{weiControlContractionMetric2021} on top of that smoothed system to handle the underactuatedness and nonlinearity of the system. Our hope was that we would be able to synthesize a DCCM for a system with low amounts of smoothing and that this controller would also stabilize a "real-world" system with exact dynamics, however we did not manage to achieve that goal. We only managed to synthesize a controller that worked around a particular desired trajectory under significant smoothing, but are hopeful that our findings in this paper will serve as a good jumping off points for future work to realize the full potential of DCCMs applied to systems with contact.
 
 \section{Preliminaries and Problem Formulation}
 \subsection{Quasistatic Assumptions}
@@ -283,8 +282,9 @@ Both of these factors (requiring a higher degree, and more samples) led to the o
 		& \xmark & \cmark & \cmark & \cmark & - \\ \cline{2-8}
 		& \multirow{2}{*}{6}
 		& Synthesizes 
-		\\ \cline{3-8}
-		& &  Stabilizes \\ \hline
+		& \cmark & \cmark & ! & - & - \\ \cline{3-8}
+		& &  Stabilizes
+		& \xmark & \xmark & - & - & - \\ \hline
 		\multirow{4}{*}{100} & \multirow{2}{*}{4} 
 		& Synthesizes
 		& \cmark & \cmark & \xmark & - & - \\ \cline{3-8}
