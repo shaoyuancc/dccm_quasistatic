@@ -19,61 +19,6 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
-    \entry{stewartOptimalControlSystems2010}{article}{}
-      \name{author}{2}{}{%
-        {{hash=f5003f438d27eacbb94f94bace68fd4f}{%
-           family={Stewart},
-           familyi={S\bibinitperiod},
-           given={David\bibnamedelima E.},
-           giveni={D\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
-        {{hash=7058aa626b208c417496503bd26f9285}{%
-           family={Anitescu},
-           familyi={A\bibinitperiod},
-           given={Mihai},
-           giveni={M\bibinitperiod}}}%
-      }
-      \strng{namehash}{60bdc8b83dac8c0b4eb0c7fb20018f92}
-      \strng{fullhash}{60bdc8b83dac8c0b4eb0c7fb20018f92}
-      \strng{bibnamehash}{60bdc8b83dac8c0b4eb0c7fb20018f92}
-      \strng{authorbibnamehash}{60bdc8b83dac8c0b4eb0c7fb20018f92}
-      \strng{authornamehash}{60bdc8b83dac8c0b4eb0c7fb20018f92}
-      \strng{authorfullhash}{60bdc8b83dac8c0b4eb0c7fb20018f92}
-      \field{sortinit}{1}
-      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{In this paper we discuss the problem of verifying and computing optimal controls of systems whose dynamics is governed by differential systems with a discontinuous right-hand side. In our work, we are motivated by optimal control of mechanical systems with Coulomb friction, which exhibit such a right-hand side. Notwithstanding the impressive development of nonsmooth and set-valued analysis, these systems have not been closely studied either computationally or analytically. We show that even when the solution crosses and does not stay on the discontinuity, differentiating the results of a simulation gives gradients that have errors of a size independent of the stepsize. This means that the strategy of “optimize the discretization” will usually fail for problems of this kind. We approximate the discontinuous right-hand side for the differential equations or inclusions by a smooth right-hand side. For these smoothed approximations, we show that the resulting gradients approach the true gradients provided that the start and end points of the trajectory do not lie on the discontinuity and that Euler’s method is used where the step size is “sufficiently small” in comparison with the smoothing parameter. Numerical results are presented for a crude model of car racing that involves Coulomb friction and slip showing that this approach is practical and can handle problems of moderate complexity.}
-      \field{day}{1}
-      \field{issn}{0945-3245}
-      \field{journaltitle}{Numerische Mathematik}
-      \field{langid}{english}
-      \field{month}{2}
-      \field{number}{4}
-      \field{shortjournal}{Numer. Math.}
-      \field{title}{Optimal Control of Systems with Discontinuous Differential Equations}
-      \field{urlday}{12}
-      \field{urlmonth}{5}
-      \field{urlyear}{2023}
-      \field{volume}{114}
-      \field{year}{2010}
-      \field{dateera}{ce}
-      \field{urldateera}{ce}
-      \field{pages}{653\bibrangedash 695}
-      \range{pages}{43}
-      \verb{doi}
-      \verb 10.1007/s00211-009-0262-2
-      \endverb
-      \verb{file}
-      \verb /home/shaoyuan/snap/zotero-snap/common/Zotero/storage/EPA5NXNT/Stewart and Anitescu - 2010 - Optimal control of systems with discontinuous diff.pdf
-      \endverb
-      \verb{urlraw}
-      \verb https://doi.org/10.1007/s00211-009-0262-2
-      \endverb
-      \verb{url}
-      \verb https://doi.org/10.1007/s00211-009-0262-2
-      \endverb
-      \keyw{49J24,Primary: 49Q12,Secondary: 34A36}
-    \endentry
     \entry{pangGlobalPlanningContactRich2023}{online}{}
       \name{author}{4}{}{%
         {{hash=15bfbfe1db67917fc953926d49afd752}{%
@@ -138,6 +83,61 @@
       \endverb
       \keyw{Computer Science - Robotics}
     \endentry
+    \entry{stewartOptimalControlSystems2010}{article}{}
+      \name{author}{2}{}{%
+        {{hash=f5003f438d27eacbb94f94bace68fd4f}{%
+           family={Stewart},
+           familyi={S\bibinitperiod},
+           given={David\bibnamedelima E.},
+           giveni={D\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=7058aa626b208c417496503bd26f9285}{%
+           family={Anitescu},
+           familyi={A\bibinitperiod},
+           given={Mihai},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{60bdc8b83dac8c0b4eb0c7fb20018f92}
+      \strng{fullhash}{60bdc8b83dac8c0b4eb0c7fb20018f92}
+      \strng{bibnamehash}{60bdc8b83dac8c0b4eb0c7fb20018f92}
+      \strng{authorbibnamehash}{60bdc8b83dac8c0b4eb0c7fb20018f92}
+      \strng{authornamehash}{60bdc8b83dac8c0b4eb0c7fb20018f92}
+      \strng{authorfullhash}{60bdc8b83dac8c0b4eb0c7fb20018f92}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this paper we discuss the problem of verifying and computing optimal controls of systems whose dynamics is governed by differential systems with a discontinuous right-hand side. In our work, we are motivated by optimal control of mechanical systems with Coulomb friction, which exhibit such a right-hand side. Notwithstanding the impressive development of nonsmooth and set-valued analysis, these systems have not been closely studied either computationally or analytically. We show that even when the solution crosses and does not stay on the discontinuity, differentiating the results of a simulation gives gradients that have errors of a size independent of the stepsize. This means that the strategy of “optimize the discretization” will usually fail for problems of this kind. We approximate the discontinuous right-hand side for the differential equations or inclusions by a smooth right-hand side. For these smoothed approximations, we show that the resulting gradients approach the true gradients provided that the start and end points of the trajectory do not lie on the discontinuity and that Euler’s method is used where the step size is “sufficiently small” in comparison with the smoothing parameter. Numerical results are presented for a crude model of car racing that involves Coulomb friction and slip showing that this approach is practical and can handle problems of moderate complexity.}
+      \field{day}{1}
+      \field{issn}{0945-3245}
+      \field{journaltitle}{Numerische Mathematik}
+      \field{langid}{english}
+      \field{month}{2}
+      \field{number}{4}
+      \field{shortjournal}{Numer. Math.}
+      \field{title}{Optimal Control of Systems with Discontinuous Differential Equations}
+      \field{urlday}{12}
+      \field{urlmonth}{5}
+      \field{urlyear}{2023}
+      \field{volume}{114}
+      \field{year}{2010}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{653\bibrangedash 695}
+      \range{pages}{43}
+      \verb{doi}
+      \verb 10.1007/s00211-009-0262-2
+      \endverb
+      \verb{file}
+      \verb /home/shaoyuan/snap/zotero-snap/common/Zotero/storage/EPA5NXNT/Stewart and Anitescu - 2010 - Optimal control of systems with discontinuous diff.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s00211-009-0262-2
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s00211-009-0262-2
+      \endverb
+      \keyw{49J24,Primary: 49Q12,Secondary: 34A36}
+    \endentry
     \entry{hoganFeedbackControlPusherSlider2016}{online}{}
       \name{author}{2}{}{%
         {{hash=63adab344af16b6de012d8ed7c09be6a}{%
@@ -157,8 +157,8 @@
       \strng{authorbibnamehash}{9e7799b40fb8a8a295b79a237fd07677}
       \strng{authornamehash}{9e7799b40fb8a8a295b79a237fd07677}
       \strng{authorfullhash}{9e7799b40fb8a8a295b79a237fd07677}
-      \field{sortinit}{2}
-      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{sortinit}{3}
+      \field{sortinithash}{a37a8ef248a93c322189792c34fc68c9}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{This paper investigates real-time control strategies for dynamical systems that involve frictional contact interactions. Hybridness and underactuation are key characteristics of these systems that complicate the design of feedback controllers. In this research, we examine and test a novel feedback controller design on a planar pushing system, where the purpose is to control the motion of a sliding object on a flat surface using a point robotic pusher. The pusher-slider is a simple dynamical system that retains many of the challenges that are typical of robotic manipulation tasks. Our results show that a model predictive control approach used in tandem with integer programming offers a powerful solution to capture the dynamic constraints associated with the friction cone as well as the hybrid nature of the contact. In order to achieve real-time control, simplifications are proposed to speed up the integer program. The concept of Family of Modes (FOM) is introduced to solve an online convex optimization problem by selecting a set of contact mode schedules that spans a large set of dynamic behaviors that can occur during the prediction horizon. The controller design is applied to stabilize the motion of a sliding object about a nominal trajectory, and to re-plan its trajectory in real-time to follow a moving target. We validate the controller design through numerical simulations and experimental results on an industrial ABB IRB 120 robotic arm.}
@@ -188,6 +188,193 @@
       \verb http://arxiv.org/abs/1611.08268
       \endverb
       \keyw{Computer Science - Robotics}
+    \endentry
+    \entry{sleimanContactImplicitTrajectoryOptimization2019}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=0ef9c342f3a850f90011c934f7bbaa36}{%
+           family={Sleiman},
+           familyi={S\bibinitperiod},
+           given={Jean-Pierre},
+           giveni={J\bibinithyphendelim P\bibinitperiod}}}%
+        {{hash=49e33c9ac639ea68ba15cb0626d16c58}{%
+           family={Carius},
+           familyi={C\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f85389162930f5ad2711e55587aade76}{%
+           family={Grandia},
+           familyi={G\bibinitperiod},
+           given={Ruben},
+           giveni={R\bibinitperiod}}}%
+        {{hash=e46598fc7c8234c629e15f9854fbc392}{%
+           family={Wermelinger},
+           familyi={W\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=164607f9daa616a03bed0e2bf6531a8d}{%
+           family={Hutter},
+           familyi={H\bibinitperiod},
+           given={Marco},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{6370746c7a2bc5faa1fb9a880ed4cdd6}
+      \strng{fullhash}{ee32ef13b8317c285590630bd46c021d}
+      \strng{bibnamehash}{ee32ef13b8317c285590630bd46c021d}
+      \strng{authorbibnamehash}{ee32ef13b8317c285590630bd46c021d}
+      \strng{authornamehash}{6370746c7a2bc5faa1fb9a880ed4cdd6}
+      \strng{authorfullhash}{ee32ef13b8317c285590630bd46c021d}
+      \field{sortinit}{4}
+      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We present a reformulation of a contact-implicit optimization (CIO) approach that computes optimal trajectories for rigid-body systems in contact-rich settings. A hard-contact model is assumed, and the unilateral constraints are imposed in the form of complementarity conditions. Newton's impact law is adopted for enhanced physical correctness. The optimal control problem is formulated as a multi-staged program through a multiple-shooting scheme. This problem structure is exploited within the FORCES Pro framework to retrieve optimal motion plans, contact sequences and control inputs with increased computational efficiency. We investigate our method on a variety of dynamic object manipulation tasks, performed by a six degrees of freedom robot. The dynamic feasibility of the optimal trajectories, as well as the repeatability and accuracy of the task-satisfaction are verified through simulations and real hardware experiments on one of the manipulation problems.}
+      \field{booktitle}{2019 {{IEEE}}/{{RSJ International Conference}} on {{Intelligent Robots}} and {{Systems}} ({{IROS}})}
+      \field{eprintclass}{cs}
+      \field{eprinttype}{arxiv}
+      \field{month}{11}
+      \field{note}{Comment: 8 Pages, 10 Figures. Submitted to the International Conference on Intelligent Robots and Systems (IROS), 2019}
+      \field{title}{Contact-{{Implicit Trajectory Optimization}} for {{Dynamic Object Manipulation}}}
+      \field{urlday}{17}
+      \field{urlmonth}{3}
+      \field{urlyear}{2023}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{6814\bibrangedash 6821}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1109/IROS40897.2019.8968194
+      \endverb
+      \verb{eprint}
+      \verb 2103.01104
+      \endverb
+      \verb{file}
+      \verb /home/shaoyuan/snap/zotero-snap/common/Zotero/storage/WZM5IZ8L/Sleiman et al. - 2019 - Contact-Implicit Trajectory Optimization for Dynam.pdf;/home/shaoyuan/snap/zotero-snap/common/Zotero/storage/LIS355FQ/2103.html
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/2103.01104
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/2103.01104
+      \endverb
+      \keyw{Computer Science - Robotics}
+    \endentry
+    \entry{nakatsuruImplicitContactRichManipulation2023}{online}{}
+      \name{author}{3}{}{%
+        {{hash=d68205d89d1c37ca9cfec59b6945c481}{%
+           family={Nakatsuru},
+           familyi={N\bibinitperiod},
+           given={Kento},
+           giveni={K\bibinitperiod}}}%
+        {{hash=3cc91d385b1bf8434cb61a7777b144d7}{%
+           family={Wan},
+           familyi={W\bibinitperiod},
+           given={Weiwei},
+           giveni={W\bibinitperiod}}}%
+        {{hash=d745a060a2fb50258544d992d12ae018}{%
+           family={Harada},
+           familyi={H\bibinitperiod},
+           given={Kensuke},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{8376cc1bf315605e71d39ee7f4f8f8fd}
+      \strng{fullhash}{8376cc1bf315605e71d39ee7f4f8f8fd}
+      \strng{bibnamehash}{8376cc1bf315605e71d39ee7f4f8f8fd}
+      \strng{authorbibnamehash}{8376cc1bf315605e71d39ee7f4f8f8fd}
+      \strng{authornamehash}{8376cc1bf315605e71d39ee7f4f8f8fd}
+      \strng{authorfullhash}{8376cc1bf315605e71d39ee7f4f8f8fd}
+      \field{sortinit}{4}
+      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{This paper uses a mobile manipulator with a collaborative robotic arm to manipulate objects beyond the robot's maximum payload. It proposes a single-shot probabilistic roadmap-based method to plan and optimize manipulation motion with environment support. The method uses an expanded object mesh model to examine contact and randomly explores object motion while keeping contact and securing affordable grasping force. It generates robotic motion trajectories after obtaining object motion using an optimization-based algorithm. With the proposed method's help, we can plan contact-rich manipulation without particularly analyzing an object's contact modes and their transitions. The planner and optimizer determine them automatically. We conducted experiments and analyses using simulations and real-world executions to examine the method's performance. It can successfully find manipulation motion that met contact, force, and kinematic constraints, thus allowing a mobile manipulator to move heavy objects while leveraging supporting forces from environmental obstacles. The mehtod does not need to explicitly analyze contact states and build contact transition graphs, thus providing a new view for robotic grasp-less manipulation, non-prehensile manipulation, manipulation with contact, etc.}
+      \field{day}{25}
+      \field{eprintclass}{cs}
+      \field{eprinttype}{arxiv}
+      \field{month}{2}
+      \field{pubstate}{preprint}
+      \field{title}{Implicit {{Contact-Rich Manipulation Planning}} for a {{Manipulator}} with {{Insufficient Payload}}}
+      \field{urlday}{17}
+      \field{urlmonth}{3}
+      \field{urlyear}{2023}
+      \field{year}{2023}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.48550/arXiv.2302.13212
+      \endverb
+      \verb{eprint}
+      \verb 2302.13212
+      \endverb
+      \verb{file}
+      \verb /home/shaoyuan/snap/zotero-snap/common/Zotero/storage/N85Z7K6M/Nakatsuru et al. - 2023 - Implicit Contact-Rich Manipulation Planning for a .pdf;/home/shaoyuan/snap/zotero-snap/common/Zotero/storage/KLI3G6DN/2302.html
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/2302.13212
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/2302.13212
+      \endverb
+      \keyw{Computer Science - Robotics}
+    \endentry
+    \entry{posaDirectMethodTrajectory2014}{article}{}
+      \name{author}{3}{}{%
+        {{hash=0ea4cf717addacf224e1ffd958f0b375}{%
+           family={Posa},
+           familyi={P\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+        {{hash=f0a7e95b751cb07c9cb96461719b7926}{%
+           family={Cantu},
+           familyi={C\bibinitperiod},
+           given={Cecilia},
+           giveni={C\bibinitperiod}}}%
+        {{hash=480d067fbc7c00be4a01a0e4902c984e}{%
+           family={Tedrake},
+           familyi={T\bibinitperiod},
+           given={Russ},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{540655f37799ec905d76919ddbdb3497}
+      \strng{fullhash}{540655f37799ec905d76919ddbdb3497}
+      \strng{bibnamehash}{540655f37799ec905d76919ddbdb3497}
+      \strng{authorbibnamehash}{540655f37799ec905d76919ddbdb3497}
+      \strng{authornamehash}{540655f37799ec905d76919ddbdb3497}
+      \strng{authorfullhash}{540655f37799ec905d76919ddbdb3497}
+      \field{sortinit}{4}
+      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Direct methods for trajectory optimization are widely used for planning locally optimal trajectories of robotic systems. Many critical tasks, such as locomotion and manipulation, often involve impacting the ground or objects in the environment. Most state-of-the-art techniques treat the discontinuous dynamics that result from impacts as discrete modes and restrict the search for a complete path to a specified sequence through these modes. Here we present a novel method for trajectory planning of rigid-body systems that contact their environment through inelastic impacts and Coulomb friction. This method eliminates the requirement for a priori mode ordering. Motivated by the formulation of multi-contact dynamics as a Linear Complementarity Problem for forward simulation, the proposed algorithm poses the optimization problem as a Mathematical Program with Complementarity Constraints. We leverage Sequential Quadratic Programming to naturally resolve contact constraint forces while simultaneously optimizing a trajectory that satisfies the complementarity constraints. The method scales well to high-dimensional systems with large numbers of possible modes. We demonstrate the approach on four increasingly complex systems: rotating a pinned object with a finger, simple grasping and manipulation, planar walking with the Spring Flamingo robot, and high-speed bipedal running on the FastRunner platform.}
+      \field{day}{1}
+      \field{issn}{0278-3649}
+      \field{journaltitle}{International Journal of Robotics Research}
+      \field{month}{1}
+      \field{number}{1}
+      \field{shortjournal}{Int. J. Rob. Res.}
+      \field{title}{A Direct Method for Trajectory Optimization of Rigid Bodies through Contact}
+      \field{urlday}{17}
+      \field{urlmonth}{3}
+      \field{urlyear}{2023}
+      \field{volume}{33}
+      \field{year}{2014}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{69\bibrangedash 81}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1177/0278364913506757
+      \endverb
+      \verb{file}
+      \verb /home/shaoyuan/snap/zotero-snap/common/Zotero/storage/ZEQEHRDE/Posa et al. - 2014 - A direct method for trajectory optimization of rig.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1177/0278364913506757
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1177/0278364913506757
+      \endverb
+      \keyw{locomotion planning,optimal control,planning with contacts,planning with impacts and friction,Trajectory optimization}
     \endentry
     \entry{manchesterUnifyingRobotTrajectory2018}{incollection}{}
       \name{author}{3}{}{%
@@ -234,8 +421,8 @@
       \strng{editorbibnamehash}{22eb1ac8f5b01532f7d30926a2361efa}
       \strng{editornamehash}{22eb1ac8f5b01532f7d30926a2361efa}
       \strng{editorfullhash}{22eb1ac8f5b01532f7d30926a2361efa}
-      \field{sortinit}{4}
-      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{sortinit}{5}
+      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{In this paper we present new results for nonlinear tracking control design based on the search for a “control contraction metric” (CCM). We show that for fully-actuated robots, CCMs can be found analytically that correspond to classical methods of robot control including sliding and energy-based designs. We also show that, for underactuated robots, the CCM approach extends more recent optimization-based methods such as LQR-Trees to tracking of arbitrary feasible trajectories. Therefore the CCM methodology represents a bridge between these methods. We illustrate our results with calculations and simulations on the single and double inverted pendulums and the underactuated cart-pole system.}
@@ -289,8 +476,8 @@
       \strng{authorbibnamehash}{bb1917638836d5d2d89954a0fc86afd5}
       \strng{authornamehash}{bb1917638836d5d2d89954a0fc86afd5}
       \strng{authorfullhash}{bb1917638836d5d2d89954a0fc86afd5}
-      \field{sortinit}{5}
-      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
+      \field{sortinit}{6}
+      \field{sortinithash}{7851c86048328b027313775d8fbd2131}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Flexible manufacturing has been the trend in the area of the modern chemical process nowadays. One of the essential characteristics of flexible manufacturing is to track time-varying target trajectories (e.g. diversity and quantity of products). A possible tool to achieve time-varying targets is contraction theory. However, the contraction theory was developed for continuous time systems and there lacks analysis and synthesis tools for discrete-time systems. This article develops a systematic approach to discrete-time contraction analysis and control synthesis using Discrete-time Control Contraction Metrics (DCCM) which can be implemented using Sum of Square (SOS) programming. The proposed approach is demonstrated by illustrative example.}
@@ -345,8 +532,8 @@
       \strng{authorbibnamehash}{47bf9fc4b95b81dd567fe1f464892fca}
       \strng{authornamehash}{47bf9fc4b95b81dd567fe1f464892fca}
       \strng{authorfullhash}{47bf9fc4b95b81dd567fe1f464892fca}
-      \field{sortinit}{6}
-      \field{sortinithash}{7851c86048328b027313775d8fbd2131}
+      \field{sortinit}{7}
+      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{We introduce the concept of a control contraction metric, extending contraction analysis to constructive nonlinear control design. We derive sufficient conditions for exponential stabilizability of all trajectories of a nonlinear control system. The conditions have a simple geometrical interpretation, can be written as a convex feasibility problem, and are invariant under coordinate changes. We show that these conditions are necessary and sufficient for feedback linearizable systems and also derive novel convex criteria for exponential stabilization of a nonlinear submanifold of state space. We illustrate the benefits of convexity by constructing a controller for an unstable polynomial system that combines local optimality and global stability, using a metric found via sum-of-squares programming.}
