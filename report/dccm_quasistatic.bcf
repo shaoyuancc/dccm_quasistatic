@@ -2210,6 +2210,10 @@
     <bcf:citekey order="19">manchesterControlContractionMetrics2017</bcf:citekey>
     <bcf:citekey order="20">DrakeModelBasedDesign</bcf:citekey>
     <bcf:citekey order="21">weiControlContractionMetric2021</bcf:citekey>
+    <bcf:citekey order="22">singhLearningStabilizableDynamical2018</bcf:citekey>
+    <bcf:citekey order="22">chouModelErrorPropagation2021</bcf:citekey>
+    <bcf:citekey order="23">leungNonlinearStabilizationControl2017</bcf:citekey>
+    <bcf:citekey order="24">manchesterControlContractionMetrics2017</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

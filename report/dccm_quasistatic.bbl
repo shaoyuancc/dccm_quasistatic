@@ -707,6 +707,156 @@
       \verb https://drake.mit.edu/
       \endverb
     \endentry
+    \entry{singhLearningStabilizableDynamical2018}{online}{}
+      \name{author}{4}{}{%
+        {{hash=1681c066cc14ab973df975fa46b1d3b2}{%
+           family={Singh},
+           familyi={S\bibinitperiod},
+           given={Sumeet},
+           giveni={S\bibinitperiod}}}%
+        {{hash=4f9c34b413772edc3b1cd5671b79dca7}{%
+           family={Sindhwani},
+           familyi={S\bibinitperiod},
+           given={Vikas},
+           giveni={V\bibinitperiod}}}%
+        {{hash=1dc6c2ca8255505108e7ed377ab4c534}{%
+           family={Slotine},
+           familyi={S\bibinitperiod},
+           given={Jean-Jacques\bibnamedelima E.},
+           giveni={J\bibinithyphendelim J\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=35318fcd7c56edabda1a4c70f2174048}{%
+           family={Pavone},
+           familyi={P\bibinitperiod},
+           given={Marco},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{organization}{1}{%
+        {arXiv.org}%
+      }
+      \strng{namehash}{29c5ce5a39cf5a59353bab6eae81fc20}
+      \strng{fullhash}{baecd9e82a75b075da68266aceff559c}
+      \strng{bibnamehash}{baecd9e82a75b075da68266aceff559c}
+      \strng{authorbibnamehash}{baecd9e82a75b075da68266aceff559c}
+      \strng{authornamehash}{29c5ce5a39cf5a59353bab6eae81fc20}
+      \strng{authorfullhash}{baecd9e82a75b075da68266aceff559c}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We propose a novel framework for learning stabilizable nonlinear dynamical systems for continuous control tasks in robotics. The key idea is to develop a new control-theoretic regularizer for dynamics fitting rooted in the notion of stabilizability, which guarantees that the learned system can be accompanied by a robust controller capable of stabilizing any open-loop trajectory that the system may generate. By leveraging tools from contraction theory, statistical learning, and convex optimization, we provide a general and tractable semi-supervised algorithm to learn stabilizable dynamics, which can be applied to complex underactuated systems. We validated the proposed algorithm on a simulated planar quadrotor system and observed notably improved trajectory generation and tracking performance with the control-theoretic regularized model over models learned using traditional regression techniques, especially when using a small number of demonstration examples. The results presented illustrate the need to infuse standard model-based reinforcement learning algorithms with concepts drawn from nonlinear control theory for improved reliability.}
+      \field{day}{31}
+      \field{langid}{english}
+      \field{month}{7}
+      \field{title}{Learning {{Stabilizable Dynamical Systems}} via {{Control Contraction Metrics}}}
+      \field{urlday}{4}
+      \field{urlmonth}{5}
+      \field{urlyear}{2023}
+      \field{year}{2018}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{file}
+      \verb /home/shaoyuan/snap/zotero-snap/common/Zotero/storage/MYT7BEKN/Singh et al. - 2018 - Learning Stabilizable Dynamical Systems via Contro.pdf
+      \endverb
+      \verb{urlraw}
+      \verb https://arxiv.org/abs/1808.00113v2
+      \endverb
+      \verb{url}
+      \verb https://arxiv.org/abs/1808.00113v2
+      \endverb
+    \endentry
+    \entry{chouModelErrorPropagation2021}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=cd723ce3a652cb3862e92597e708c30d}{%
+           family={Chou},
+           familyi={C\bibinitperiod},
+           given={Glen},
+           giveni={G\bibinitperiod}}}%
+        {{hash=70179ac2355b441deda1cecc4fd7c3fa}{%
+           family={Ozay},
+           familyi={O\bibinitperiod},
+           given={Necmiye},
+           giveni={N\bibinitperiod}}}%
+        {{hash=8fba3174d77f4dd85a440c8c95359bc4}{%
+           family={Berenson},
+           familyi={B\bibinitperiod},
+           given={Dmitry},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{d16f7fa5367f47160181c264109f249f}
+      \strng{fullhash}{d16f7fa5367f47160181c264109f249f}
+      \strng{bibnamehash}{d16f7fa5367f47160181c264109f249f}
+      \strng{authorbibnamehash}{d16f7fa5367f47160181c264109f249f}
+      \strng{authornamehash}{d16f7fa5367f47160181c264109f249f}
+      \strng{authorfullhash}{d16f7fa5367f47160181c264109f249f}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{day}{14}
+      \field{month}{12}
+      \field{title}{Model {{Error Propagation}} via {{Learned Contraction Metrics}} for {{Safe Feedback Motion Planning}} of {{Unknown Systems}}}
+      \field{year}{2021}
+      \field{dateera}{ce}
+      \field{pages}{3576\bibrangedash 3583}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1109/CDC45484.2021.9683354
+      \endverb
+      \verb{file}
+      \verb /home/shaoyuan/snap/zotero-snap/common/Zotero/storage/YTL76CZF/Chou et al. - 2021 - Model Error Propagation via Learned Contraction Me.pdf
+      \endverb
+    \endentry
+    \entry{leungNonlinearStabilizationControl2017}{online}{}
+      \name{author}{2}{}{%
+        {{hash=1a3c5c30e3541d7ff643703e383951c7}{%
+           family={Leung},
+           familyi={L\bibinitperiod},
+           given={Karen},
+           giveni={K\bibinitperiod}}}%
+        {{hash=05a95f205346bf516eafa0bbf32ae394}{%
+           family={Manchester},
+           familyi={M\bibinitperiod},
+           given={Ian\bibnamedelima R.},
+           giveni={I\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{fac69571a1b9d4615c7f5acb8816ab92}
+      \strng{fullhash}{fac69571a1b9d4615c7f5acb8816ab92}
+      \strng{bibnamehash}{fac69571a1b9d4615c7f5acb8816ab92}
+      \strng{authorbibnamehash}{fac69571a1b9d4615c7f5acb8816ab92}
+      \strng{authornamehash}{fac69571a1b9d4615c7f5acb8816ab92}
+      \strng{authorfullhash}{fac69571a1b9d4615c7f5acb8816ab92}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Real-time nonlinear stabilization techniques are often limited by inefficient or intractable online and/or offline computations, or a lack guarantee for global stability. In this paper, we explore the use of Control Contraction Metrics (CCM) for nonlinear stabilization because it offers tractable offline computations that give formal guarantees for global stability. We provide a method to solve the associated online computation for a CCM controller - a pseudospectral method to find a geodesic. Through a case study of a stiff nonlinear system, we highlight two key benefits: (i) using CCM for nonlinear stabilization and (ii) rapid online computations amenable to real-time implementation. We compare the performance of a CCM controller with other popular feedback control techniques, namely the Linear Quadratic Regulator (LQR) and Nonlinear Model Predictive Control (NMPC). We show that a CCM controller using a pseudospectral approach for online computations is a middle ground between the simplicity of LQR and stability guarantees for NMPC.}
+      \field{day}{4}
+      \field{eprintclass}{cs}
+      \field{eprinttype}{arxiv}
+      \field{month}{11}
+      \field{pubstate}{preprint}
+      \field{shorttitle}{Nonlinear {{Stabilization}} via {{Control Contraction Metrics}}}
+      \field{title}{Nonlinear {{Stabilization}} via {{Control Contraction Metrics}}: A {{Pseudospectral Approach}} for {{Computing Geodesics}}}
+      \field{urlday}{6}
+      \field{urlmonth}{5}
+      \field{urlyear}{2023}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \verb{eprint}
+      \verb 1607.04340
+      \endverb
+      \verb{file}
+      \verb /home/shaoyuan/snap/zotero-snap/common/Zotero/storage/P2PZWY8J/Leung and Manchester - 2017 - Nonlinear Stabilization via Control Contraction Me.pdf;/home/shaoyuan/snap/zotero-snap/common/Zotero/storage/2JWABGGA/1607.html
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1607.04340
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1607.04340
+      \endverb
+      \keyw{Electrical Engineering and Systems Science - Systems and Control}
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

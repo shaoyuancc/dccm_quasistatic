@@ -36,10 +36,10 @@ shaoyuan\_chewchia@college.harvard.edu
 \maketitle
 
 \begin{abstract}
-
+The paper explores the feasibility and performance of Discrete-time Control Contraction Metrics (DCCM) on a planar pushing system with smoothed dynamics, to address the challenges of non-smoothness and underactuation of control through contact. While they were unable to achieve many of the theoretical advantages of the control contraction metric framework, they managed to demonstrate the feasibility of synthesizing and running a DCCM controller on a planar pushing system with highly smoothed dynamics. The limitations and gaps in applying their implentation in the real world are also discussed. The paper serves as a good starting point for future work to realize the full potential of DCCMs applied to systems with contact.
 \end{abstract}
 
-\section{Introduction}
+\section{Introduction} \label{sec:introduction}
 % Control through contact is important
 Planning and control through contact is an important capability in robotics. In order for robots to manipulate objects in their environment, they need to be able to reason about how to make and break contact. However, this has proved challenging for model-based methods due to two factors:
 \begin{enumerate}
@@ -320,7 +320,7 @@ Figure (\ref{fig:result_2000}) demonstrates the performance of the controller sy
 \begin{figure}[h]
 	\centering\includegraphics[width = 0.47 \textwidth]
 	{figures/result_lbw10_2000samples.png}
-    \caption{Performance of DCCM with parameters (\ref{table:best_params}); (\textbf{a}) desired state $x^*$ and actual state $x$; (\textbf{b}) nominal input $u^*$ and DCCM input $u$; (\textbf{c}) geodesic energy $E(\bar{\gamma})$, (\ref{eq:geodesic_length_energy}), (\ref{eq:geodesic_opt}); (\textbf{d}) l2-norm tracking error; (\textbf{c}) desired and actual positions of the box at various time steps.}
+    \caption{Performance of DCCM with parameters (\ref{table:best_params}); (\textbf{a}) desired state $x^*$ and actual state $x$; (\textbf{b}) nominal input $u^*$ and DCCM input $u$; (\textbf{c}) geodesic energy $E(\bar{\gamma})$, (\ref{eq:geodesic_length_energy}), (\ref{eq:geodesic_opt}); (\textbf{d}) $l_2$-norm tracking error; (\textbf{c}) desired and actual positions of the box at various time steps.}
 	\label{fig:result_2000}
 \end{figure}
 
@@ -343,11 +343,11 @@ It is also interesting to note that even though the 2000 sample controller consi
 \begin{figure}[h]
 	\centering\includegraphics[width = 0.47 \textwidth]
 	{figures/comparison_num_samples.png}
-    \caption{Comparison of performance of controllers synthesized with varying numbers of samples. Parameters listed in table (\ref{table:comparison_num_sample_params}); (\textbf{a}) geodesic energy $E(\bar{\gamma})$, (\ref{eq:geodesic_length_energy}), (\ref{eq:geodesic_opt}); (\textbf{b}) l2-norm tracking error.}
+    \caption{Comparison of performance of controllers synthesized with varying numbers of samples. Parameters listed in table (\ref{table:comparison_num_sample_params}); (\textbf{a}) geodesic energy $E(\bar{\gamma})$, (\ref{eq:geodesic_length_energy}), (\ref{eq:geodesic_opt}); (\textbf{b}) $l_2$-norm tracking error.}
 	\label{fig:comparison_num_sample}
 \end{figure}
 
-\subsection{Discretization of Geodesic}
+\subsection{Discretization of Geodesic} \label{sec:discretization_geodesic}
 In testing, we found that trying to find the geodesic for the planar pushing system with $N>1$ (\ref{eq:geodesic_opt}) consistently failed. This was slightly unexpected as even though there are more decision variables for larger $N$, and while acknowledging that this is a non-convex problem, it was interesting that SNOPT was not able to find even the straight line solution. We were able to get larger $N$s in our implementation of the simpler 2-dimensional CSTR dynamical system from \autocite{weiControlContractionMetric2021}, but did notice that it significantly increased the online computation time.
 
 For future work, we hope to explore warm-starting the larger $N$ geodesic optimization with the solution of the $N=1$ geodesic, and then warm starting subsequent geodesic optimizations with the previous time-step's solution. Given smoothness of the system and the metric, the previous solution should serve as a good inital guess.
@@ -363,19 +363,17 @@ Online computation of the 1-segment geodesic for a DCCM synthesized with degree 
 All experiments were run on a Linux machine with 31.3GB of RAM, an with an Intel Core i7-6700 CPU @ 3.40GHz x 8 processor.
 
 \section{Conclusion and Future Work}
-More work needs to be done to realize the full benefits of applying the Control Contraction Metric Framework to the problem of control through contact. 
+The feasibility of synthesizing and running a DCCM controller on a planar pushing system with smoothed dynamics was demonstrated in this paper. Limitations of this preliminary implementation were also discussed. Unfortunately, in this work we were largely unable to achieve the benefits discussed in section (\ref{sec:introduction}):
+\begin{enumerate}
+	\item {\bf Certificates of stability and convergence rates}. Two major gaps remain to be overcome in order to certify the stability and performance of a DCCM controller on a real system. The first is that theoretical arguments need to be made about density of samples on which the contraction condition is enforced and a connection drawn to the smoothness of the system in order to bound the error between the closed loop dynamics of the sample-based DCCM, and the smoothed dynamics. Second, the error between the smooth dynamics and exact dynamics also needs to be bounded. Only after mathematically accounting for these two sources of "sim to real" gap will we be able to certify the controller on the real system.
+	\item {\bf Trajectory independent controllers}. We were not able to realize this benefit in our implementation due to computational limitations on the number of samples we could add to our synthesis SOS program. This resulted in low coverage of the state space and meant that there was only a narrow basin of attraction around our desired trajectory.
+	\item {\bf Convex synthesis of the controller}. While SOS programming was able to synthesize DCCMs that worked, we ran into challenges with the high degree of monomial basis required. Future work should address this issue, possibly by applying more computational power to the system, or exploring other synthesis methods such as learning the contraction metric \autocite{singhLearningStabilizableDynamical2018,chouModelErrorPropagation2021}
+	\item {\bf Faster online computation of the control law}. In this paper we used a basic implementation of the geodesic calculation. We avoided working with the symbolic inversion of the $W$ matrix in (\ref{eq:geodesic_opt}) but that made the burden of finding the inverse to the optimizer. In future work, more advanced methods should be explored, such as the warm starting schemes described in section (\ref{sec:discretization_geodesic}) or the pseudospectral approach described in \autocite{leungNonlinearStabilizationControl2017}.
+\end{enumerate}
 
-Pretty brittle, hypothesize this is due to insufficient coverage of the state space by the samples
+Another interesting direction we are excited to explore is reformulating the problem such that we only care about stabilizing the state of the object to the desired trajectory and do not require the trajectories of the robot to be contracting. Stability and tabilization of submanifolds were briefly discussed in \autocite{manchesterControlContractionMetrics2017}, but more work need to be done to translate it to the discrete-time case. This formulation may be more true to our goals of manipulating the object and reduce the dimensionality of the problem which might make both offline and online calculations easier.
 
-Same controller across different trajectories - this was not realized in our implementation because of the sampling technique used.
-
-Convex synthesis - high degree SOS polynomial required
-
-Certificates of stability and convergence rates - need arguments about samping density, and also bounding the difference between smoothed and exact dynamics.
-
-faster online computation - explore other methods for solving the geodesic that don't involve inverting the symbolic matrix.
-
-Explore stabilizing to the submanifold of just the object position.
+While more work needs to be done to realize the full benefits of applying the control contraction metric framework to the problem of control through contact, we are hopeful that this paper serves as a good first step on that path.
 
 \printbibliography
 
