@@ -2209,6 +2209,7 @@
     <bcf:citekey order="18">manchesterControlContractionMetrics2017</bcf:citekey>
     <bcf:citekey order="19">manchesterControlContractionMetrics2017</bcf:citekey>
     <bcf:citekey order="20">DrakeModelBasedDesign</bcf:citekey>
+    <bcf:citekey order="21">weiControlContractionMetric2021</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

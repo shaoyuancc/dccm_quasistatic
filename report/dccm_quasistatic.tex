@@ -76,7 +76,7 @@ We plot the force at a distance effect of the smoothed contact dynamics in Figur
 \begin{figure}[t]
 	\centering\includegraphics[width = 0.45 \textwidth]
 	{figures/smoothed_contact_dynamics.png}
-    \caption{Force at a distance effect of smoothed contact dynamics. (\textbf{a}) A system consisting of an actuated point finger at $x=-1$ and unactuated box at $x=0$, (\textbf{b}) The next $b_x$ after rolling out one step of the analytically smoothed dynamics with different log barrier weights.}
+    \caption{Force at a distance effect of smoothed contact dynamics. (\textbf{a}) A system consisting of an actuated point finger at $x=-1$ and unactuated box at $x=0$. (\textbf{b}) The next $b_x$ after rolling out one step of the analytically smoothed dynamics with different log barrier weights.}
 	\label{fig:smoothed_contact_dynamics}
 	\vskip -0.25 true in
 \end{figure}
@@ -166,7 +166,8 @@ In order to synthesize the contraction metric and controller, we use the SOS pro
 \end{equation}
 
 where $\Sigma(x_k, u_k, w)$ is the set of SOS polynomials that satisfy the contraction condition in equation \ref{eq:contraction_condition_schur}. $l_c$ are the polynomial coefficients of $L$ and $w_c$ are the polynomial coefficients of $W$.
-\begin{equation} 
+\begin{equation}
+	\label{eq:dccm_opt_params}
 	\begin{aligned}
 	\Omega &=
 	\begin{bmatrix}
@@ -218,6 +219,7 @@ For a smooth curve $c(s), s\in [0, 1]$ that connects two points in state space $
 		L(c) &= \int_0^1 \sqrt{\frac{\partial{c(s)}}{\partial{s}} ^\top M(c(s)) \frac{\partial{c(s)}}{\partial{s}}} ds \\
 		E(c) &= \int_0^1 L(c)^2 ds
 	\end{aligned}
+	\label{eq:geodesic_length_energy}
 \end{equation}
 
 The geodesic $\gamma(x_0, x_1)$ is the curve that minimizes the Riemanian length and energy between $x_0$ and $x_1$
@@ -267,9 +269,9 @@ To create the desired trajectory, we first parameterised an arbitrary circular t
 \section{Results and Discussion}
 Our original goal was to synthesize a DCCM with a small amount of smoothing that would transfer well to stabilizing the real system to arbitrary feasible desired trajectories under non-smooth, exact contact dynamics. Unfortunately, we were not able to achieve this goal. We find that when using a small amount of smoothing, a higher degree monomial basis was required to enforce the contraction condition across all samples. Furthermore, since the dynamics were less smooth, a greater density of samples was required in order for the contraction condition to hold around the desired trajectory. This can be seen from the result in table (\ref{table:results_overview}) where even though we were able to synthesize DCCMs for 500 samples for both log barrier weights, the DCCM for log barrier weight 10 worked while the DCCM for log barrier weight 100 did not.
 
-Both of these factors (requiring a higher degree, and more samples) led to the optimization (\ref{eq:dccm_opt}) being intractable due to the computer used running out of RAM. Ultimately we were only able to find a stabilizing controller for a log barrier weight of 10, which corresponds to the robot exerting $0.1$ Newtons of force on an object that is $1$ meter away.
+Both of these factors (requiring a higher degree, and more samples) led to the optimization (\ref{eq:dccm_opt}) being intractable due to the computer used running out of RAM. Ultimately we were only able to find a stabilizing controller for a log barrier weight of 10, which corresponds to the robot exerting $0.1$N of force on an object that is $1$m away.
 
-\begin{table}[thpb]
+\begin{table}[h]
 	\centering
 	\begin{tabular}{| C{0.8cm} | c | c || c | c | c | c | c |} 
 		\hline
@@ -300,20 +302,70 @@ Both of these factors (requiring a higher degree, and more samples) led to the o
 	\label{table:results_overview}
 \end{table}
 
-\subsection{Effect of different parameters}
+\subsection{Controller Performance}
+Figure (\ref{fig:result_2000}) demonstrates the performance of the controller synthesized and run with parameters listed in table (\ref{table:best_params}). We see that the controller is able to stabilize the system from the initial offset at $t=0$ and step change in desired trajectory at $t=5$, with the geodesic energy $E(\bar{\gamma})$ decreasing exponentially after each instantaneous reference change.
 
+\begin{table}[h]
+	\centering
+	\begin{tabular}{| C{1.5cm} | c | c | c | c |} 
+		\hline
+		Log Barrier Weight  & Deg. & \# Samples 
+		& \# Geodesic Segments & $\beta$ \\ \hline\hline
+		10 & 4 & 2000 & 1 & 0.1\\ \hline
+	\end{tabular}
+	\caption{Parameters of the controller shown in figure (\ref{fig:result_2000}), where \# Geodesic Segments is the parameter $N$ in optimization problem \ref{eq:geodesic_opt}, and $\beta = (1 - \text{convergence rate w.r.t. DCCM})$ as shown in \ref{eq:dccm_opt_params}.}
+	\label{table:best_params}
+\end{table}
 
+\begin{figure}[h]
+	\centering\includegraphics[width = 0.47 \textwidth]
+	{figures/result_lbw10_2000samples.png}
+    \caption{Performance of DCCM with parameters (\ref{table:best_params}); (\textbf{a}) desired state $x^*$ and actual state $x$; (\textbf{b}) nominal input $u^*$ and DCCM input $u$; (\textbf{c}) geodesic energy $E(\bar{\gamma})$, (\ref{eq:geodesic_length_energy}), (\ref{eq:geodesic_opt}); (\textbf{d}) l2-norm tracking error; (\textbf{c}) desired and actual positions of the box at various time steps.}
+	\label{fig:result_2000}
+\end{figure}
 
-
-\subsection{Degree of metric on}
-Higher degree means its more able to find a contraction metric for a system with more "warped" dynamics, i.e. if there is less smoothing. 
-
-But higher degree also means less samples can be used, and increased computation time.
 \subsection{Effect of number of samples on controller performance}
+Figure \ref{fig:comparison_num_sample} shows the performance of 3 controllers, synthesized with 500, 1000, and 2000 samples respectively. Note that the controller synthesized with 100 samples was not included in the figure as the controller was not able to stabilize the system. We can see that as the number of samples increases, the controller is better able to regulate the geodesic energy. For the controller with 500 samples, geodesic energy does not exponentially decrease, in fact, it increases at times. We reason that this is due to the contraction condition not being enforced over the states of the trajectory due to the sparse sampling.
+
+It is also interesting to note that even though the 2000 sample controller consistently has the lowest geodesic energy, and fastest decrease in geodesic energy after instantaneous reference change, it also has the largest l2-norm tracking error. In order to stabilize the system and make the geodesic energy decrease exponentialy, the sphere robot has to deviate a greater amount from the reference trajectory in order to push the box back towards the reference trajectory.
+\begin{table}[h]
+	\centering
+	\begin{tabular}{| C{1.5cm} | c | c | C{1.5cm} | c |} 
+		\hline
+		Log Barrier Weight  & Deg. & \# Samples 
+		& \# Geodesic Segments & $\beta$ \\ \hline\hline
+		10 & 4 & 500, 1000, 2000 & 1 & 0.1\\ \hline
+	\end{tabular}
+	\caption{Parameters of the controllers shown in figure \ref{fig:comparison_num_sample}.}
+	\label{table:comparison_num_sample_params}
+\end{table}
+
+\begin{figure}[h]
+	\centering\includegraphics[width = 0.47 \textwidth]
+	{figures/comparison_num_samples.png}
+    \caption{Comparison of performance of controllers synthesized with varying numbers of samples. Parameters listed in table (\ref{table:comparison_num_sample_params}); (\textbf{a}) geodesic energy $E(\bar{\gamma})$, (\ref{eq:geodesic_length_energy}), (\ref{eq:geodesic_opt}); (\textbf{b}) l2-norm tracking error.}
+	\label{fig:comparison_num_sample}
+\end{figure}
+
+\subsection{Discretization of Geodesic}
+In testing, we found that trying to find the geodesic for the planar pushing system with $N>1$ (\ref{eq:geodesic_opt}) consistently failed. This was slightly unexpected as even though there are more decision variables for larger $N$, and while acknowledging that this is a non-convex problem, it was interesting that SNOPT was not able to find even the straight line solution. We were able to get larger $N$s in our implementation of the simpler 2-dimensional CSTR dynamical system from \autocite{weiControlContractionMetric2021}, but did notice that it significantly increased the online computation time.
+
+For future work, we hope to explore warm-starting the larger $N$ geodesic optimization with the solution of the $N=1$ geodesic, and then warm starting subsequent geodesic optimizations with the previous time-step's solution. Given smoothness of the system and the metric, the previous solution should serve as a good inital guess.
+
+\subsection{Effect of Convergence Rates on DCCM Synthesis}
+Another peculiar observation of our implementation was that synthesis of the DCCM consistently failed when using $\beta > 0.3$. We would think that it would be strictly easier to satify the slower convergence rate enforced by a larger $\beta$, however this is not what we found. Furthermore, while we were able to synthesize a DCCM with 500 samples for both $\beta = 0.1$ and $\beta = 0.3$, the $\beta = 0.1$ controller was able to stabilize the system while the $\beta = 0.3$ controller was not. This may speak to the brittleness of the controller when using insufficient samples or it may be indicative of some underlying issue that is also contributing the the synthesis of controllers with larger $\beta$ failing. More investigation into this issue is required to fully understand it.
+
+\subsection{Computation Time}
+The DCCM synthesis with a monomial basis of degree 4 and 500 samples took approximately 18 minutes, while using a degree 6 basis with the same number of samples took approximately 3 hours and 20 minutes. The synthesis of the DCCM with degree 4 basis and 2000 samples shown in figure \ref{fig:result_2000} took approximately 1 hour.
+
+Online computation of the 1-segment geodesic for a DCCM synthesized with degree 4 basis took 1.54 seconds, while the DCCM synthesized with degree 6 basis took 3.81 seconds.
+
+All experiments were run on a Linux machine with 31.3GB of RAM, an with an Intel Core i7-6700 CPU @ 3.40GHz x 8 processor.
 
 \section{Conclusion and Future Work}
 More work needs to be done to realize the full benefits of applying the Control Contraction Metric Framework to the problem of control through contact. 
 
+Pretty brittle, hypothesize this is due to insufficient coverage of the state space by the samples
 
 Same controller across different trajectories - this was not realized in our implementation because of the sampling technique used.
 
@@ -322,6 +374,8 @@ Convex synthesis - high degree SOS polynomial required
 Certificates of stability and convergence rates - need arguments about samping density, and also bounding the difference between smoothed and exact dynamics.
 
 faster online computation - explore other methods for solving the geodesic that don't involve inverting the symbolic matrix.
+
+Explore stabilizing to the submanifold of just the object position.
 
 \printbibliography
 

@@ -1,13 +1,13 @@
 # Fdb version 3
-["biber dccm_quasistatic"] 0 "dccm_quasistatic.bcf" "dccm_quasistatic.bbl" "dccm_quasistatic" 1683998154
-  "dccm_quasistatic.bcf" 1683998154 102716 d327afcae389776ad20b1cb9612681c4 "pdflatex"
+["biber dccm_quasistatic"] 0 "dccm_quasistatic.bcf" "dccm_quasistatic.bbl" "dccm_quasistatic" 1684022874
+  "dccm_quasistatic.bcf" 1684022874 102790 b8737ac390107dd49d5d0d012b7da21e "pdflatex"
   (generated)
   "dccm_quasistatic.blg"
   "dccm_quasistatic.bbl"
-["pdflatex"] 1683998153 "/home/shaoyuan/Documents/Software/dccm_quasistatic/report/dccm_quasistatic.tex" "/home/shaoyuan/Documents/Software/dccm_quasistatic/report/dccm_quasistatic.pdf" "dccm_quasistatic" 1683998154
+["pdflatex"] 1684022873 "/home/shaoyuan/Documents/Software/dccm_quasistatic/report/dccm_quasistatic.tex" "/home/shaoyuan/Documents/Software/dccm_quasistatic/report/dccm_quasistatic.pdf" "dccm_quasistatic" 1684022874
   "/etc/texmf/web2c/texmf.cnf" 1683642474 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/shaoyuan/Documents/Software/dccm_quasistatic/report/dccm_quasistatic.aux" 1683998154 8934 1d9365410de41a2fb0072c7127f50eb3 ""
-  "/home/shaoyuan/Documents/Software/dccm_quasistatic/report/dccm_quasistatic.tex" 1683998153 23252 ba126eab96eaef10e80424f8dfcc49b3 ""
+  "/home/shaoyuan/Documents/Software/dccm_quasistatic/report/dccm_quasistatic.aux" 1684022874 11183 15dbe6835d2f722b7d4e1cb19541e74c ""
+  "/home/shaoyuan/Documents/Software/dccm_quasistatic/report/dccm_quasistatic.tex" 1684022872 29182 dff6cbc44432ecc04a36c52c1bd5a1fe ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/courier/pcrr7t.tfm" 1136768653 960 379cc0019370a9e0208a0a3f949f847a ""
@@ -41,6 +41,7 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb" 1248133631 37912 77d683123f92148345f3fc36a38d9ab1 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1248133631 36281 c355509802a035cadc5f15869451dcee ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1248133631 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb" 1248133631 31809 8670ca339bf94e56da1fc21c80635e2a ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
@@ -122,16 +123,18 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1683643799 165012 f177baa1c39a3ebd62c3096a43521a0d ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1683643809 4878321 22ba37f73113b0e5ba9853a39b3705b9 ""
   "IEEEtran.cls" 1683644409 281957 5b2e4fa15b0f7eabb840ebf67df4c0f7 ""
-  "dccm_quasistatic.aux" 1683998154 8934 1d9365410de41a2fb0072c7127f50eb3 "pdflatex"
-  "dccm_quasistatic.bbl" 1683994406 41460 1f26f6b9655af9228cc8b488e1f3adb1 "biber dccm_quasistatic"
-  "dccm_quasistatic.run.xml" 1683998154 2489 d7aab961ea41183f6dbc53896e2cbf14 "pdflatex"
-  "dccm_quasistatic.tex" 1683998153 23252 ba126eab96eaef10e80424f8dfcc49b3 ""
+  "dccm_quasistatic.aux" 1684022874 11183 15dbe6835d2f722b7d4e1cb19541e74c "pdflatex"
+  "dccm_quasistatic.bbl" 1684019954 41460 1f26f6b9655af9228cc8b488e1f3adb1 "biber dccm_quasistatic"
+  "dccm_quasistatic.run.xml" 1684022874 2489 d7aab961ea41183f6dbc53896e2cbf14 "pdflatex"
+  "dccm_quasistatic.tex" 1684022872 29182 dff6cbc44432ecc04a36c52c1bd5a1fe ""
+  "figures/comparison_num_samples.png" 1684015876 141355 0437b768ed6f1c5a591ae91a8f0ddfa8 ""
+  "figures/result_lbw10_2000samples.png" 1684022870 447666 81ec01ecf6afd963c3d990e0763bab56 ""
   "figures/smoothed_contact_dynamics.png" 1683679803 63428 d70695b953ed0b893dbacaaea12daa31 ""
   (generated)
-  "dccm_quasistatic.log"
   "dccm_quasistatic.pdf"
-  "dccm_quasistatic.run.xml"
-  "/home/shaoyuan/Documents/Software/dccm_quasistatic/report/dccm_quasistatic.pdf"
-  "dccm_quasistatic.bcf"
   "/home/shaoyuan/Documents/Software/dccm_quasistatic/report/dccm_quasistatic.log"
+  "dccm_quasistatic.bcf"
+  "dccm_quasistatic.log"
+  "/home/shaoyuan/Documents/Software/dccm_quasistatic/report/dccm_quasistatic.pdf"
+  "dccm_quasistatic.run.xml"
   "dccm_quasistatic.aux"

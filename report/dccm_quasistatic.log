@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.5.9)  13 MAY 2023 13:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.5.9)  13 MAY 2023 20:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -610,39 +610,60 @@ File: figures/smoothed_contact_dynamics.png Graphic file (type png)
 Package pdftex.def Info: figures/smoothed_contact_dynamics.png  used on input line 78.
 (pdftex.def)             Requested size: 232.19843pt x 99.89346pt.
  [2 </home/shaoyuan/Documents/Software/dccm_quasistatic/report/figures/smoothed_contact_dynamics.png>] [3]
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 326.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<figures/result_lbw10_2000samples.png, id=29, 1885.0425pt x 3304.345pt>
+File: figures/result_lbw10_2000samples.png Graphic file (type png)
+<use figures/result_lbw10_2000samples.png>
+Package pdftex.def Info: figures/result_lbw10_2000samples.png  used on input line 322.
+(pdftex.def)             Requested size: 242.52063pt x 425.09254pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<figures/comparison_num_samples.png, id=30, 1885.0425pt x 1063.975pt>
+File: figures/comparison_num_samples.png Graphic file (type png)
+<use figures/comparison_num_samples.png>
+Package pdftex.def Info: figures/comparison_num_samples.png  used on input line 345.
+(pdftex.def)             Requested size: 242.52063pt x 136.8767pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[4] [5 </home/shaoyuan/Documents/Software/dccm_quasistatic/report/figures/result_lbw10_2000samples.png> </home/shaoyuan/Documents/Software/dccm_quasistatic/report/figures/comparison_num_samples.png>]
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 380.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Underfull \hbox (badness 5105) in paragraph at lines 327--327
+Underfull \hbox (badness 5105) in paragraph at lines 381--381
 []\OT1/ptm/m/n/10 J.[]P. Sleiman, J. Car-ius, R. Grandia, M. Wer-
  []
 
-[4]
-Underfull \hbox (badness 1796) in paragraph at lines 327--327
+
+Underfull \hbox (badness 1796) in paragraph at lines 381--381
 []\OT1/ptm/m/n/10 R. Tedrake, I. R. Manch-ester, M. To-benkin, and
  []
 
-[5
-
-] (/home/shaoyuan/Documents/Software/dccm_quasistatic/report/dccm_quasistatic.aux)
+[6] (/home/shaoyuan/Documents/Software/dccm_quasistatic/report/dccm_quasistatic.aux)
 Package logreq Info: Writing requests to 'dccm_quasistatic.run.xml'.
 \openout1 = `dccm_quasistatic.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 12736 strings out of 483107
- 225959 string characters out of 5964631
- 855413 words of memory out of 5000000
- 27605 multiletter control sequences out of 15000+600000
+ 12754 strings out of 483107
+ 226547 string characters out of 5964631
+ 857466 words of memory out of 5000000
+ 27621 multiletter control sequences out of 15000+600000
  571390 words of font info for 100 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  50i,13n,48p,1714b,1834s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on /home/shaoyuan/Documents/Software/dccm_quasistatic/report/dccm_quasistatic.pdf (5 pages, 240654 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on /home/shaoyuan/Documents/Software/dccm_quasistatic/report/dccm_quasistatic.pdf (6 pages, 772820 bytes).
 PDF statistics:
- 88 PDF objects out of 1000 (max. 8388607)
- 62 compressed objects within 1 object stream
+ 99 PDF objects out of 1000 (max. 8388607)
+ 67 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
