@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.5.9)  14 MAY 2023 22:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.5.9)  15 MAY 2023 18:53
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -629,23 +629,23 @@ Package biblatex Info: Reference segment=0 on input line 24.
 
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 74.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 73.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 74.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 73.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 <figures/smoothed_contact_dynamics.png, id=10, 1885.0425pt x 811.03pt>
 File: figures/smoothed_contact_dynamics.png Graphic file (type png)
 <use figures/smoothed_contact_dynamics.png>
-Package pdftex.def Info: figures/smoothed_contact_dynamics.png  used on input line 79.
+Package pdftex.def Info: figures/smoothed_contact_dynamics.png  used on input line 78.
 (pdftex.def)             Requested size: 232.19843pt x 99.89346pt.
 <figures/problem_setup.png, id=12, 920.43875pt x 630.355pt>
 File: figures/problem_setup.png Graphic file (type png)
 <use figures/problem_setup.png>
-Package pdftex.def Info: figures/problem_setup.png  used on input line 98.
+Package pdftex.def Info: figures/problem_setup.png  used on input line 97.
 (pdftex.def)             Requested size: 154.80157pt x 106.01433pt.
 
 
@@ -655,30 +655,33 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <figures/sampling_strategy.png, id=28, 1264.725pt x 1258.7025pt>
 File: figures/sampling_strategy.png Graphic file (type png)
 <use figures/sampling_strategy.png>
-Package pdftex.def Info: figures/sampling_strategy.png  used on input line 258.
+Package pdftex.def Info: figures/sampling_strategy.png  used on input line 255.
 (pdftex.def)             Requested size: 154.80157pt x 154.05316pt.
  [3 </home/shaoyuan/Documents/Software/dccm_quasistatic/report/figures/sampling_strategy.png>] [4]
 <figures/result_lbw10_2000samples.png, id=37, 1885.0425pt x 3304.345pt>
 File: figures/result_lbw10_2000samples.png Graphic file (type png)
 <use figures/result_lbw10_2000samples.png>
-Package pdftex.def Info: figures/result_lbw10_2000samples.png  used on input line 356.
+Package pdftex.def Info: figures/result_lbw10_2000samples.png  used on input line 353.
 (pdftex.def)             Requested size: 242.52063pt x 425.09254pt.
+
+Underfull \vbox (badness 4995) has occurred while \output is active []
+
 <figures/comparison_num_samples.png, id=38, 1885.0425pt x 1063.975pt>
 File: figures/comparison_num_samples.png Graphic file (type png)
 <use figures/comparison_num_samples.png>
-Package pdftex.def Info: figures/comparison_num_samples.png  used on input line 379.
+Package pdftex.def Info: figures/comparison_num_samples.png  used on input line 376.
 (pdftex.def)             Requested size: 242.52063pt x 136.8767pt.
  [5 </home/shaoyuan/Documents/Software/dccm_quasistatic/report/figures/result_lbw10_2000samples.png> </home/shaoyuan/Documents/Software/dccm_quasistatic/report/figures/comparison_num_samples.png>]
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 412.
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 410.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Underfull \hbox (badness 5105) in paragraph at lines 413--413
+Underfull \hbox (badness 5105) in paragraph at lines 411--411
 []\OT1/ptm/m/n/10 J.[]P. Sleiman, J. Car-ius, R. Grandia, M. Wer-
  []
 
 [6]
-Underfull \hbox (badness 1796) in paragraph at lines 413--413
+Underfull \hbox (badness 1796) in paragraph at lines 411--411
 []\OT1/ptm/m/n/10 R. Tedrake, I. R. Manch-ester, M. To-benkin, and
  []
 
@@ -688,15 +691,15 @@ Package logreq Info: Writing requests to 'dccm_quasistatic.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 13684 strings out of 483107
- 245560 string characters out of 5964631
- 899512 words of memory out of 5000000
- 28505 multiletter control sequences out of 15000+600000
+ 13688 strings out of 483107
+ 245667 string characters out of 5964631
+ 898550 words of memory out of 5000000
+ 28509 multiletter control sequences out of 15000+600000
  571390 words of font info for 100 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  53i,15n,63p,1714b,1902s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on /home/shaoyuan/Documents/Software/dccm_quasistatic/report/dccm_quasistatic.pdf (7 pages, 882920 bytes).
+Output written on /home/shaoyuan/Documents/Software/dccm_quasistatic/report/dccm_quasistatic.pdf (7 pages, 883454 bytes).
 PDF statistics:
  108 PDF objects out of 1000 (max. 8388607)
  71 compressed objects within 1 object stream

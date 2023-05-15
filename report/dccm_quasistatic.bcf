@@ -2200,20 +2200,21 @@
     <bcf:citekey order="9">pangGlobalPlanningContactRich2023</bcf:citekey>
     <bcf:citekey order="10">weiControlContractionMetric2021</bcf:citekey>
     <bcf:citekey order="11">pangGlobalPlanningContactRich2023</bcf:citekey>
-    <bcf:citekey order="12">manchesterControlContractionMetrics2017</bcf:citekey>
+    <bcf:citekey order="12">pangGlobalPlanningContactRich2023</bcf:citekey>
     <bcf:citekey order="13">manchesterControlContractionMetrics2017</bcf:citekey>
-    <bcf:citekey order="14">weiControlContractionMetric2021</bcf:citekey>
+    <bcf:citekey order="14">manchesterControlContractionMetrics2017</bcf:citekey>
     <bcf:citekey order="15">weiControlContractionMetric2021</bcf:citekey>
     <bcf:citekey order="16">weiControlContractionMetric2021</bcf:citekey>
     <bcf:citekey order="17">weiControlContractionMetric2021</bcf:citekey>
-    <bcf:citekey order="18">pangGlobalPlanningContactRich2023</bcf:citekey>
-    <bcf:citekey order="19">DrakeModelBasedDesign</bcf:citekey>
+    <bcf:citekey order="18">weiControlContractionMetric2021</bcf:citekey>
+    <bcf:citekey order="19">pangGlobalPlanningContactRich2023</bcf:citekey>
     <bcf:citekey order="20">DrakeModelBasedDesign</bcf:citekey>
-    <bcf:citekey order="21">weiControlContractionMetric2021</bcf:citekey>
-    <bcf:citekey order="22">singhLearningStabilizableDynamical2018</bcf:citekey>
-    <bcf:citekey order="22">chouModelErrorPropagation2021</bcf:citekey>
-    <bcf:citekey order="23">leungNonlinearStabilizationControl2017</bcf:citekey>
-    <bcf:citekey order="24">manchesterControlContractionMetrics2017</bcf:citekey>
+    <bcf:citekey order="21">DrakeModelBasedDesign</bcf:citekey>
+    <bcf:citekey order="22">weiControlContractionMetric2021</bcf:citekey>
+    <bcf:citekey order="23">singhLearningStabilizableDynamical2018</bcf:citekey>
+    <bcf:citekey order="23">chouModelErrorPropagation2021</bcf:citekey>
+    <bcf:citekey order="24">leungNonlinearStabilizationControl2017</bcf:citekey>
+    <bcf:citekey order="25">manchesterControlContractionMetrics2017</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
