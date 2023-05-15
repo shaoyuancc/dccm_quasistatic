@@ -7,6 +7,7 @@
 \usepackage{algorithmic}
 \usepackage{graphicx}
 \usepackage{textcomp}
+\usepackage[inkscapeformat=png]{svg}
 \usepackage{xcolor}
 \usepackage{multirow}
 \usepackage{array}
@@ -73,7 +74,7 @@ In this work we use the analytically smoothed contact dynamics and corresponding
 We plot the force at a distance effect of the smoothed contact dynamics in Figure \ref{fig:smoothed_contact_dynamics}. We see that for a high weight, which corresponds to a small force at a distance, the next $b_x$ is close to 0, but as the log barrier weight decreases, the box is pushed further to the right.
 
 % Figure showing force at a distance
-\begin{figure}[t]
+\begin{figure}[h]
 	\centering\includegraphics[width = 0.45 \textwidth]
 	{figures/smoothed_contact_dynamics.png}
     \caption{Force at a distance effect of smoothed contact dynamics. (\textbf{a}) A system consisting of an actuated point finger at $x=-1$ and unactuated box at $x=0$. (\textbf{b}) The next $b_x$ after rolling out one step of the analytically smoothed dynamics with different log barrier weights.}
@@ -81,7 +82,7 @@ We plot the force at a distance effect of the smoothed contact dynamics in Figur
 	\vskip -0.25 true in
 \end{figure}
 
-\subsection{Planar Pushing System}
+\subsection{Planar Pushing System and its Contraction Condition}
 The state of 
 \begin{equation}
     x = \begin{bmatrix}b_x & b_y & b_{\theta}& s_x& s_y\end{bmatrix}^\top
@@ -91,6 +92,14 @@ control input $u$ are absolute position commands for the sphere
 \begin{equation}
     u = \begin{bmatrix}u_x\\ u_y \end{bmatrix}
 \end{equation}
+
+\begin{figure}[h]
+	\centering\includegraphics[width = 0.3 \textwidth]
+	{figures/problem_setup.png}
+    \caption{The components of state $x$ and position command $u$}
+	\label{fig:problem_setup}
+	\vskip -0.25 true in
+\end{figure}
 
 The system evolves in nonlinearly in discrete time and is control affine. The dynamics are defined as
 
@@ -102,7 +111,7 @@ where $f$ and $g$ are smooth functions due to the smoothing of the contact dynam
 
 The differential dynamics are defined as
 \begin{equation}
-    \delta_{x_k} = A(x_k)\delta_{x_k} + B(x_k)\delta_{u_k}
+    \delta_{x_{k+1}} = A(x_k)\delta_{x_k} + B(x_k)\delta_{u_k}
 \end{equation}
 where $A(x_k) = \frac{\partial (f(x_k) + g(x_k)u_k)}{\partial x_k} \in \mathbb{R}^{5 \times 5}$ and $B(x_k) = \frac{\partial (f(x_k) + g(x_k)u_k)}{\partial u_k} \in \mathbb{R}^{5 \times 2}$ are the Jacobians of the dynamics.
 
@@ -128,17 +137,57 @@ And by substituting the differential dynamics and control law, we can see that t
 \end{equation}
 
 The contraction condition can then be expressed as
+
 \begin{equation}
+	\begin{aligned}
 	V_{k+1} - V_k \leq 
 	- \beta V_k <
-	0
+	0 \quad \forall x, \delta_x \in \mathbb{R}^5, \beta \in (0,1]
+	\end{aligned}
 \end{equation}
+where the contraction rate is $(1-\beta)$
 
-which simplifies to
+which is equivalent to
 \begin{equation}
 	\label{eq:contraction_condition}
 	(A_k + B_k K_k)^\top M_{k+1} (A_k + B_k K_k) - (1 - \beta) M_k < 0
 \end{equation}
+
+Once we've found the metric $M$ and control gain $K$ offline, to run the controller online, at each time step we will need to find the minimum length curve between our desired state $x^*_k$ and our actual state $x_k$.
+
+For a smooth curve $c(s), s\in [0, 1]$ that connects two points in state space $x_0$ and $x_1$, \autocite{manchesterControlContractionMetrics2017} defines the Riemannian length and energy of the curve as
+
+\begin{equation}
+	\begin{aligned}
+		L(c) &= \int_0^1 \sqrt{\frac{\partial{c(s)}}{\partial{s}} ^\top M(c(s)) \frac{\partial{c(s)}}{\partial{s}}} ds \\
+		E(c) &= \int_0^1 L(c)^2 ds
+	\end{aligned}
+	\label{eq:geodesic_length_energy}
+\end{equation}
+
+The geodesic $\gamma(x_0, x_1)$ is the curve that minimizes the Riemanian length and energy between $x_0$ and $x_1$
+
+\begin{equation}
+	\begin{aligned}
+		\gamma(x_0, x_1) &= \argmin_{c} L(c) \\
+		&= \arg \min_{c} E(c)
+	\end{aligned}
+	\label{eq:geodesic}
+\end{equation}
+
+By the contraction condition we enforced, we see that the Riemanian energy of geodesic decreases exponentially as the system evolves and thus can be thought of as an incremental Lyapunov function \autocite{manchesterControlContractionMetrics2017}.
+
+The controller that tracks the desired trajectory $(x^*, u^*)$ will then be
+\begin{equation}
+	\begin{aligned}
+		u_k = u^*_k + \int_0^1 K(\gamma(s))\frac{\partial{\gamma(s)}}{\partial{s}}
+	\end{aligned}
+	\label{eq:control_integral_geodesic}
+\end{equation}
+
+\section{Methods}
+\subsection{Contraction Metric and Controller Synthesis}
+\subsubsection{Sum of Squares (SOS) Programming}
 
 \autocite{weiControlContractionMetric2021} showed that equation \ref{eq:contraction_condition} can be transformed via Schur's complement (among other transformations) into
 % Create a 2x2 matrix
@@ -151,16 +200,13 @@ which simplifies to
 \end{equation}
 where $W := M^{-1}$ and $L := KW$
 
-\section{Methods}
-\subsection{Contraction Metric and Controller Synthesis}
-\subsubsection{Sum of Squares (SOS) Programming}
 In order to synthesize the contraction metric and controller, we use the SOS programming framework described in \autocite{weiControlContractionMetric2021} with some slight modifications.
 
 \begin{equation}
 	\label{eq:dccm_opt}
 	\begin{aligned}
-	\min_{l_c, w_c, r} & r \\
-	s.t. & \forall k, w^\top \Omega w - r w^\top w \in \Sigma(x_k, u_k, w) \\
+	\min_{l_c, w_c, r} \quad& r \\
+	s.t. \quad& \forall k, w^\top \Omega w - r w^\top w \in \Sigma(x_k, u_k, w) \\
 	& r \geq 0.1
 	\end{aligned}
 \end{equation}
@@ -177,17 +223,15 @@ where $\Sigma(x_k, u_k, w)$ is the set of SOS polynomials that satisfy the contr
 	% W_k is a 5x5 symmetric matrix
 	W_k &= 
 	\begin{bmatrix}
-		W_{11_k} & W_{12_k} & W_{13_k} & W_{14_k} & W_{15_k} \\
-		W_{12_k} & W_{22_k} & W_{23_k} & W_{24_k} & W_{25_k} \\
-		W_{13_k} & W_{23_k} & W_{33_k} & W_{34_k} & W_{35_k} \\
-		W_{14_k} & W_{24_k} & W_{34_k} & W_{44_k} & W_{45_k} \\
-		W_{15_k} & W_{25_k} & W_{35_k} & W_{45_k} & W_{55_k} \\
+		W_{11_k} & \cdots & W_{15_k} \\
+		\vdots & \ddots & \vdots \\
+		W_{15_k} & \cdots & W_{55_k} \\
 	\end{bmatrix} \\
 	% L_k is a 2x5 matrix
 	L_k &=
 	\begin{bmatrix}
-		L_{11_k} & L_{12_k} & L_{13_k} & L_{14_k} & L_{15_k} \\
-		L_{21_k} & L_{22_k} & L_{23_k} & L_{24_k} & L_{25_k} \\
+		L_{11_k} & \cdots & L_{15_k} \\
+		L_{21_k} & \cdots & L_{25_k} \\
 	\end{bmatrix} \\
 	\end{aligned}
 \end{equation}
@@ -209,37 +253,27 @@ We solve this SOS program using Drake's Mathematical Program \autocite{DrakeMode
 \subsubsection{Sampling Strategy}
 To get a contraction metric valid over the entire state space we would have to densely sample the entire state space. However, the available RAM on the machine sets an upper bound of the size of the optmization program, which for a monomial basis of degree $4$, was around $2000$ samples. Thus, to get a contraction metric and controller that had good performance at least in the vicinity of the desired trajectory, we only sampled states and control actions from a small region around the desired trajectory. This is a clear limitation of the current approach and future work would involve finding a way to enforce the contraction condition over a larger portion of state space.
 
+\begin{figure}[h]
+	\centering\includegraphics[width = 0.3 \textwidth]
+	{figures/sampling_strategy.png}
+    \caption{Sampled box and sphere positions around the circular target trajectory}
+	\label{fig:sampling_strategy}
+	\vskip -0.25 true in
+\end{figure}
+
+
 \subsection{Online Geodesic and Controller Computation}
 With the contraction metric synthesized, we now need to compute the control action that enforces the contraction condition.
 
-For a smooth curve $c(s), s\in [0, 1]$ that connects two points in state space $x_0$ and $x_1$, \autocite{manchesterControlContractionMetrics2017} defines the Riemannian length and energy of the curve as
-
-\begin{equation}
-	\begin{aligned}
-		L(c) &= \int_0^1 \sqrt{\frac{\partial{c(s)}}{\partial{s}} ^\top M(c(s)) \frac{\partial{c(s)}}{\partial{s}}} ds \\
-		E(c) &= \int_0^1 L(c)^2 ds
-	\end{aligned}
-	\label{eq:geodesic_length_energy}
-\end{equation}
-
-The geodesic $\gamma(x_0, x_1)$ is the curve that minimizes the Riemanian length and energy between $x_0$ and $x_1$
-
-\begin{equation}
-	\label{eq:geodesic}
-	\begin{aligned}
-		\gamma(x_0, x_1) &= \argmin_{c} L(c) \\
-		&= \arg \min_{c} E(c)
-	\end{aligned}
-\end{equation}
-
-By the contraction condition we enforced, we see that the Riemanian energy of geodesic decreases exponentially as the system evolves and thus can be thought of as an incremental Lyapunov function \autocite{manchesterControlContractionMetrics2017}. In order to numerically approximate the geodesic $\gamma(x^*_k, x_k)$, we discretize the curve into $N$ segments and solve the following optimization program
+In order to numerically approximate the geodesic $\gamma(x^*_k, x_k)$, we discretize the curve into $N$ segments and solve the following optimization program
 
 \begin{equation}
 	\label{eq:geodesic_opt}
 	\begin{aligned}
-		\bar{\gamma}(x^*_k, x_k) = \argmin_{ \substack{ x[\cdot], \Delta x_{s}[\cdot],\\ \Delta s[\cdot], m[\cdot], y[\cdot]}}
-		& \sum_{i=0}^{N-1} y[i] + \Delta s[i]^2 \\
-		s.t. & \forall i, y \geq \Delta s[i] \Delta x_s[i]^\top M(m[i]) \Delta x_s[i]\\
+		\bar{\gamma}(x^*_k, x_k) =
+		\argmin_{ \substack{ x[\cdot], \Delta x_{s}[\cdot],\\ \Delta s[\cdot], m[\cdot], y[\cdot]}}
+		 & \sum_{i=0}^{N-1} y[i] + \Delta s[i]^2 \\
+		s.t. \quad & \forall i, y \geq \Delta s[i] \Delta x_s[i]^\top M(m[i]) \Delta x_s[i]\\
 		& x[0] = x^*_k, \quad x[N] = x_k \\
 		& \forall i, x[i+1] = x[i] + \Delta x_{s}[i]\Delta s[i] \\
 		& \forall i, \Delta s[i] > 0, \quad \sum_{i=0}^{N-1} \Delta s[i] = 1\\
