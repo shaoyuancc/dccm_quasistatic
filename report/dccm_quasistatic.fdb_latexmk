@@ -1,12 +1,12 @@
 # Fdb version 3
-["biber dccm_quasistatic"] 1684209880 "dccm_quasistatic.bcf" "dccm_quasistatic.bbl" "dccm_quasistatic" 1684250180
+["biber dccm_quasistatic"] 1684209880 "dccm_quasistatic.bcf" "dccm_quasistatic.bbl" "dccm_quasistatic" 1684255843
   "ZoteroLibrary.bib" 1684205206 426885 6a322f150b1dc81e2fe30a458c90c898 ""
-  "dccm_quasistatic.bcf" 1684250179 109941 9df1b46260b5c203ecca1e366d149d68 "pdflatex"
+  "dccm_quasistatic.bcf" 1684255843 109941 9df1b46260b5c203ecca1e366d149d68 "pdflatex"
   (generated)
   "dccm_quasistatic.bbl"
   "dccm_quasistatic.blg"
-["pdflatex"] 1684250177 "/Users/chewchiashaoyuan/Documents/Software/dccm_quasistatic/report/dccm_quasistatic.tex" "dccm_quasistatic.pdf" "dccm_quasistatic" 1684250180
-  "/Users/chewchiashaoyuan/Documents/Software/dccm_quasistatic/report/dccm_quasistatic.tex" 1684250177 34419 6b6368f0c0c9baf8825dcadcd8ff72e8 ""
+["pdflatex"] 1684255841 "/Users/chewchiashaoyuan/Documents/Software/dccm_quasistatic/report/dccm_quasistatic.tex" "dccm_quasistatic.pdf" "dccm_quasistatic" 1684255843
+  "/Users/chewchiashaoyuan/Documents/Software/dccm_quasistatic/report/dccm_quasistatic.tex" 1684255840 34429 b1351f0009ea08c6797d2de2fa7d1b32 ""
   "/dev/null" 0 -1 0 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -152,10 +152,10 @@
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1678519403 2826450 b0cc1c1b4326c536121635a20ee9fced ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
   "IEEEtran.cls" 1684205206 281957 5b2e4fa15b0f7eabb840ebf67df4c0f7 ""
-  "dccm_quasistatic.aux" 1684250179 11432 ff7367abdb7fe6a5ea7c62fa57110608 "pdflatex"
+  "dccm_quasistatic.aux" 1684255843 11432 ff7367abdb7fe6a5ea7c62fa57110608 "pdflatex"
   "dccm_quasistatic.bbl" 1684209888 49795 2f13b988601cdcc5236cdad54e9c193b "biber dccm_quasistatic"
-  "dccm_quasistatic.run.xml" 1684250179 2489 d7aab961ea41183f6dbc53896e2cbf14 "pdflatex"
-  "dccm_quasistatic.tex" 1684250177 34419 6b6368f0c0c9baf8825dcadcd8ff72e8 ""
+  "dccm_quasistatic.run.xml" 1684255843 2489 d7aab961ea41183f6dbc53896e2cbf14 "pdflatex"
+  "dccm_quasistatic.tex" 1684255840 34429 b1351f0009ea08c6797d2de2fa7d1b32 ""
   "figures/comparison_num_samples.png" 1684205206 141355 0437b768ed6f1c5a591ae91a8f0ddfa8 ""
   "figures/problem_setup.png" 1684205206 28698 82383dcfb20d2da41adb22d51e1119da ""
   "figures/result_lbw10_2000samples.png" 1684205206 447666 81ec01ecf6afd963c3d990e0763bab56 ""

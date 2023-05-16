@@ -37,7 +37,7 @@ shaoyuan\_chewchia@college.harvard.edu
 \maketitle
 
 \begin{abstract}
-The paper explores the feasibility and performance of Discrete-time Control Contraction Metrics (DCCM) on a planar pushing system with smoothed dynamics, to address the challenges of non-smoothness and underactuation of control through contact. While they were unable to achieve many of the theoretical advantages of the control contraction metric framework, they managed to demonstrate the feasibility of synthesizing and running a DCCM controller on a planar pushing system with highly smoothed dynamics. The limitations and gaps in applying their implentation in the real world are also discussed. The paper serves as a good starting point for future work to realize the full potential of DCCMs applied to systems with contact.
+The paper explores the feasibility and performance of Discrete-time Control Contraction Metrics (DCCM) on a planar pushing system with smoothed dynamics, to address the challenges of non-smoothness and underactuation of control through contact. While they were unable to achieve many of the theoretical advantages of the control contraction metric framework, they managed to demonstrate the feasibility of synthesizing and running a DCCM controller on a planar pushing system with highly smoothed dynamics. The limitations and gaps in applying their implementation in the real world are also discussed. The paper serves as a good starting point for future work to realize the full potential of DCCMs applied to systems with contact.
 \end{abstract}
 
 \section{Introduction} \label{sec:introduction}
@@ -49,7 +49,7 @@ Planning and control through contact is an important capability in robotics. In 
 \end{enumerate}
 
 % Current methods for control through contact
-Current methods for model based planning and control through contact typically fall into one of three categories: methods that apply smoothing to the dynamics \autocite{stewartOptimalControlSystems2010,pangGlobalPlanningContactRich2023}, methods that explicitly enumerate the contact modes \autocite{hoganFeedbackControlPusherSlider2016}, and methods that implicitly reason about the contact modes \autocite{sleimanContactImplicitTrajectoryOptimization2019,nakatsuruImplicitContactRichManipulation2023,posaDirectMethodTrajectory2014}. Two methods that have been applied to the control of nonlinear underactuated systems are Linear Quadratic Regulator (LQR)-Trees and Control Contraction Metrics (CCM). LQR-Trees use locally optimal linear control policies to stabilize planned trajectories. Each trajectory has a basin of attraction and these regions are pieced together to cover a larger region of state space \autocite{tedrakeLQRtreesFeedbackMotion2010}. CCMs, first established in \autocite{manchesterControlContractionMetrics2017}, were shown to be effective at controling underactuated systems in \autocite{manchesterUnifyingRobotTrajectory2018}.
+Current methods for model based planning and control through contact typically fall into one of three categories: methods that apply smoothing to the dynamics \autocite{stewartOptimalControlSystems2010,pangGlobalPlanningContactRich2023}, methods that explicitly enumerate the contact modes \autocite{hoganFeedbackControlPusherSlider2016}, and methods that implicitly reason about the contact modes \autocite{sleimanContactImplicitTrajectoryOptimization2019,nakatsuruImplicitContactRichManipulation2023,posaDirectMethodTrajectory2014}. Two methods that have been applied to the control of nonlinear underactuated systems are Linear Quadratic Regulator (LQR)-Trees and Control Contraction Metrics (CCM). LQR-Trees use locally optimal linear control policies to stabilize planned trajectories. Each trajectory has a basin of attraction and these regions are pieced together to cover a larger region of state space \autocite{tedrakeLQRtreesFeedbackMotion2010}. CCMs, first established in \autocite{manchesterControlContractionMetrics2017}, were shown to be effective at controlling underactuated systems in \autocite{manchesterUnifyingRobotTrajectory2018}.
 
 % Why we would want to use Control Contraction Metrics
 CCMs theoretically provide 4 key advantages over other control methods as described in \autocite{manchesterControlContractionMetrics2017,manchesterUnifyingRobotTrajectory2018,singhRobustOnlineMotion2017,weiControlContractionMetric2021}:
@@ -68,7 +68,7 @@ In this paper we use the analytic smoothing of contact dynamics described in \au
 We will assume that our system is quasistatic, meaning the velocities and accelerations of the system are 0 at the end of each time step \autocite{pangGlobalPlanningContactRich2023}. This corresponds to having a high amount of damping and is a reasonable assumption in the 2D planar pushing setup where we restrict pushing velocities to be low and there is a large amount of friction between the object and table surface. As a result, the state of our system only consists of positions.
 
 \subsection{Analytically Smoothed Contact Dynamics} \label{sec:smoothing}
-In this work we use the analytically smoothed contact dynamics and corresponding simulator developed by the authors of \autocite{pangGlobalPlanningContactRich2023}. Contact dynamics are formulated as an unconstrained convex program where the contact and friction contraints are moved into the objective function using a log barrier function. The effect of this is that there is a log barrier penalty for violating the contact constraints. Constraints can exert force even if they are not active and this translates to producing a force at a distance.
+In this work we use the analytically smoothed contact dynamics and corresponding simulator developed by the authors of \autocite{pangGlobalPlanningContactRich2023}. Contact dynamics are formulated as an unconstrained convex program where the contact and friction constraints are moved into the objective function using a log barrier function. The effect of this is that there is a log barrier penalty for violating the contact constraints. Constraints can exert force even if they are not active and this translates to producing a force at a distance.
 
 We plot the force at a distance effect of the smoothed contact dynamics in figure (\ref{fig:smoothed_contact_dynamics}). We see that for a high weight, which corresponds to a small force at a distance, the next $b_x$ is close to 0, but as the log barrier weight decreases, the box is pushed further to the right for the same position of the spherical robot.
 
@@ -105,7 +105,6 @@ The system evolves nonlinearly and is control affine. The discrete-time dynamics
 \begin{equation}
     x_{k+1} = f(x_k) + g(x_k)u_k
 \end{equation}
-
 where $f$ and $g$ are smooth functions due to the smoothing of the contact dynamics described in section (\ref{sec:smoothing}).
 
 The differential dynamics are defined as
@@ -165,7 +164,7 @@ For a smooth curve $c(s), s\in [0, 1]$ that connects two points in state space $
 	\label{eq:geodesic_length_energy}
 \end{equation}
 
-The geodesic $\gamma(x_0, x_1)$ is the curve that minimizes the Riemanian length and energy between $x_0$ and $x_1$
+The geodesic $\gamma(x_0, x_1)$ is the curve that minimizes the Riemannian length and energy between $x_0$ and $x_1$
 
 \begin{equation}
 	\begin{aligned}
@@ -175,7 +174,7 @@ The geodesic $\gamma(x_0, x_1)$ is the curve that minimizes the Riemanian length
 	\label{eq:geodesic}
 \end{equation}
 
-By the contraction condition we enforced, we see that the Riemanian energy of geodesic decreases exponentially as the system evolves and thus can be thought of as an incremental Lyapunov function \autocite{manchesterControlContractionMetrics2017}.
+By the contraction condition we enforced, we see that the Riemannian energy of geodesic decreases exponentially as the system evolves and thus can be thought of as an incremental Lyapunov function \autocite{manchesterControlContractionMetrics2017}.
 
 The controller that tracks the desired trajectory $(x^*, u^*)$ will then be
 \begin{equation}
@@ -189,7 +188,7 @@ The controller that tracks the desired trajectory $(x^*, u^*)$ will then be
 \subsection{Contraction Metric and Controller Synthesis}
 \subsubsection{Sum of Squares (SOS) Programming}
 
-\autocite{weiControlContractionMetric2021} showed that equation (\ref{eq:contraction_condition}) can be transformed via Schur's complement as well as left and right multipyling by an invertible matrix into
+\autocite{weiControlContractionMetric2021} showed that equation (\ref{eq:contraction_condition}) can be transformed via Schur's complement as well as left and right multiplying by an invertible matrix into
 \begin{equation}
 	\begin{bmatrix}
 		W_{k+1} & A_k + B_k L_k \\
@@ -241,14 +240,14 @@ where $v(x_k)$ has $126$ elements. $L.._k = l.._c v(x_k)$ is similarly defined.
 
 In general, the dimensions of the matrices are as follows: $\Omega: 2 \cdot dim(x) \times 2 \cdot dim(x), W: dim(x) \times dim(x), L: dim(u) \times dim(x)$
 
-We note the difference in the way we use the slack variable $r$ compared to \autocite{weiControlContractionMetric2021}. In \autocite{weiControlContractionMetric2021}, the constraints on the optimization program are $w^\top \Omega w - r I \in \Sigma(x_k, u_k, w), r \geq 0$. In practice we found that in some cases, especially when generating a higher degree metric, that the solver would return a trivial solution where $r$, $w_c$ and $l_c$ are extremely small numbers (on the order of $1e-17$). By setting a higher bound on $r$, we force the solver to find a solution where the contraction condition is satisfied with a greater buffer and the returned coefficients of $w_c$ and $l_c$ are larger.
+We note the difference in the way we use the slack variable $r$ compared to \autocite{weiControlContractionMetric2021}. In \autocite{weiControlContractionMetric2021}, the constraints on the optimization program are $w^\top \Omega w - r I \in \Sigma(x_k, u_k, w), r \geq 0$. In practice, we found that in some cases, especially when generating a higher degree metric, that the solver would return a trivial solution where $r$, $w_c$ and $l_c$ are extremely small numbers (on the order of $1e-17$). By setting a higher bound on $r$, we force the solver to find a solution where the contraction condition is satisfied with a greater buffer and the returned coefficients of $w_c$ and $l_c$ are larger.
 
 Another difference is that we do not have closed form equations for the $A$ and $B$ matrices which would allow us to enforce the contraction conditions over all states. Instead, we sample a set of (state, control action) pairs and enforce the contraction condition over these samples. We use the contact dynamics solver described in \autocite{pangGlobalPlanningContactRich2023} to calculate the next state $x_{k+1}$, and the Jacobians $A_k$ and $B_k$, for each sample of the current state $x_k$ and control action $u_k$, and substitute these values into the constraints in optimization program (\ref{eq:dccm_opt}). Since $M$ is smooth, we can expect the contraction condition to be satisfied over at least a small local region around each sample. However, if the samples are too sparse, the contraction condition may not be satisfied over all the states around the desired trajectory.
 
-We solve this SOS program using Drake's Mathematical Program \autocite{DrakeModelBasedDesign}, which uses Mosek under the hood to solve this Semidefinite Program (SDP).
+We solve this SOS program using Drake's Mathematical Program \autocite{DrakeModelBasedDesign}, which uses MOSEK under the hood to solve this Semidefinite Program (SDP).
 
 \subsubsection{Sampling Strategy}
-To get a contraction metric valid over the entire state space we would have to densely sample the entire state space. However, the available RAM on the machine used set an upper bound of the size of the optmization program we were able to run. For a monomial basis of degree $4$, the maximum number of samples we could add to our constraints was around $2000$. Thus, to get a contraction metric and controller that had good performance at least in the vicinity of the desired trajectory, we only sampled states and control actions from a small region around the desired trajectory as shown in figure (\ref{fig:sampling_strategy}). This is a clear limitation of the current approach and future work would involve finding a way to enforce the contraction condition over a larger portion of state space.
+To get a contraction metric valid over the entire state space we would have to densely sample the entire state space. However, the available RAM on the machine used set an upper bound of the size of the optimization program we were able to run. For a monomial basis of degree $4$, the maximum number of samples we could add to our constraints was around $2000$. Thus, to get a contraction metric and controller that had good performance at least in the vicinity of the desired trajectory, we only sampled states and control actions from a small region around the desired trajectory as shown in figure (\ref{fig:sampling_strategy}). This is a clear limitation of the current approach and future work would involve finding a way to enforce the contraction condition over a larger portion of state space.
 
 \begin{figure}[h]
 	\centering\includegraphics[width = 0.3 \textwidth]
@@ -277,7 +276,7 @@ In order to numerically approximate the geodesic $\gamma(x^*_k, x_k)$, we discre
 		& \forall i, M(m[i]) W(x[i]) = I  \\
 	\end{aligned}
 \end{equation}
-where $x[i]$ is the state at the start of the $i$th segment of the geodesic, $\Delta s[i]$ is a small positive scalar, $\Delta x_s[i]$ is the discretized displacement vector, $y[i]$ is a slack variable that represents the Riemanian energy and $N$ is the number of segments the geodesic $\gamma$ is discretized into. $m[i]$ is a slack variable introduced such that the $5\times5$ symbolic matrix $W(x[i])$ does not need to be explicitly inverted which was found to be a severe computational bottleneck. The constraint $M(m[i]) W(x[i]) = I$ is a surrogate for enforcing $M(m[i])=W(x[i])^{-1}$. Adding the regularization term $\Delta s[i]^2$ to the objective serves to spread out the discretized points evenly along the geodesic.
+where $x[i]$ is the state at the start of the $i$th segment of the geodesic, $\Delta s[i]$ is a small positive scalar, $\Delta x_s[i]$ is the discretized displacement vector, $y[i]$ is a slack variable that represents the Riemannian energy and $N$ is the number of segments the geodesic $\gamma$ is discretized into. $m[i]$ is a slack variable introduced such that the $5\times5$ symbolic matrix $W(x[i])$ does not need to be explicitly inverted which was found to be a severe computational bottleneck. The constraint $M(m[i]) W(x[i]) = I$ is a surrogate for enforcing $M(m[i])=W(x[i])^{-1}$. Adding the regularization term $\Delta s[i]^2$ to the objective serves to spread out the discretized points evenly along the geodesic.
 
 To solve this non-convex optimization problem we use Drake's Mathematical Program, this time using SNOPT under the hood \autocite{DrakeModelBasedDesign}.
 
@@ -295,7 +294,7 @@ An important point to note is that the integration is done from $x^*_k$ to $x_k$
 
 \section{Experimental Setup}
 \subsection{Creating Feasible Desired Trajectories}
-To create the desired trajectory, we first parameterised an arbitrary circular trajectory with the robot behind the object at each time step and the object slowly rotating as it travels around the circle. We then rolled out the dynamics from the initial condition, using the position of the robot at the next time step as the open loop position command for the robot and recorded the actual positions of the object under this open loop control. We created two feasible circular trajectories of slightly different radii in this way and spliced them together in the middle $(t=5)$ in order to introduce a step change in the desired trajectory. Finally, we introduce an additional initial disturbance by adding an offset to the initial state of the system from the first state of the desired trajectory. We do this process twice to create desired trajectories for both the log barrier weight 10 and 100 levels of smoothing.
+To create the desired trajectory, we first parameterized an arbitrary circular trajectory with the robot behind the object at each time step and the object slowly rotating as it travels around the circle. We then rolled out the dynamics from the initial condition, using the position of the robot at the next time step as the open loop position command for the robot and recorded the actual positions of the object under this open loop control. We created two feasible circular trajectories of slightly different radii in this way and spliced them together in the middle $(t=5)$ in order to introduce a step change in the desired trajectory. Finally, we introduce an additional initial disturbance by adding an offset to the initial state of the system from the first state of the desired trajectory. We do this process twice to create desired trajectories for both the log barrier weight 10 and 100 levels of smoothing.
 
 \section{Results and Discussion}
 Our original goal was to synthesize a DCCM with a small amount of smoothing that would transfer well to stabilizing the real system to arbitrary feasible desired trajectories under non-smooth, exact contact dynamics. Unfortunately, we were not able to achieve this goal. We found that when using a small amount of smoothing, a higher degree monomial basis was required to enforce the contraction condition across all samples. Furthermore, since the dynamics were less smooth, a greater density of samples was required in order for the contraction condition to hold around the desired trajectory. This can be seen from the result in table (\ref{table:results_overview}) where even though we were able to synthesize DCCMs for 500 samples for both log barrier weights, the DCCM for log barrier weight 10 was able to stabilize the system while the DCCM for log barrier weight 100 was not.
@@ -311,7 +310,7 @@ Both of these factors (requiring a higher degree, and more samples) led to the o
 		\multirow{4}{*}{10} & \multirow{2}{*}{4} 
 		& Synthesizes 
 		& \cmark & \cmark & \cmark & \cmark & ! \\ \cline{3-8}
-		& & Stabilzes 
+		& & Stabilizes 
 		& \xmark & \cmark & \cmark & \cmark & - \\ \cline{2-8}
 		& \multirow{2}{*}{6}
 		& Synthesizes 
@@ -321,7 +320,7 @@ Both of these factors (requiring a higher degree, and more samples) led to the o
 		\multirow{4}{*}{100} & \multirow{2}{*}{4} 
 		& Synthesizes
 		& \cmark & \cmark & \xmark & - & - \\ \cline{3-8}
-		& & Stabilzes
+		& & Stabilizes
 		& \xmark & \xmark & - & - & -\\ \cline{2-8}
 		& \multirow{2}{*}{6} 
 		& Synthesizes
@@ -382,17 +381,17 @@ It is also interesting to note that even though the 2000 sample controller consi
 \subsection{Discretization of Geodesic} \label{sec:discretization_geodesic}
 In testing, we found that trying to find the geodesic for the planar pushing system with $N>1$ (\ref{eq:geodesic_opt}) consistently failed. This was slightly unexpected as even though there are more decision variables for larger $N$, and while acknowledging that this is a non-convex problem, it was interesting that SNOPT was not able to find even the straight line solution. We were able to get larger $N$s in our implementation of the simpler 2-dimensional CSTR dynamical system from \autocite{weiControlContractionMetric2021}, but did notice that it significantly increased the online computation time.
 
-For future work, we hope to explore warm-starting the larger $N$ geodesic optimization with the solution of the $N=1$ geodesic, and then warm starting subsequent geodesic optimizations with the previous time-step's solution. Given smoothness of the system and the metric, the previous solution should serve as a good inital guess.
+For future work, we hope to explore warm-starting the larger $N$ geodesic optimization with the solution of the $N=1$ geodesic, and then warm starting subsequent geodesic optimizations with the previous time-step's solution. Given smoothness of the system and the metric, the previous solution should serve as a good initial guess.
 
 \subsection{Effect of Convergence Rates on DCCM Synthesis}
-Another peculiar observation of our implementation was that synthesis of the DCCM consistently failed when using $\beta > 0.3$. We think that it would be strictly easier to satisfy the slower convergence rate enforced by a larger $\beta$, however that is not what we found. Furthermore, while we were able to synthesize a DCCM with 500 samples for both $\beta = 0.1$ and $\beta = 0.3$, the $\beta = 0.1$ controller was able to stabilize the system while the $\beta = 0.3$ controller was not. This may speak to the brittleness of the controller when using insufficient samples or it may be indicative of some underlying issue that is also contributing to the synthesis of controllers with larger $\beta$ failing. More investigation into this issue is required to fully understand it.
+Another peculiar observation of our implementation was that synthesis of the DCCM consistently failed when using $\beta > 0.3$. We think that it would be strictly easier to satisfy the slower convergence rate enforced by a larger $\beta$, however that is not what we found. Furthermore, while we were able to synthesize a DCCM with 500 samples for both $\beta = 0.1$ and $\beta = 0.3$, the $\beta = 0.1$ controller was able to stabilize the system while the $\beta = 0.3$ controller was not. This may speak to the brittleness of the controller when using insufficient samples, or it may be indicative of some underlying issue that is also contributing to the synthesis of controllers with larger $\beta$ failing. More investigation into this issue is required to fully understand it.
 
 \subsection{Computation Time}
 The DCCM synthesis with a degree 4 monomial basis and 500 samples took approximately 18 minutes, while using a degree 6 basis with the same number of samples took approximately 3 hours 20 minutes. The synthesis of the DCCM with degree 4 basis and 2000 samples shown in figure \ref{fig:result_2000} took approximately 1 hour.
 
 Online computation of the 1-segment geodesic for a DCCM synthesized with degree 4 basis took 1.54 seconds, while the DCCM synthesized with degree 6 basis took 3.81 seconds.
 
-All experiments were run on a Linux machine with 31.3GB of RAM, an with an Intel Core i7-6700 CPU @ 3.40GHz x 8 processor.
+All experiments were run on a Linux machine with 31.3 GB of RAM, with an Intel Core i7-6700 CPU @ 3.40GHz x 8 processor.
 
 \section{Conclusion and Future Work}
 The feasibility of synthesizing and running a DCCM controller on a planar pushing system with smoothed dynamics was demonstrated in this paper. Limitations of this preliminary implementation were also discussed. Unfortunately, in this work we were largely unable to achieve the benefits discussed in section (\ref{sec:introduction}):
