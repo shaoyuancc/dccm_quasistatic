@@ -1,5 +1,5 @@
 % $ biblatex auxiliary file $
-% $ biblatex bbl format version 3.1 $
+% $ biblatex bbl format version 3.2 $
 % Do not modify the above lines!
 %
 % This is an auxiliary file used by the 'biblatex' package.
@@ -49,7 +49,7 @@
       \strng{authornamehash}{b187a94242925e9eb9c88ced00895d74}
       \strng{authorfullhash}{7cc4cef530c30e06c10714dd8ed3b726}
       \field{sortinit}{1}
-      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The empirical success of Reinforcement Learning (RL) in the setting of contact-rich manipulation leaves much to be understood from a model-based perspective, where the key difficulties are often attributed to (i) the explosion of contact modes, (ii) stiff, non-smooth contact dynamics and the resulting exploding / discontinuous gradients, and (iii) the non-convexity of the planning problem. The stochastic nature of RL addresses (i) and (ii) by effectively sampling and averaging the contact modes. On the other hand, model-based methods have tackled the same challenges by smoothing contact dynamics analytically. Our first contribution is to establish the theoretical equivalence of the two methods for simple systems, and provide qualitative and empirical equivalence on a number of complex examples. In order to further alleviate (ii), our second contribution is a convex, differentiable and quasi-dynamic formulation of contact dynamics, which is amenable to both smoothing schemes, and has proven through experiments to be highly effective for contact-rich planning. Our final contribution resolves (iii), where we show that classical sampling-based motion planning algorithms can be effective in global planning when contact modes are abstracted via smoothing. Applying our method on a collection of challenging contact-rich manipulation tasks, we demonstrate that efficient model-based motion planning can achieve results comparable to RL with dramatically less computation. Video: https://youtu.be/12Ew4xC-VwA}
@@ -103,7 +103,7 @@
       \strng{authornamehash}{60bdc8b83dac8c0b4eb0c7fb20018f92}
       \strng{authorfullhash}{60bdc8b83dac8c0b4eb0c7fb20018f92}
       \field{sortinit}{2}
-      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{In this paper we discuss the problem of verifying and computing optimal controls of systems whose dynamics is governed by differential systems with a discontinuous right-hand side. In our work, we are motivated by optimal control of mechanical systems with Coulomb friction, which exhibit such a right-hand side. Notwithstanding the impressive development of nonsmooth and set-valued analysis, these systems have not been closely studied either computationally or analytically. We show that even when the solution crosses and does not stay on the discontinuity, differentiating the results of a simulation gives gradients that have errors of a size independent of the stepsize. This means that the strategy of “optimize the discretization” will usually fail for problems of this kind. We approximate the discontinuous right-hand side for the differential equations or inclusions by a smooth right-hand side. For these smoothed approximations, we show that the resulting gradients approach the true gradients provided that the start and end points of the trajectory do not lie on the discontinuity and that Euler’s method is used where the step size is “sufficiently small” in comparison with the smoothing parameter. Numerical results are presented for a crude model of car racing that involves Coulomb friction and slip showing that this approach is practical and can handle problems of moderate complexity.}
@@ -158,7 +158,7 @@
       \strng{authornamehash}{9e7799b40fb8a8a295b79a237fd07677}
       \strng{authorfullhash}{9e7799b40fb8a8a295b79a237fd07677}
       \field{sortinit}{3}
-      \field{sortinithash}{a37a8ef248a93c322189792c34fc68c9}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{This paper investigates real-time control strategies for dynamical systems that involve frictional contact interactions. Hybridness and underactuation are key characteristics of these systems that complicate the design of feedback controllers. In this research, we examine and test a novel feedback controller design on a planar pushing system, where the purpose is to control the motion of a sliding object on a flat surface using a point robotic pusher. The pusher-slider is a simple dynamical system that retains many of the challenges that are typical of robotic manipulation tasks. Our results show that a model predictive control approach used in tandem with integer programming offers a powerful solution to capture the dynamic constraints associated with the friction cone as well as the hybrid nature of the contact. In order to achieve real-time control, simplifications are proposed to speed up the integer program. The concept of Family of Modes (FOM) is introduced to solve an online convex optimization problem by selecting a set of contact mode schedules that spans a large set of dynamic behaviors that can occur during the prediction horizon. The controller design is applied to stabilize the motion of a sliding object about a nominal trajectory, and to re-plan its trajectory in real-time to follow a moving target. We validate the controller design through numerical simulations and experimental results on an industrial ABB IRB 120 robotic arm.}
@@ -224,7 +224,7 @@
       \strng{authornamehash}{6370746c7a2bc5faa1fb9a880ed4cdd6}
       \strng{authorfullhash}{ee32ef13b8317c285590630bd46c021d}
       \field{sortinit}{4}
-      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{We present a reformulation of a contact-implicit optimization (CIO) approach that computes optimal trajectories for rigid-body systems in contact-rich settings. A hard-contact model is assumed, and the unilateral constraints are imposed in the form of complementarity conditions. Newton's impact law is adopted for enhanced physical correctness. The optimal control problem is formulated as a multi-staged program through a multiple-shooting scheme. This problem structure is exploited within the FORCES Pro framework to retrieve optimal motion plans, contact sequences and control inputs with increased computational efficiency. We investigate our method on a variety of dynamic object manipulation tasks, performed by a six degrees of freedom robot. The dynamic feasibility of the optimal trajectories, as well as the repeatability and accuracy of the task-satisfaction are verified through simulations and real hardware experiments on one of the manipulation problems.}
@@ -284,7 +284,7 @@
       \strng{authornamehash}{8376cc1bf315605e71d39ee7f4f8f8fd}
       \strng{authorfullhash}{8376cc1bf315605e71d39ee7f4f8f8fd}
       \field{sortinit}{4}
-      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{This paper uses a mobile manipulator with a collaborative robotic arm to manipulate objects beyond the robot's maximum payload. It proposes a single-shot probabilistic roadmap-based method to plan and optimize manipulation motion with environment support. The method uses an expanded object mesh model to examine contact and randomly explores object motion while keeping contact and securing affordable grasping force. It generates robotic motion trajectories after obtaining object motion using an optimization-based algorithm. With the proposed method's help, we can plan contact-rich manipulation without particularly analyzing an object's contact modes and their transitions. The planner and optimizer determine them automatically. We conducted experiments and analyses using simulations and real-world executions to examine the method's performance. It can successfully find manipulation motion that met contact, force, and kinematic constraints, thus allowing a mobile manipulator to move heavy objects while leveraging supporting forces from environmental obstacles. The mehtod does not need to explicitly analyze contact states and build contact transition graphs, thus providing a new view for robotic grasp-less manipulation, non-prehensile manipulation, manipulation with contact, etc.}
@@ -342,7 +342,7 @@
       \strng{authornamehash}{540655f37799ec905d76919ddbdb3497}
       \strng{authorfullhash}{540655f37799ec905d76919ddbdb3497}
       \field{sortinit}{4}
-      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Direct methods for trajectory optimization are widely used for planning locally optimal trajectories of robotic systems. Many critical tasks, such as locomotion and manipulation, often involve impacting the ground or objects in the environment. Most state-of-the-art techniques treat the discontinuous dynamics that result from impacts as discrete modes and restrict the search for a complete path to a specified sequence through these modes. Here we present a novel method for trajectory planning of rigid-body systems that contact their environment through inelastic impacts and Coulomb friction. This method eliminates the requirement for a priori mode ordering. Motivated by the formulation of multi-contact dynamics as a Linear Complementarity Problem for forward simulation, the proposed algorithm poses the optimization problem as a Mathematical Program with Complementarity Constraints. We leverage Sequential Quadratic Programming to naturally resolve contact constraint forces while simultaneously optimizing a trajectory that satisfies the complementarity constraints. The method scales well to high-dimensional systems with large numbers of possible modes. We demonstrate the approach on four increasingly complex systems: rotating a pinned object with a finger, simple grasping and manipulation, planar walking with the Spring Flamingo robot, and high-speed bipedal running on the FastRunner platform.}
@@ -409,7 +409,7 @@
       \strng{authornamehash}{577871f2dafaedc6c6b0530fe8e7460b}
       \strng{authorfullhash}{4cee38d2ce6b8643d3541acc4aa75932}
       \field{sortinit}{5}
-      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{Advances in the direct computation of Lyapunov functions using convex optimization make it possible to efficiently evaluate regions of attraction for smooth non-linear systems. Here we present a feedback motion-planning algorithm which uses rigorously computed stability regions to build a sparse tree of LQR-stabilized trajectories. The region of attraction of this non-linear feedback policy “probabilistically covers” the entire controllable subset of state space, verifying that all initial conditions that are capable of reaching the goal will reach the goal. We numerically investigate the properties of this systematic non-linear feedback design algorithm on simple non-linear systems, prove the property of probabilistic coverage, and discuss extensions and implementation details of the basic algorithm.}
@@ -463,7 +463,7 @@
       \strng{authornamehash}{47bf9fc4b95b81dd567fe1f464892fca}
       \strng{authorfullhash}{47bf9fc4b95b81dd567fe1f464892fca}
       \field{sortinit}{6}
-      \field{sortinithash}{7851c86048328b027313775d8fbd2131}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{We introduce the concept of a control contraction metric, extending contraction analysis to constructive nonlinear control design. We derive sufficient conditions for exponential stabilizability of all trajectories of a nonlinear control system. The conditions have a simple geometrical interpretation, can be written as a convex feasibility problem, and are invariant under coordinate changes. We show that these conditions are necessary and sufficient for feedback linearizable systems and also derive novel convex criteria for exponential stabilization of a nonlinear submanifold of state space. We illustrate the benefits of convexity by constructing a controller for an unstable polynomial system that combines local optimality and global stability, using a metric found via sum-of-squares programming.}
@@ -533,7 +533,7 @@
       \strng{editornamehash}{22eb1ac8f5b01532f7d30926a2361efa}
       \strng{editorfullhash}{22eb1ac8f5b01532f7d30926a2361efa}
       \field{sortinit}{7}
-      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{In this paper we present new results for nonlinear tracking control design based on the search for a “control contraction metric” (CCM). We show that for fully-actuated robots, CCMs can be found analytically that correspond to classical methods of robot control including sliding and energy-based designs. We also show that, for underactuated robots, the CCM approach extends more recent optimization-based methods such as LQR-Trees to tracking of arbitrary feasible trajectories. Therefore the CCM methodology represents a bridge between these methods. We illustrate our results with calculations and simulations on the single and double inverted pendulums and the underactuated cart-pole system.}
@@ -593,7 +593,7 @@
       \strng{authornamehash}{a067f60cc6d2bcafae1e806892746f1b}
       \strng{authorfullhash}{641a0c7526229a59bfec9595fef6d6df}
       \field{sortinit}{8}
-      \field{sortinithash}{1b24cab5087933ef0826a7cd3b99e994}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{We present a framework for online generation of robust motion plans for robotic systems with nonlinear dynamics subject to bounded disturbances, control constraints, and online state constraints such as obstacles. In an offline phase, one computes the structure of a feedback controller that can be efficiently implemented online to track any feasible nominal trajectory. The offline phase leverages contraction theory and convex optimization to characterize a fixed-size " tube " that the state is guaranteed to remain within while tracking a nominal trajectory (representing the center of the tube). In the online phase, when the robot is faced with obstacles, a motion planner uses such a tube as a robustness margin for collision checking, yielding nominal trajectories that can be safely executed (i.e., tracked without collisions under disturbances). In contrast to recent work on robust online planning using funnel libraries, our approach is not restricted to a fixed library of maneuvers computed offline and is thus particularly well-suited to applications such as UAV flight in densely cluttered environments where complex maneuvers may be required to reach a goal. We demonstrate our approach through simulations of a 6-state planar quadrotor navigating cluttered environments in the presence of a crosswind. We also discuss applications of our approach to Tube Model Predictive Control (TMPC) and compare the merits of our method with state-of-the-art nonlinear TMPC techniques.}
@@ -634,7 +634,7 @@
       \strng{authornamehash}{bb1917638836d5d2d89954a0fc86afd5}
       \strng{authorfullhash}{bb1917638836d5d2d89954a0fc86afd5}
       \field{sortinit}{8}
-      \field{sortinithash}{1b24cab5087933ef0826a7cd3b99e994}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Flexible manufacturing has been the trend in the area of the modern chemical process nowadays. One of the essential characteristics of flexible manufacturing is to track time-varying target trajectories (e.g. diversity and quantity of products). A possible tool to achieve time-varying targets is contraction theory. However, the contraction theory was developed for continuous time systems and there lacks analysis and synthesis tools for discrete-time systems. This article develops a systematic approach to discrete-time contraction analysis and control synthesis using Discrete-time Control Contraction Metrics (DCCM) which can be implemented using Sum of Square (SOS) programming. The proposed approach is demonstrated by illustrative example.}
@@ -687,7 +687,7 @@
       \strng{authornamehash}{2fea63cf1e4140f74fb7fa5f676776b7}
       \strng{authorfullhash}{2fea63cf1e4140f74fb7fa5f676776b7}
       \field{sortinit}{2}
-      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Drake: {{Model-Based Design}} and {{Verification}} for {{Robotics}}}
@@ -740,7 +740,7 @@
       \strng{authornamehash}{29c5ce5a39cf5a59353bab6eae81fc20}
       \strng{authorfullhash}{baecd9e82a75b075da68266aceff559c}
       \field{sortinit}{2}
-      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{We propose a novel framework for learning stabilizable nonlinear dynamical systems for continuous control tasks in robotics. The key idea is to develop a new control-theoretic regularizer for dynamics fitting rooted in the notion of stabilizability, which guarantees that the learned system can be accompanied by a robust controller capable of stabilizing any open-loop trajectory that the system may generate. By leveraging tools from contraction theory, statistical learning, and convex optimization, we provide a general and tractable semi-supervised algorithm to learn stabilizable dynamics, which can be applied to complex underactuated systems. We validated the proposed algorithm on a simulated planar quadrotor system and observed notably improved trajectory generation and tracking performance with the control-theoretic regularized model over models learned using traditional regression techniques, especially when using a small number of demonstration examples. The results presented illustrate the need to infuse standard model-based reinforcement learning algorithms with concepts drawn from nonlinear control theory for improved reliability.}
@@ -789,7 +789,7 @@
       \strng{authornamehash}{d16f7fa5367f47160181c264109f249f}
       \strng{authorfullhash}{d16f7fa5367f47160181c264109f249f}
       \field{sortinit}{2}
-      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{day}{14}
@@ -826,7 +826,7 @@
       \strng{authornamehash}{fac69571a1b9d4615c7f5acb8816ab92}
       \strng{authorfullhash}{fac69571a1b9d4615c7f5acb8816ab92}
       \field{sortinit}{2}
-      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
       \field{abstract}{Real-time nonlinear stabilization techniques are often limited by inefficient or intractable online and/or offline computations, or a lack guarantee for global stability. In this paper, we explore the use of Control Contraction Metrics (CCM) for nonlinear stabilization because it offers tractable offline computations that give formal guarantees for global stability. We provide a method to solve the associated online computation for a CCM controller - a pseudospectral method to find a geodesic. Through a case study of a stiff nonlinear system, we highlight two key benefits: (i) using CCM for nonlinear stabilization and (ii) rapid online computations amenable to real-time implementation. We compare the performance of a CCM controller with other popular feedback control techniques, namely the Linear Quadratic Regulator (LQR) and Nonlinear Model Predictive Control (NMPC). We show that a CCM controller using a pseudospectral approach for online computations is a middle ground between the simplicity of LQR and stability guarantees for NMPC.}

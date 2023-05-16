@@ -1,17 +1,15 @@
-[0] Config.pm:304> INFO - This is Biber 2.14 (beta)
-[0] Config.pm:307> INFO - Logfile is 'dccm_quasistatic.blg'
-[60] biber:322> INFO - === Mon May 15, 2023, 18:34:30
-[72] Biber.pm:415> INFO - Reading 'dccm_quasistatic.bcf'
-[124] Biber.pm:943> INFO - Found 15 citekeys in bib section 0
-[135] Biber.pm:4256> INFO - Processing section 0
-[135] Utils.pm:75> INFO - Globbing data source 'ZoteroLibrary.bib'
-[135] Utils.pm:91> INFO - Globbed data source 'ZoteroLibrary.bib' to ZoteroLibrary.bib
-[144] Biber.pm:4455> INFO - Looking for bibtex format file 'ZoteroLibrary.bib' for section 0
-[182] bibtex.pm:1653> INFO - LaTeX decoding ...
-[793] bibtex.pm:1471> INFO - Found BibTeX data source 'ZoteroLibrary.bib'
-[935] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[935] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[936] Biber.pm:4084> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[936] Biber.pm:4090> INFO - No sort tailoring available for locale 'en-US'
-[947] bbl.pm:652> INFO - Writing 'dccm_quasistatic.bbl' with encoding 'UTF-8'
-[959] bbl.pm:755> INFO - Output to dccm_quasistatic.bbl
+[0] Config.pm:307> INFO - This is Biber 2.17
+[0] Config.pm:310> INFO - Logfile is 'dccm_quasistatic.blg'
+[73] biber-darwin:340> INFO - === Tue May 16, 2023, 00:04:47
+[88] Biber.pm:418> INFO - Reading 'dccm_quasistatic.bcf'
+[178] Biber.pm:972> INFO - Found 15 citekeys in bib section 0
+[191] Biber.pm:4383> INFO - Processing section 0
+[201] Biber.pm:4574> INFO - Looking for bibtex file 'ZoteroLibrary.bib' for section 0
+[234] bibtex.pm:1713> INFO - LaTeX decoding ...
+[730] bibtex.pm:1518> INFO - Found BibTeX data source 'ZoteroLibrary.bib'
+[920] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[920] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[920] Biber.pm:4203> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[920] Biber.pm:4209> INFO - No sort tailoring available for locale 'en-US'
+[936] bbl.pm:654> INFO - Writing 'dccm_quasistatic.bbl' with encoding 'UTF-8'
+[950] bbl.pm:757> INFO - Output to dccm_quasistatic.bbl
